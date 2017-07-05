@@ -1,0 +1,93 @@
+/* Qualification.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  font-size: 11pt;
+}
+
+.btn {
+  padding: 40rpx 30rpx 60rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.btnRed {
+  width: 180rpx;
+  height: 70rpx;
+  background-color: #e64340;
+  text-align: center;
+  color: #fff;
+  line-height: 70rpx;
+  border-radius: 6rpx;
+  border: 1rpx solid #e64340;
+  margin-right: 30rpx;
+  letter-spacing: 2rpx;
+}
+
+.btnGreen {
+  width: 180rpx;
+  height: 70rpx;
+  background-color: #fff;
+  text-align: center;
+  color: #09bb07;
+  line-height: 70rpx;
+  border-radius: 6rpx;
+  border: 1rpx solid #09bb07;
+}
+
+.box {
+  padding: 30rpx;
+  font-size: 9pt;
+  color: #888;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.boxOne {
+  padding: 30rpx;
+  font-size: 9pt;
+  color: #888;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin-top: 10rpx;
+}
+
+.img {
+  margin: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.image {
+  width: 150rpx;
+  height: 170rpx;
+  margin-bottom: 16rpx;
+}
+
+.yuan {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  top: 100rpx;
+  left: 80rpx;
+}
+
+.yuanIcon {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  top: 100rpx;
+  left: 80rpx;
+}

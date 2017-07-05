@@ -1,0 +1,134 @@
+<scroll-view bindtap="hideSendBox" scroll-y="true" style="height:{{viewHeight}}px" class="scoll-view" bindscroll="recordScroll" scroll-top='{{scrollTop}}'>
+  <view wx:for='{{slList}}' wx:key='{{this}}' data-id='{{item.id}}'>
+    <!--信息分类-->
+    <!--<view wx:if='{{item.userleixing=="通知"}}' class="info-tz">
+      <image class="info-tz-icon" src="{{urlPath}}hongbao.png"></image>
+      {{item.neirong}}
+    </view>-->
+    <view wx:if='{{item.memid != userId}}' class="info-bar">
+      <view class="info-top">{{item.createtime}}</view>
+      <view class="info-bottom">
+        <view class="info-left">
+          <image src="{{item.touxiang}}" class="info-left-head" bindtap="selectHead" data-userid='{{item.userid}}'></image>
+          <!--<text class="info_left_dashang" bindtap='dashang' data-userid='{{item.userid}}' data-xingming='{{item.xingming}}' data-touxiang='{{item.touxiang}}'>赏</text>-->
+        </view>
+        <view class="info-right">
+          <view class="info-right-top">
+            <text class="info-right-name">{{item.xingming}}</text>
+            <!--<text class="info-right-type">{{item.userleixing}}</text>-->
+          </view>
+          <view class="info-right-content"  wx:if='{{item.type=="1"}}'>
+            <view class="info-rc-word" style="background-color:white;border:1px solid #f0f0f0;" bindtap='clickwenzi' data-neirong='{{item.neirong}}'>
+              <text>{{item.descs}}</text>
+            </view>
+          </view>
+          <view class="info-right-content" wx:if='{{item.type=="2"}}'>
+            <view class="info-yuyin-box">
+              <view class="info-yb-left">
+                <image class="info-yb-ctrl" src="{{urlPath}}play2.png"></image>
+              </view>
+              <view class="info-yb-middle">
+                <slider class="info-yb-slider" step="1" bindchange="slider4change" min="0" max="100" />
+              </view>
+              <view class="info-yb-right">
+                <view class="info-yb-time">{{item.key}}s</view>
+              </view>
+            </view>
+          </view>
+          <view class="info-right-content" wx:if='{{item.messleixing=="3"}}'>
+            <image src="{{item.neirong}}" class="info-rc-image" bindtap='clickimg' data-neirong='{{item.neirong}}'></image>
+          </view>
+          <view class="info-right-content" wx:if='{{item.messleixing=="4"}}'>
+            <video id="myVideo" class="info-right-video" src="{{item.neirong}}" controls></video>
+          </view>
+          <!--<view class="info-right-zan">
+            <image wx:if="{{item.isdianzan =='0'}}" class="info-rz-image" src="{{urlPath}}down01.png"></image>
+            <image wx:if="{{item.isdianzan =='1'}}" class="info-rz-image" src="{{urlPath}}downC01.png"></image>
+            <view class="info-rz-num">{{item.dianzan}}</view>
+          </view>-->
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{item.memid == userId}}" class="info-bar">
+      <view class="info-top">{{item.createtime}}</view>
+      <view class="info-bottom">
+
+        <view class="info-right">
+          <view class="info-right-top" style="float:right;">
+            <text class="info-right-name" style="float:right;">{{item.xingming}}</text>
+            <!--<text class="info-right-type">{{item.userleixing}}</text>-->
+          </view>
+          <view class="info-right-content" style="float:right;" wx:if='{{item.type=="1"}}'>
+            <view class="info-rc-word" style="float:right;" bindtap='clickwenzi' data-neirong='{{item.neirong}}'>
+              <text style="float:right;">{{item.descs}}</text>
+            </view>
+          </view>
+          <view class="info-right-content" style="float:right;" wx:if='{{item.type=="2"}}'>
+            <view class="info-yuyin-box" style="float:right;">
+              <view class="info-yb-left">
+                <image class="info-yb-ctrl" src="{{urlPath}}play2.png"></image>
+              </view>
+              <view class="info-yb-middle">
+                <slider class="info-yb-slider" step="1" bindchange="slider4change" min="0" max="100" />
+              </view>
+              <view class="info-yb-right">
+                <view class="info-yb-time">{{item.key}}s</view>
+              </view>
+            </view>
+          </view>
+          <view class="info-right-content" style="float:right;" wx:if='{{item.messleixing=="3"}}'>
+            <image style="float:right;" src="{{item.neirong}}" class="info-rc-image" bindtap='clickimg' data-neirong='{{item.neirong}}'></image>
+          </view>
+          <view class="info-right-content" style="float:right;" wx:if='{{item.messleixing=="4"}}'>
+            <video style="float:right;" id="myVideo" class="info-right-video" src="{{item.neirong}}" controls></video>
+          </view>
+          <!--<view class="info-right-zan">
+            <image wx:if="{{item.isdianzan =='0'}}" class="info-rz-image" src="{{urlPath}}down01.png"></image>
+            <image wx:if="{{item.isdianzan =='1'}}" class="info-rz-image" src="{{urlPath}}downC01.png"></image>
+            <view class="info-rz-num">{{item.dianzan}}</view>
+          </view>-->
+        </view>
+        <view class="info-left">
+          <image src="{{item.touxiang}}" class="info-left-head" bindtap="selectHead" data-userid='{{item.userid}}'></image>
+          <!--<text class="info_left_dashang" bindtap='dashang' data-userid='{{item.userid}}' data-xingming='{{item.xingming}}' data-touxiang='{{item.touxiang}}'>赏</text>-->
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class="send-box">
+  <view class="send-box-top">
+    <view bindtap="openYuyin" style="{{yuyinSelected == 'true' ? 'background-color:white;border-bottom:0px;':''}}" class="send-item">
+      <image class="send-item-icon" src="{{yuyinSelected == 'true' ?   urlPath+'yuyinClick.png':urlPath+'yuyin.png'}}"> </image>
+      <view class="send-item-text">语音</view>
+    </view>
+    <view bindtap="openWenzi" class="send-item" style="{{wenziSelected == 'true' ? 'background-color:white;border-bottom:0px;':''}}border-left:1px solid #f0f0f0;border-right:1px solid #f0f0f0;">
+      <image class="send-item-icon" src="{{wenziSelected == 'true' ?   urlPath+'wenbenClick.png':urlPath+'wenben.png'}}"> </image>
+      <view class="send-item-text">文字</view>
+    </view>
+    <view bindtap="openMeiti" style="{{meitiSelected == 'true' ? 'background-color:white;border-bottom:0px;':''}}" class="send-item">
+      <image class="send-item-icon" src="{{meitiSelected == 'true' ?   urlPath+'meitiClick.png':urlPath+'meiti.png'}}"> </image>
+      <view class="send-item-text">媒体库</view>
+    </view>
+  </view>
+  <view class="send-box-bottom" style="height:{{boxHeight}}px" hidden="{{boxHidden}}">
+    <view wx:if="{{yuyinSelected=='true'}}" class="send-box-yuyin">
+      <view class="yuyinTop">
+        <image class="yinIcon" src="{{urlPath}}yinpinL.png"></image>
+        <view class="time">0s/60s</view>
+        <image class="yinIcon" src="{{urlPath}}yinpinR.png"></image>
+      </view>
+      <image class="bigIcon" src="{{urlPath}}start.png"></image>
+    </view>
+    <view wx:if="{{wenziSelected=='true'}}" class="send-box-wenzi">
+      <view class="wenben">
+        <input bindinput="recordWord" placeholder="输入文本" placeholder-class="wenbenp" />
+        <button bindtap="sendWord" class="btnClick">发送</button>
+      </view>
+    </view>
+    <view wx:if="{{meitiSelected=='true'}}" class="send-box-meiti">
+      <image class="IconDown" src="{{urlPath}}tupian.png"></image>
+      <image class="IconDown" src="{{urlPath}}shipin.png"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,206 @@
+<!--头像-->
+<block class="classname" wx:for="{{listt}}" wx:key="{{this}}">
+  <view class="box1">
+    <image src="{{urlPath}}bk.png" class="boxBg"></image>
+    <image src="{{item.touxiang}}" class="touxiang"></image>
+    <text class="tName">{{item.xingming}}</text>
+
+    <!--嗨客-->
+    <view class="hikeBox" bindtap='xuanzeke' data-shenfen='嗨客'>
+      <view class="tHike">嗨客</view>
+      <view class="tShuliang">{{item.haike}}</view>
+    </view>
+
+    <!--威客-->
+    <view class="weikeBox" bindtap='xuanzeke' data-shenfen='威客'>
+      <view class="tWeike">威客</view>
+      <view class="tShuliang">{{item.weike}}</view>
+    </view>
+
+    <!--慧客-->
+    <view class="huikeBox" bindtap='xuanzeke' data-shenfen='慧客'>
+      <view class="tHuike">慧客</view>
+      <view class="tShuliang">{{item.huike}}</view>
+    </view>
+
+    <!--智客-->
+    <view class="zhikeBox" bindtap='xuanzeke' data-shenfen='智客'>
+      <view class="tZhike">智客</view>
+      <view class="tShuliang">{{item.zhike}}</view>
+    </view>
+
+    <!--数客-->
+    <view class="shukeBox" bindtap='xuanzeke' data-shenfen='数客'>
+      <view class="tShuke">数客</view>
+      <view class="tShuliang">{{item.shuke}}</view>
+    </view>
+
+    <!--师客-->
+    <view class="shikeBox" bindtap='xuanzeke' data-shenfen='师客'>
+      <view class="tShike">师客</view>
+      <view class="tShuliang">{{item.shike}}</view>
+    </view>
+
+    <!--金客-->
+    <view class="jinkeBox" bindtap='xuanzeke' data-shenfen='金客'>
+      <view class="tJinke">金客</view>
+      <view class="tShuliang">{{item.jinke}}</view>
+    </view>
+
+    <!--极客-->
+    <view class="jikeBox" bindtap='xuanzeke' data-shenfen='极客'>
+      <view class="tJike">极客</view>
+      <view class="tShuliang">{{item.jike}}</view>
+    </view>
+
+    <!--创客-->
+    <view class="chuangkeBox" bindtap='xuanzeke' data-shenfen='创客'>
+      <view class="tChuangke">创客</view>
+      <view class="tShuliang">{{item.chuangke}}</view>
+    </view>
+  </view>
+
+  <!--列表-->
+  <view class="list">
+    <ul class="title">
+      <li bindtap="guanzhuliebiao">
+        <text class="tMeili">合伙人级别</text>
+        <text class="tValue">{{item.hehuorenjibie}}</text>
+      </li>
+      <li class="borderLR" bindtap="fensiliebiao">
+        <text class="tMeili">城市</text>
+        <text class="tValue">{{item.shi==''?'未设置':item.shi}}</text>
+      </li>
+      <li bindtap="xiaoxiliebiao">
+        <text class="tMeili">生态位级别</text>
+        <text class="tValue">{{item.shengtaiweidengji}}</text>
+      </li>
+    </ul>
+  </view>
+  <view class="list"  >
+    <ul class="title">
+      <li bindtap="guanzhuliebiao">
+        <text class="tMeili green" style="margin-top:20rpx;">美丽积分</text>
+        <text class="tValue">{{item.meilijifen}}</text>
+      </li>
+      <li class="borderLR" bindtap="fensiliebiao">
+        <text class="tMeili green" style="margin-top:20rpx;">美丽指数</text>
+        <text class="tValue">{{item.meilizhishu}}</text>
+      </li>
+      <li bindtap="xiaoxiliebiao">
+        <text class="tMeili green" style="margin-top:20rpx;">详细信息</text>
+        <text class="tValue"></text>
+      </li>
+    </ul>
+  </view>
+
+
+  <view class="card">
+    <!--title-->
+    <ul class="title">
+      <li bindtap="goToFollow">
+        <text class="tMeili">关注</text>
+        <text class="tValue">{{item.count_guanzhu}}</text>
+      </li>
+      <li class="borderLR" bindtap="fensiliebiao">
+        <text class="tMeili">粉丝</text>
+        <text class="tValue">{{item.count_fensi}}</text>
+      </li>
+      <li bindtap="xiaoxiliebiao">
+        <text class="tMeili">私信</text>
+        <text class="tValue">{{item.count_sixin}}</text>
+      </li>
+    </ul>
+
+    <view wx:if="{{isSame==true}}" class="input">
+      <textarea maxlength="-1" style="width:100%;height:100%;" value="{{textarea}}" placeholder="请输入文字" bindinput="textarea" />
+    </view>
+
+    <view wx:if="{{isSame==true}}" class="issue">
+      <image src="{{urlPath}}tupian.png" class="issueImg" bindtap="tupian"></image>
+      <image src="{{urlPath}}shipin.png" class="issueImg" bindtap="shipin"></image>
+      <button class="issueBtn" bindtap="fabu">
+        <text>发布</text>
+      </button>
+    </view>
+
+
+    <view wx:if="{{isSame==true}}" class="tuku">
+
+
+      <view class="tupian" style="{{pic.length>0?'display:inline-block':'display:none'}}">
+        <image mode="aspectFill" src="{{pic[0]}}" class="tupianS" data-src="{{pic[0]}}" bindtap="pro"></image>
+        <image class="shanchu" src="{{urlPath}}shanchu.png" bindtap="delete" data-index="0"></image>
+      </view>
+      <view class="tupian" style="{{pic.length>1?'display:inline-block':'display:none'}}">
+        <image mode="aspectFill" src="{{pic[1]}}" class="tupianS" data-src="{{pic[1]}}" bindtap="pro"></image>
+        <image class="shanchu" src="{{urlPath}}shanchu.png" bindtap="delete" data-index="1"></image>
+      </view>
+      <view class="tupian" style="{{pic.length>2?'display:inline-block':'display:none'}}">
+        <image mode="aspectFill" src="{{pic[2]}}" class="tupianS" data-src="{{pic[2]}}" bindtap="pro"></image>
+        <image class="shanchu" src="{{urlPath}}shanchu.png" bindtap="delete" data-index="2"></image>
+      </view>
+    </view>
+
+    <view wx:if="{{isSame==true}}" class="tuku">
+      <view class="tupianv" style="{{vedio==''?'display:none':'display:inline-block'}}">
+        <video src="{{vedio}}" style="{{vedio==''?'display:none':'display:inline-block'}}" class="video1" controls="true"></video>
+        <image class="shanchu" src="{{urlPath}}shanchu.png" bindtap="delete" data-index="3"></image>
+      </view>
+    </view>
+
+  </view>
+</block>
+
+<view wx:for="{{list}}" wx:key="{{this}}" class="box">
+  <view class="card">
+    <view class="cardUp">
+      <view class="box2">
+        <image class="headPortrait" src="{{item.headpic}}"></image>
+      </view>
+      <view class="text">
+        <view class="name">{{item.name}}</view>
+        <view class="title">{{item.city}}</view>
+        <view class="classname">
+          {{item.shenfen}}
+          <!--<image class="icon" src="../../images/ji.png"></image>-->
+        </view>
+      </view>
+      <view class="textRight" data-type="{{item.isguanzhu}}" data-index='{{index}}' data-id="{{item.userid}}" bindtap="guanzhu"></view>
+    </view>
+    <view class="content overFlowText">{{item.wenzi}}</view>
+    <view class="scroll">
+      <video src="{{item.vedio}}" style="{{item.vedio==''?'display:none':'display:inline-block'}}" class="video1" controls="true"></video>
+      <scroll-view class="img1" scroll-x="true" style="inline-block;white-space: nowrap;{{item.vedio==''&item.tupan1==''&item.tupan2==''&item.tupan3==''?'display:none':item.vedio==''?'width:100%':''}}">
+        <view>
+          <image src="{{item.tupan1}}" data-src="{{item.tupan1}}" bindtap="pro"></image>
+          <image src="{{item.tupan2}}" data-src="{{item.tupan2}}" bindtap="pro"></image>
+          <image src="{{item.tupan3}}" data-src="{{item.tupan3}}" bindtap="pro"></image>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!--<view class="img" wx:for="{{item.pic_list}}" wx:for-index="idx" wx:for-item="ite">
+      <image src="../../images/carouselFour.jpg"></image>
+    </view>-->
+    <view class="date">
+      <view class="dateText">{{item.riqi}}</view>
+      <image class="iconOne" src="{{urlPath}}pinglun.png" bindtap="pinglun" data-type="pinglun" data-number="{{index}}" data-id="{{item.id}}" data-toid="0" data-toname="" data-type="pinglun"></image>
+      <image class="iconOne" src="{{item.isdianzan==0?urlPath+'down01.png':urlPath+'downC01.png'}}" data-type="{{item.isdianzan}}" data-index='{{index}}' data-id="{{item.id}}" bindtap="dianzan"></image>
+    </view>
+    <view class="click" data-number="{{index}}" data-id="{{item.id}}" data-zhankai="{{item.a}}" data-memid="{{item.memid}}" style="{{idxc>1?'display:none':''}}" bindtap="click" style="{{item.flag==0?'display:none':'display:block'}}">{{item.a=='0' ? '点击展开评论':'点击隐藏评论'}}
+      <image src="{{item.a==0?urlPath+'xiajian1.png':urlPath+'xiajian2.png'}}"></image>
+    </view>
+    <view class="classname" wx:for="{{item.commentlist}}" wx:for-index="idxc" wx:for-item="itec" bindtap="pinglun" data-type="huifu" data-number="{{index}}" data-id="{{item.id}}" data-toid="{{itec.memid}}" data-toname="{{itec.memname}}" style="{{idxc>1?item.a==0?'display:none':'display:block':'display:block'}}">
+      <view class="require">{{itec.memname}}{{itec.to_memname==""?'':' 回复 '+itec.to_memname}}</view>
+      <view class="content overFlowText">{{itec.descs}}</view>
+      <view class="down"></view>
+    </view>
+    <view class="cardDown"></view>
+  </view>
+</view>
+<!--输入框-->
+<view class="inputview1" style="display:{{display}}">
+  <input placeholder="{{placeholder}}" placeholder-style="font-size:9pt;margin-left:10rpx;" value="{{value}}" class="input1" focus="{{focus}}" bindconfirm="tianjia" bindblur="shouqi" bindinput="input" confirm-hold="{{hold}}" />
+  <view class="{{input==''?'fasongh':'fasongl'}}" bindtap="tianjia">发送</view>
+</view>

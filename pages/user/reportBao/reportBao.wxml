@@ -1,0 +1,258 @@
+
+<view wx:if="{{guanchatuan_info.length == 0 && tiyantuan_info.length == 0 && zhuanjiatuan_info.length == 0}}"  style="width:100%;height:90rpx;line-height:90rpx;color:#888;font-size:11pt;text-align:center;">
+  暂无报告
+</view>
+<view wx:if="{{guanchatuan_info.length > 0}}"  class="guanzhu-box">
+  <view class="guanzhu-box-top">
+    <text class="guanzhu-box-top-name">观察团报告</text>
+    <text bindtap="gctAll" class="guanzhu-box-top-all">{{guanchatuan_all}}</text>
+  </view>
+  <view class="guanzhu-box-bottom2">
+    <block wx:for="{{guanchatuan_info}}">
+    <view wx:if="{{index == 0}}"  bindtap="goToXiangqing" class="top2" data-id="{{item.id}}">
+      <view class="touxiang">
+        <view class="piao">{{item.votes}}票
+          <image wx:if="{{item.flag =='1'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='2'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='3'}}" class="jiantou" src=".{{urlPath}}flat.png"></image>
+        </view>
+        <image class="headpic" src="{{item.headpic}}"></image>
+      </view>
+      <view class="xiangmu">
+        <view class="mingcheng">{{item.name}}</view>
+        <view class="chengshi">{{item.city}}</view>
+        <view class="chuangshiren">{{item.memname}}</view>
+      </view>
+      <view class="shuzi">
+        <view class="zhi"  style="color:#666;height:50rpx;line-height:50rpx;">智合:
+          <text>{{item.zhihe}}</text>
+        </view>
+        <view class="ren"  style="color:#666;height:50rpx;line-height:50rpx;" >人合:
+          <text >{{item.renhe}}</text>
+        </view>
+        <view class="zi" style="color:#666;height:50rpx;line-height:50rpx;">资合:
+          <text >{{item.zihe}}</text>
+        </view>
+      </view>
+    </view>
+    <view  wx:if="{{index == 0}}"  class="below" >
+      <view class="left" style="height:70rpx;line-height:70rpx;">观察团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.guanchatuan_score}}</text>
+      </view>
+      <view class="mid" style="height:70rpx;line-height:70rpx;">体验团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.tiyantuan_score}}</text>
+      </view>
+      <view class="right" style="height:70rpx;line-height:70rpx;">专家团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.zhuanjiatuan_score}}</text>
+      </view>
+    </view>
+    <view  wx:if="{{index != 0}}" hidden="{{guanchatuan_hidden}}" bindtap="goToXiangqing" class="top2" data-id="{{item.id}}">
+      <view class="touxiang">
+        <view class="piao">{{item.votes}}票
+          <image wx:if="{{item.flag =='1'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='2'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='3'}}" class="jiantou" src=".{{urlPath}}flat.png"></image>
+        </view>
+        <image class="headpic" src="{{item.headpic}}"></image>
+      </view>
+      <view class="xiangmu">
+        <view class="mingcheng">{{item.name}}</view>
+        <view class="chengshi">{{item.city}}</view>
+        <view class="chuangshiren">{{item.memname}}</view>
+      </view>
+      <view class="shuzi">
+        <view class="zhi"  style="color:#666;height:50rpx;line-height:50rpx;">智合:
+          <text>{{item.zhihe}}</text>
+        </view>
+        <view class="ren"  style="color:#666;height:50rpx;line-height:50rpx;" >人合:
+          <text >{{item.renhe}}</text>
+        </view>
+        <view class="zi" style="color:#666;height:50rpx;line-height:50rpx;">资合:
+          <text >{{item.zihe}}</text>
+        </view>
+      </view>
+    </view>
+    <view  wx:if="{{index != 0}}" hidden="{{guanchatuan_hidden}}"  class="below" >
+      <view class="left" style="height:70rpx;line-height:70rpx;">观察团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.guanchatuan_score}}</text>
+      </view>
+      <view class="mid" style="height:70rpx;line-height:70rpx;">体验团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.tiyantuan_score}}</text>
+      </view>
+      <view class="right" style="height:70rpx;line-height:70rpx;">专家团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.zhuanjiatuan_score}}</text>
+      </view>
+    </view>
+    </block>
+  </view>
+</view>
+<view wx:if="{{tiyantuan_info.length > 0}}"  class="guanzhu-box">
+  <view class="guanzhu-box-top">
+    <text class="guanzhu-box-top-name">体验团报告</text>
+    <text bindtap="tytAll" class="guanzhu-box-top-all">{{tiyantuan_all}}</text>
+  </view>
+  <view class="guanzhu-box-bottom2">
+    <block wx:for="{{guanchatuan_info}}">
+    <view wx:if="{{index == 0}}"  bindtap="goToXiangqing" class="top2" data-id="{{item.id}}">
+      <view class="touxiang">
+        <view class="piao">{{item.votes}}票
+          <image wx:if="{{item.flag =='1'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='2'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='3'}}" class="jiantou" src=".{{urlPath}}flat.png"></image>
+        </view>
+        <image class="headpic" src="{{item.headpic}}"></image>
+      </view>
+      <view class="xiangmu">
+        <view class="mingcheng">{{item.name}}</view>
+        <view class="chengshi">{{item.city}}</view>
+        <view class="chuangshiren">{{item.memname}}</view>
+      </view>
+      <view class="shuzi">
+        <view class="zhi"  style="color:#666;height:50rpx;line-height:50rpx;">智合:
+          <text>{{item.zhihe}}</text>
+        </view>
+        <view class="ren"  style="color:#666;height:50rpx;line-height:50rpx;" >人合:
+          <text >{{item.renhe}}</text>
+        </view>
+        <view class="zi" style="color:#666;height:50rpx;line-height:50rpx;">资合:
+          <text >{{item.zihe}}</text>
+        </view>
+      </view>
+    </view>
+    <view  wx:if="{{index == 0}}"  class="below" >
+      <view class="left" style="height:70rpx;line-height:70rpx;">观察团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.guanchatuan_score}}</text>
+      </view>
+      <view class="mid" style="height:70rpx;line-height:70rpx;">体验团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.tiyantuan_score}}</text>
+      </view>
+      <view class="right" style="height:70rpx;line-height:70rpx;">专家团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.zhuanjiatuan_score}}</text>
+      </view>
+    </view>
+    <view  wx:if="{{index != 0}}" hidden="{{tiyantuan_hidden}}" bindtap="goToXiangqing" class="top2" data-id="{{item.id}}">
+      <view class="touxiang">
+        <view class="piao">{{item.votes}}票
+          <image wx:if="{{item.flag =='1'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='2'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='3'}}" class="jiantou" src=".{{urlPath}}flat.png"></image>
+        </view>
+        <image class="headpic" src="{{item.headpic}}"></image>
+      </view>
+      <view class="xiangmu">
+        <view class="mingcheng">{{item.name}}</view>
+        <view class="chengshi">{{item.city}}</view>
+        <view class="chuangshiren">{{item.memname}}</view>
+      </view>
+      <view class="shuzi">
+        <view class="zhi"  style="color:#666;height:50rpx;line-height:50rpx;">智合:
+          <text>{{item.zhihe}}</text>
+        </view>
+        <view class="ren"  style="color:#666;height:50rpx;line-height:50rpx;" >人合:
+          <text >{{item.renhe}}</text>
+        </view>
+        <view class="zi" style="color:#666;height:50rpx;line-height:50rpx;">资合:
+          <text >{{item.zihe}}</text>
+        </view>
+      </view>
+    </view>
+    <view  wx:if="{{index != 0}}" hidden="{{tiyantuan_hidden}}"  class="below" >
+      <view class="left" style="height:70rpx;line-height:70rpx;">观察团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.guanchatuan_score}}</text>
+      </view>
+      <view class="mid" style="height:70rpx;line-height:70rpx;">体验团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.tiyantuan_score}}</text>
+      </view>
+      <view class="right" style="height:70rpx;line-height:70rpx;">专家团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.zhuanjiatuan_score}}</text>
+      </view>
+    </view>
+    </block>
+  </view>
+</view>
+<view wx:if="{{zhuanjiatuan_info.length > 0}}"  class="guanzhu-box">
+  <view class="guanzhu-box-top">
+    <text class="guanzhu-box-top-name">专家团报告</text>
+    <text bindtap="zjtAll" class="guanzhu-box-top-all">{{zhuanjiatuan_all}}</text>
+  </view>
+  <view class="guanzhu-box-bottom2">
+    <block wx:for="{{zhuanjiatuan_info}}">
+    <view wx:if="{{index == 0}}"  bindtap="goToXiangqing" class="top2" data-id="{{item.id}}">
+      <view class="touxiang">
+        <view class="piao">{{item.votes}}票
+          <image wx:if="{{item.flag =='1'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='2'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='3'}}" class="jiantou" src=".{{urlPath}}flat.png"></image>
+        </view>
+        <image class="headpic" src="{{item.headpic}}"></image>
+      </view>
+      <view class="xiangmu">
+        <view class="mingcheng">{{item.name}}</view>
+        <view class="chengshi">{{item.city}}</view>
+        <view class="chuangshiren">{{item.memname}}</view>
+      </view>
+      <view class="shuzi">
+        <view class="zhi"  style="color:#666;height:50rpx;line-height:50rpx;">智合:
+          <text>{{item.zhihe}}</text>
+        </view>
+        <view class="ren"  style="color:#666;height:50rpx;line-height:50rpx;" >人合:
+          <text >{{item.renhe}}</text>
+        </view>
+        <view class="zi" style="color:#666;height:50rpx;line-height:50rpx;">资合:
+          <text >{{item.zihe}}</text>
+        </view>
+      </view>
+    </view>
+    <view  wx:if="{{index == 0}}"  class="below" >
+      <view class="left" style="height:70rpx;line-height:70rpx;">观察团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.guanchatuan_score}}</text>
+      </view>
+      <view class="mid" style="height:70rpx;line-height:70rpx;">体验团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.tiyantuan_score}}</text>
+      </view>
+      <view class="right" style="height:70rpx;line-height:70rpx;">专家团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.zhuanjiatuan_score}}</text>
+      </view>
+    </view>
+    <view  wx:if="{{index != 0}}" hidden="{{zhuanjiatuan_hidden}}" bindtap="goToXiangqing" class="top2" data-id="{{item.id}}">
+      <view class="touxiang">
+        <view class="piao">{{item.votes}}票
+          <image wx:if="{{item.flag =='1'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='2'}}" class="jiantou" src=".{{urlPath}}up2.png"></image>
+          <image wx:if="{{item.flag=='3'}}" class="jiantou" src=".{{urlPath}}flat.png"></image>
+        </view>
+        <image class="headpic" src="{{item.headpic}}"></image>
+      </view>
+      <view class="xiangmu">
+        <view class="mingcheng">{{item.name}}</view>
+        <view class="chengshi">{{item.city}}</view>
+        <view class="chuangshiren">{{item.memname}}</view>
+      </view>
+      <view class="shuzi">
+        <view class="zhi"  style="color:#666;height:50rpx;line-height:50rpx;">智合:
+          <text>{{item.zhihe}}</text>
+        </view>
+        <view class="ren"  style="color:#666;height:50rpx;line-height:50rpx;" >人合:
+          <text >{{item.renhe}}</text>
+        </view>
+        <view class="zi" style="color:#666;height:50rpx;line-height:50rpx;">资合:
+          <text >{{item.zihe}}</text>
+        </view>
+      </view>
+    </view>
+    <view  wx:if="{{index != 0}}" hidden="{{zhuanjiatuan_hidden}}"  class="below" >
+      <view class="left" style="height:70rpx;line-height:70rpx;">观察团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.guanchatuan_score}}</text>
+      </view>
+      <view class="mid" style="height:70rpx;line-height:70rpx;">体验团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.tiyantuan_score}}</text>
+      </view>
+      <view class="right" style="height:70rpx;line-height:70rpx;">专家团：
+        <text style="height:70rpx;line-height:70rpx;">{{item.zhuanjiatuan_score}}</text>
+      </view>
+    </view>
+    </block>
+  </view>
+</view>
+
+

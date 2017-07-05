@@ -1,0 +1,24 @@
+<!--xianxiashenqing.wxml-->
+<!--applyFor.wxml-->
+<view class="originator">
+  <view>渠道合伙人</view>
+  <view class="describe overFlowText">渠道合伙人的描述</view>
+</view>
+<view class="labelOne">渠道种类:线下</view>
+<view class="card ">
+  <view class="label">数字平台地址</view>
+  <view class="text overFlowText">{{address}}</view>
+</view>
+<view class="cardDown">
+ 
+  <view class="flex">
+    <view class="labelDown">加盟或代理费用</view>
+    <view class="textRight">{{feiyong}}</view>
+  </view>
+</view>
+<view style="width:100%;height:90rpx;line-height:90rpx;text-align:center;font-size:11pt;color:#353535;">剩余需要合伙人数量{{amount}}</view>
+
+<view class="btn-shenqing">
+  <button wx:if="{{isShenqing == false}}" bindtap="shenqing" type="primary">申请加入</button>
+  <button wx:if="{{isShenqing == true}}" disabled="true" type="default">已申请加入</button>
+</view>

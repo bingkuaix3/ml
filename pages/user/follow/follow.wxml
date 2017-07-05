@@ -1,0 +1,7 @@
+<view wx:for="{{list}}" class="line">
+  <image class="head" src="{{item.touxiang}}"></image>
+  <view class="name">{{item.xingming}}</view>
+  <view class="time">
+    <button data-index="{{index}}" data-id="{{item.userid}}" class="cancle" bindtap="cancle" type="warn">取消关注</button>
+  </view>
+</view>

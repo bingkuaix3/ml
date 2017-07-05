@@ -1,0 +1,18 @@
+<!--resumeBao.wxml-->
+<view class="btn">
+  <view class="btnRed" style="{{hd==0?'display:none':'display:block'}}" bindtap="delete">删除</view>
+  <view class="btnGreen" bindtap="bj">{{hd==0?'编辑':'取消'}}</view>
+</view>
+<view class="img">
+  <view class="{{hd==0?'box':item.a==1?'boxOne':'box'}}" wx:for="{{list}}" wx:key="{{this}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="{{hd==0?'jump':'check'}}">
+    <image class="image" src="{{urlPath}}file.png"></image>
+    <image class="yuanIcon" src="{{urlPath}}duihao1.png" style="{{hd==0?'display:none':item.a==1?'display:block':'display:none'}}"></image>
+    <view class="text">{{item.name}}</view>
+  </view>
+  <view class="box" style="{{list.length<4?'display:block':'display:none'}}" bindtap="jumpxz">
+    <image class="image" src="{{urlPath}}tianjia.png" ></image>
+    <view class="text"></view>
+  </view>
+</view>
+<modal title="确认删除？" hidden="{{modal}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalconfirm" bindcancel="modalcancel">
+</modal>

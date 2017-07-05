@@ -1,0 +1,69 @@
+<!--zhiweiadd.wxml-->
+<view class="{{firstHidden}}">
+  <view class="text">职位名称</view>
+  <input bindinput="recordName" style="text-align:center;" placeholder="请输入职位名称" />
+  <view class="btn">
+    <button bindtap="back" class="btnLeft">取消</button>
+    <button bindtap="firstNext" class="btnRight">下一步</button>
+  </view>
+</view>
+<view class="{{secondHidden}}">
+  <view class="text">要求</view>
+  <view class="neirong ">
+    <textarea maxlength="-1" bindinput="recordDescs" value="{{descs}}" class="overFlowText">
+    </textarea>
+  </view>
+  <view class="btn">
+    <button bindtap="secondBefore" class="btnLeft">上一步</button>
+    <button bindtap="secondNext" class="btnRight">下一步</button>
+  </view>
+</view>
+
+<view class="{{thirdHidden}}">
+  <view class="text">合伙方式</view>
+  <view class="body-view ">全职
+    <switch checked="{{whole}}" bindchange="recordIsWhole" class="big" />
+  </view>
+   <view class="body-view matop">社会化
+    <switch checked="{{social}}" bindchange="recordIsSocial" class="big" />
+  </view>
+   <view class="body-view matop">集中办公
+    <switch  checked="{{fucus}}"  bindchange="recordIsFucus" class="big" />
+  </view>
+   <view class="body-view matop">异地办公
+    <switch  checked="{{other}}"  bindchange="recordIsOther" class="big" />
+  </view>
+  <view class="btn">
+    <button bindtap="thirdBefore" class="btnLeft">上一步</button>
+    <button bindtap="thirdNext" class="btnRight">下一步</button>
+  </view>
+</view>
+
+<view class="{{forthHidden}}">
+  <view class="text">薪资待遇和入股占股</view>
+  <view class="body-view ">需薪资待遇
+    <switch  bindchange="recordIsMoney" class="big" />
+  </view>
+   <view class="body-view matop">有入资占股
+    <switch  bindchange="recordIsStock" class="big" />
+  </view>
+  <view class="btn">
+    <button bindtap="forthBefore" class="btnLeft">上一步</button>
+    <button bindtap="forthNext" class="btnRight">下一步</button>
+  </view>
+</view>
+
+<view class="{{fifthHidden}}">
+  <view class="text">激励方式</view>
+  <view class="body-view ">原始股权
+    <switch bindchange="recordIsOriginal" class="big" />
+  </view>
+   <view class="body-view matop">期股
+    <switch bindchange="recordIsOption" class="big" />
+  </view>
+  <view class="btn">
+    <button bindtap="fifthBefore" class="btnLeft">上一步</button>
+    <button bindtap="sure" class="btnRight">确定</button>
+  </view>
+</view>
+

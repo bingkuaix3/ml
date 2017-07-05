@@ -1,0 +1,41 @@
+<!--guanchatuan.wxml-->
+<view class="cardTop">
+  <image class="tupian" src="{{urlPath}}guanchatuan.jpg"></image>
+  <view class="headLine">邀请观察团</view>
+</view>
+<view class="card">
+  <view class="card1">
+    <view class="biaotiDown">邀请函</view>
+    <view class="paTop">
+      <textarea bindinput="yqCotentChange" maxlength="-1" placeholder="请输入邀请函内容" class="content overFlowText"> </textarea>
+    </view>
+  </view>
+</view>
+<view class="card">
+  <view class="card1">
+    <view class="biaotiDown">邀请观察团莅临时间</view>
+
+  </view>
+  <view class="cardDown">
+    <view class="left">
+      <image class="Icon" src="{{urlPath}}rili1.png"></image>
+      <view class="text"><picker mode="date" value="{{yqDate}}" start="2005-09-01" end="2117-09-01" bindchange="yqDateChange">
+        <view class="picker">
+          {{yqDate}}
+        </view>
+      </picker></view>
+      
+    </view>
+    <view class="right">
+      <image class="Icon" src="{{urlPath}}shijian1.png"></image>
+      <view class="text"><picker mode="time" value="{{yqTime}}" start="0:00" end="23:59" bindchange="yqTimeChange">
+        <view class="picker">
+        {{yqTime}}
+        </view>
+      </picker></view>
+      
+    </view>
+  </view>
+</view>
+<button bindtap="faQiYaoqing" class="yqButton" type="primary">邀请</button>
+<view style="float:left;width:100%;height:20px;"></view>

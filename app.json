@@ -1,0 +1,111 @@
+{
+  "pages": [
+    "pages/project/project",
+    "pages/project/newProject/newProject",
+    "pages/project/editProject/editProject",
+    "pages/project/pictures/pictures",
+    "pages/project/details/details",
+    "pages/project/aptitude/aptitude",
+    "pages/project/partake/partake",
+    "pages/project/wisdomjoin/wisdomjoin",
+    "pages/project/wisdomjoinPublish/wisdomjoinPublish",
+    "pages/project/wisdomjoinDetails/wisdomjoinDetails",
+    "pages/project/universitas/universitas",
+    "pages/project/universitasJobAdd/universitasJobAdd",
+    "pages/project/universitasJobEdit/universitasJobEdit",
+    "pages/project/universitasRecruitAddUp/universitasRecruitAddUp",
+    "pages/project/universitasRecruitAddDown/universitasRecruitAddDown",
+    "pages/project/universitasRecruitEditUp/universitasRecruitEditUp",
+    "pages/project/universitasJobApply/universitasJobApply",
+    "pages/project/universitasJobApplicant/universitasJobApplicant",
+    "pages/project/universitasJobDownApply/universitasJobDownApply",
+    "pages/project/universitasJobUpApply/universitasJobUpApply",
+    "pages/project/universitasRecruitEditDown/universitasRecruitEditDown",
+    "pages/project/universitasSurrender/universitasSurrender",
+    "pages/project/capital/capital",
+    "pages/project/capitalFundraising/capitalFundraising",
+    "pages/project/capitalDetails/capitalDetails",
+    "pages/project/observer/observer",
+    "pages/project/observeReport/observeReport",
+    "pages/project/reportSubmit/reportSubmit",
+    "pages/project/experience/experience",
+    "pages/project/experienceReport/experienceReport",
+    "pages/project/expert/expert",
+    "pages/project/expertReport/expertReport",
+    "pages/project/observeGroupApply/observeGroupApply",
+    "pages/discover/discover",
+    "pages/discover/walkman/walkman",
+    "pages/discover/dynamic/dynamic",
+    "pages/study/study",
+    "pages/message/message",
+    "pages/message/privatechat/privatechat",
+    "pages/message/fans/fans",
+    "pages/message/notice/notice",
+    "pages/message/system/system",
+    "pages/user/user",
+    "pages/user/information/information",
+    "pages/user/fortuneBao/fortuneBao",
+    "pages/user/fortuneBao/recharge/recharge",
+    "pages/user/fortuneBao/details/details",
+    "pages/user/projectBao/projectBao",
+    "pages/user/reportBao/reportBao",
+    "pages/user/about/about",
+    "pages/user/home/home",
+    "pages/discover/partner/partner",
+    "pages/message/invitation/invitation",
+    "pages/discover/cover/cover",
+    "pages/discover/activity/activity",
+    "pages/user/follow/follow",
+    "pages/discover/activity/activityDetails/activityDetails",
+    "pages/message/privatechatList/privatechatList",
+    "pages/user/activityBao/activityBao",
+    "pages/discover/activity/activityPublish/activityPublish",
+    "pages/user/resumeBao/resumeBao",
+    "pages/user/resumeBao/resumeEdit/resumeEdit",
+    "pages/user/resumeBao/resumeNew/resumeNew",
+    "pages/user/register/register"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "美丽互联",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#333",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/project/project",
+        "text": "项目",
+        "iconPath": "images/project.png",
+        "selectedIconPath": "images/project_active.png"
+      },
+      {
+        "pagePath": "pages/study/study",
+        "text": "学习",
+        "iconPath": "images/study.png",
+        "selectedIconPath": "images/study_active.png"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "images/discover.png",
+        "selectedIconPath": "images/discover_active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/message.png",
+        "selectedIconPath": "images/message_active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "会员",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_active.png"
+      }
+    ]
+  }
+}

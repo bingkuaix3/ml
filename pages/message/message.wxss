@@ -1,0 +1,25 @@
+page{
+  background-color:#f7f7f7;
+  height:100%;
+}
+.box{
+  margin:30rpx;
+  background-color:#fff;
+  border:1px solid #f0f0f0;
+  height:200rpx;
+  line-height:200rpx;
+  text-align:center;
+  display:flex;
+  justify-content: center;
+  box-shadow: 1px 1px 7px rgb(128,128,128);
+}
+.box-type{
+  width:auto;
+  height:200rpx;
+  line-height:200rpx;
+  color:#353535;
+  font-size:11pt;
+}
+.box-value{
+  color:#576b95;
+}

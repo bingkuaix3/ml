@@ -1,0 +1,14 @@
+<!--pictures.wxml-->
+<block wx:for="{{pics}}" wx:key="{{pics}}">
+  <image  mode="widthFix" bindtap="{{have==1?'':'actionSheetTap'}}" class="pic" data-id="{{item.id}}" src="{{item.pic}}"></image>
+</block>
+
+<view class="bottom">
+  <button bindtap="{{have==1?'addPic1':'addPic'}}" type="primary">{{have==1?'修改':'添加'}}</button>
+</view>
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+  <block wx:key="{{actionSheetItems}}" wx:for-items="{{actionSheetItems}}">
+    <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>

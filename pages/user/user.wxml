@@ -1,0 +1,108 @@
+<!--huiyuan.wxml-->
+<image class="bg" src="{{urlPath}}wo_bg.jpg"></image>
+<image class="header" src="{{huiyuanInfo.touxiangurl}}"></image>
+<text class="nickname">{{huiyuanInfo.xingming}}</text>
+<image bindtap="goToInformation" class="edit" src="{{urlPath}}modification.png"></image>
+<view class="para">
+  <view class="para-box">
+    <view class="para-tag">美丽指数</view>
+    <view class="para-value">{{huiyuanInfo.meilizhishu}}</view>
+  </view>
+  <view class="para-box" style="width:34%;">
+    <view class="para-tag">生态位等级</view>
+    <view class="para-value">1</view>
+  </view>
+  <view class="para-box">
+    <view class="para-tag">合伙人级别</view>
+    <view class="para-value">初级</view>
+  </view>
+</view>
+<view class="card">
+  <view bindtap="goToHome" class="line">
+    <view class="headPortrait">
+      <image class="line-icon" src="{{urlPath}}user_home.png"></image>
+      <text class="line-name">会员主页</text>
+    </view>
+    <image class="line-right" src="{{urlPath}}arrows.png"></image>
+  </view>
+</view>
+<view   class="card">
+  <view bindtap="goToFortuneBao" class="line">
+    <view class="headPortrait">
+      <image class="line-icon" src="{{urlPath}}user_money.png"></image>
+      <text class="line-name">财富宝</text>
+    </view>
+    <image class="line-right" src="{{urlPath}}arrows.png"></image>
+  </view>
+  <view bindtap="goToGuquanbao" class="line">
+    <view class="headPortrait">
+      <image class="line-icon" src="{{urlPath}}user_stock_right.png"></image>
+      <text class="line-name">股权宝</text>
+    </view>
+    <image class="line-right" src="{{urlPath}}arrows.png"></image>
+  </view>
+  <view class="line">
+    <view class="headPortrait">
+      <image class="line-icon" src="{{urlPath}}user_study.png"></image>
+      <text class="line-name">学习宝</text>
+    </view>
+    <image class="line-right" src="{{urlPath}}arrows.png"></image>
+  </view>
+  <view bindtap="goToProjectBao" class="line">
+    <view class="headPortrait">
+      <image class="line-icon" src="{{urlPath}}user_project.png"></image>
+      <text class="line-name">项目宝</text>
+    </view>
+    <image class="line-right" src="{{urlPath}}arrows.png"></image>
+  </view>
+  <view bindtap="goToActivityBao" class="line">
+    <view class="headPortrait">
+      <image class="line-icon" src="{{urlPath}}user_activity.png"></image>
+      <text class="line-name">活动宝</text>
+    </view>
+    <image class="line-right" src="{{urlPath}}arrows.png"></image>
+  </view>
+  <view class="line">
+    <view class="headPortrait">
+      <image class="line-icon" src="{{urlPath}}user_integral.png"></image>
+      <text class="line-name">积分宝</text>
+    </view>
+    <image class="line-right" src="{{urlPath}}arrows.png"></image>
+  </view>
+</view>
+<view class="card">
+  <view bindtap="goToResumeBao" class="line">
+    <view class="headPortrait">
+      <image class="line-icon" src="{{urlPath}}user_resume.png"></image>
+      <text class="line-name">我的简历</text>
+    </view>
+    <image class="line-right" src="{{urlPath}}arrows.png"></image>
+  </view>
+
+  <view bindtap="goToReportBao" class="line">
+    <view class="headPortrait">
+      <image class="line-icon" src="{{urlPath}}user_report.png"></image>
+      <text class="line-name">我的报告</text>
+    </view>
+    <image class="line-right" src="{{urlPath}}arrows.png"></image>
+  </view>
+</view>
+
+
+<view class="card">
+  <view class="line">
+    <view class="headPortrait">
+      <image class="line-icon" src="{{urlPath}}user_setting.png"></image>
+      <text class="line-name">设置</text>
+    </view>
+    <image class="line-right" src="{{urlPath}}arrows.png"></image>
+  </view>
+
+  <view bindtap="goToAbout" class="line">
+    <view class="headPortrait">
+      <image class="line-icon" src="{{urlPath}}user_about.png"></image>
+      <text class="line-name">关于</text>
+    </view>
+    <image class="line-right" src="{{urlPath}}arrows.png"></image>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<!--pages/fabu/fabu.wxml-->
+<textarea placeholder="请输入内容" placeholder-class="color:rgb(215,224,232);font-size:17pt" class="textarea" bindinput="recordContent"  maxlength="-1"/>
+<button class="btn" bindtap="publish">发布</button>
+

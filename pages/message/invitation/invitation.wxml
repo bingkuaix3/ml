@@ -1,0 +1,19 @@
+<!--invitation.wxml-->
+<view class="top"></view>
+<view wx:for="{{list}}" class="box">
+<view class="temp">
+  <view bindtap="control" class="line" data-id="{{item.id}}">
+    <view class="time">
+    {{item.activity_memname}}向你发送了邀请
+    </view>
+    <view wx:if="{{item.state == '0'}}" class="status"></view>
+  </view>
+  <view style="{{item.a=='0'?'display:none':'display:block'}}" class="content">
+    <view class="content-content">{{item.activity_memname}}将于{{item.activitytime}} 在{{item.province}}{{item.city}}{{item.address}} 举行{{item.activity_name}}活动,望您参加。</view>
+    <view  wx:if="{{item.state == '0'}}" class="cc-box">
+    <button bindtap="huifu" data-id="{{item.id}}" data-type="2" class="cancle">拒绝</button>
+      <button bindtap="huifu" data-id="{{item.id}}" data-type="1"  class="accept" type="primary">接收</button>
+    </view>
+  </view>
+  </view>
+</view>

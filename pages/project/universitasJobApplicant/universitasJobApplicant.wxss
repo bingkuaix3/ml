@@ -1,0 +1,117 @@
+/* zhiweisqrlist.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  color: #353535;
+}
+
+.btn {
+  height:100rpx;
+  font-size: 11pt;
+  color: #fff;
+  padding: 0rpx 0rpx;
+  margin: 30rpx 0;
+}
+
+.btn-cancle {
+  float: left;
+  height: 70rpx;
+  text-align: center;
+  padding: 0 30rpx;
+  line-height: 70rpx;
+  border-radius: 8rpx;
+  margin-left: 16rpx;
+  background-color: #ccc;
+}
+
+.btnTop {
+  float:right;
+  min-width:160rpx;
+  height: 70rpx;
+  text-align: center;
+  padding: 0 30rpx;
+  line-height: 70rpx;
+  border-radius: 8rpx;
+  margin-right: 16rpx;
+}
+
+.green {
+  background-color: #f7f7f7;
+  border: 1rpx solid #09bb07;
+  color: #09bb07;
+}
+
+.greenDown {
+  background-color: #fff;
+  border: 1rpx solid #09bb07;
+  color: #09bb07;
+}
+
+.red {
+  background-color: #e64340;
+}
+
+.huiText {
+  color: #888;
+}
+
+.headline {
+  font-size: 11pt;
+  color: #353535;
+  margin: 0 0 16rpx 30rpx;
+}
+
+.card {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30rpx 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.headPortrait {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+.Icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.text {
+  font-size: 11pt;
+  flex: 1;
+}
+
+.btnDown {
+  display: flex;
+  flex-direction: row;
+}
+
+.btnDownRight {
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-left: 30rpx;
+  color: #fff;
+  font-size: 9pt;
+}
+
+.btnDownLeft {
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-left: 30rpx;
+  color: #09bb07;
+  font-size: 9pt;
+}

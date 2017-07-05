@@ -1,0 +1,224 @@
+/* Wisdom.wxss */
+
+/* JobDetails.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.box1 {
+  background-color: #fff;
+}
+
+.card {
+  margin: 0 30rpx;
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.require {
+  font-size: 11pt;
+  margin: 0;
+  padding-top: 30rpx;
+  padding-bottom: 16rpx;
+  text-align: left;
+}
+
+.content {
+  font-size: 9pt;
+  line-height: 1.4;
+  color: #888;
+  letter-spacing: 1.2rpx;
+}
+
+.overFlowText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.accessory {
+  font-size: 11pt;
+  height:20rpx;
+  padding-top: 30rpx;
+  padding-bottom: 16rpx;
+  color: #576b95;
+}
+
+.cardUp {
+  margin: 30rpx 0rpx 30rpx 0rpx;
+  background-color: #fff;
+  height: 170rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.box1 {
+  padding-bottom: 0rpx;
+}
+
+.headPortrait {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin-top: 30rpx;
+}
+
+.icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.text {
+  height: 200rpx;
+  width: auto;
+  line-height: 1.4;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+  flex: 1;
+}
+
+.name {
+  font-size: 11pt;
+  color: #353535;
+}
+
+.title {
+  font-size: 11pt;
+  color: #888;
+}
+
+.date {
+  height: 40rpx;
+  padding-bottom: 30rpx;
+}
+
+.dateText {
+  font-size: 11pt;
+  color: #888;
+  width: 300rpx;
+  float: left;
+}
+
+.iconOne {
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+  margin-left: 40rpx;
+  margin-top: -16rpx;
+}
+
+.down {
+  background-color: #fff;
+  border-bottom: 1rpx solid #f7f7f7;
+  padding-bottom: 30rpx;
+}
+
+.cardDown {
+  margin-bottom: 40rpx;
+}
+
+.show {
+  font-size: 10pt;
+  color: #576b95;
+  width: 190rpx;
+  padding-top: 30rpx;
+}
+
+.click {
+  font-size: 13pt;
+  padding-top: 30rpx;
+  padding-bottom: 16rpx;
+  text-align: center;
+  color: #09bb07;
+  border-top: 1rpx solid #f7f7f7;
+  border-bottom: 1rpx solid #f7f7f7;
+}
+
+.click image {
+  width: 40rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}
+
+.inputview {
+  width: 100%;
+  height: 120rpx;
+  background: #fafafa;
+  border-top: 1px solid #cacaca;
+  bottom: 450rpx;
+  position: fixed;
+}
+
+.input {
+  float: left;
+  width: 69%;
+  margin-left: 2%;
+  margin-top: 16rpx;
+  height: 60rpx;
+  background: #fcfcfc;
+  border: 1px solid #ebebeb;
+  border-radius: 8rpx;
+  font-size: 9pt;
+  padding-left: 10rpx;
+  margin-bottom:16rpx;
+}
+
+.inputview image {
+  width: 9%;
+  height: 60rpx;
+  float: right;
+  line-height: 120rpx;
+  margin-top: 20rpx;
+  margin-right: 2%;
+  margin-left: 1%;
+}
+
+.fasongh {
+  margin-right: 3%;
+  float: right;
+  line-height: 120rpx;
+  margin-top: 16rpx;
+  width: 10%;
+  height:60rpx;
+  background: #e6e6e6;
+  color: #d2d2d2;
+  border-radius: 7rpx;
+  font-size: 9pt;
+  border: 1px solid #d0d0d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fasongl{
+   margin-right: 3%;
+  float: right;
+  line-height: 120rpx;
+  margin-top: 16rpx;
+  width: 10%;
+  height: 60rpx;
+  background: #1BAD16;
+  color: white;
+  border-radius: 7rpx;
+  font-size: 9pt;
+  border: 1px solid #E0ECCD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fabu{
+  background: white;
+}

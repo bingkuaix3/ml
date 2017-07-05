@@ -1,0 +1,14 @@
+
+<view class="top"></view>
+<!--余额列表-->
+<view wx:for='{{list}}' wx:key='{{this}}' data-id='{{item.id}}' data-dingdanhao='{{item.dingdanhao}}' data-leixing='{{item.leixing}}' data-xiaofeijine='{{item.xiaofeijine}}' data-shuoming='{{item.shuoming}}' data-huiyuanid='{{item.huiyuanid}}' data-riqi='{{item.riqi}}'>
+  <view class="line">
+    <view class="left">
+      <text class="title">{{item.shuoming}}</text>
+      <text class="time">{{item.riqi}}</text>
+    </view>
+    <view class="right right-black">
+      {{item.xiaofeijine}}
+    </view>
+  </view>
+</view>

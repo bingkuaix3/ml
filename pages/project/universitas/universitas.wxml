@@ -1,0 +1,250 @@
+<!--renheliebiao.wxml-->
+<view class="head">
+  <text>创始合伙人 {{csrSelected}}/{{csrNeed}}</text>
+  <text>{{csrShenhe}}人待审核</text>
+  <text bindtap="goToCsrZhiweiAdd" wx:if="{{projectUser == userId}}" class="clickG">添加新职位</text>
+</view>
+<view class="card">
+  <block wx:for="{{csrList}}" wx:for-item="i">
+    <view wx:if="{{index < 2}}" class="card-box">
+      <view class="position">
+        <text>{{i.name}}</text>
+        <text wx:if="{{i.shenhe_list.length == 0 && projectUser == userId}}" bindtap="goToCsrZhiweiEdit" data-id="{{i.id}}" class="clickG">编辑</text>
+      </view>
+      <block wx:for="{{i.shenhe_list}}" wx:for-item="j">
+        <view bindtap="goToZhiweiQyrDetail" data-id="{{j.id}}" class="headPortrait">
+          <image class="headImg" src="{{j.headpic}}"></image>
+          <view class="name  maTop">
+            <view style="height:40rpx;">{{j.xingming}}</view>
+            <view style="height:40rpx;">{{j.zhiwei}}</view>
+            <image class="headIcon" src="{{urlPath}}ji.png"></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{ i.shenhe_list.length == 0 && i.daishenhe_counts >= 0}}">
+        <view bindtap="goToZhiweiSqrList" data-id="{{i.id}}" data-name="{{i.name}}" class="headPortrait">
+          <image class="headImg" src="{{urlPath}}liebiao.png"></image>
+          <view class="nameDown click maTop">{{i.daishenhe_counts}}人待审核</view>
+          <image class="headIconR maTopRight" src="{{urlPath}}arrows01.png"></image>
+        </view>
+      </block>
+      <view wx:if="{{csrSelected < csrNeed  && projectUser != userId}}" class="zhiwei-add">
+        <image bindtap="goToCsrZhiweiShenqing" data-id="{{i.id}}" src="{{urlPath}}tianjia.png"></image>
+      </view>
+    </view>
+    <view wx:else class="card-box" style="display:{{csrHidden}}">
+      <view class="position">
+        <text>{{i.name}}</text>
+        <text wx:if="{{i.shenhe_list.length == 0 && projectUser == userId}}" bindtap="goToCsrZhiweiEdit" data-id="{{i.id}}" class="clickG">编辑</text>
+      </view>
+      <block wx:for="{{i.shenhe_list}}" wx:for-item="j">
+        <view bindtap="goToZhiweiQyrDetail" data-id="{{j.id}}" class="headPortrait">
+          <image class="headImg" src="{{j.headpic}}"></image>
+          <view class="name  maTop">
+            <view style="height:40rpx;">{{j.xingming}}</view>
+            <view style="height:40rpx;">{{j.zhiwei}}</view>
+            <image class="headIcon" src="{{urlPath}}ji.png"></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{i.shenhe_list.length == 0 && i.daishenhe_counts >= 0}}">
+        <view bindtap="goToZhiweiSqrList" data-id="{{i.id}}" data-name="{{i.name}}" class="headPortrait">
+          <image class="headImg" src="{{urlPath}}liebiao.png"></image>
+          <view class="nameDown click maTop">{{i.daishenhe_counts}}人待审核</view>
+          <image class="headIconR maTopRight" src="{{urlPath}}arrows01.png"></image>
+        </view>
+      </block>
+      <view wx:if="{{csrSelected < csrNeed  && projectUser != userId}}" class="zhiwei-add">
+        <image bindtap="goToCsrZhiweiShenqing" data-id="{{i.id}}" src="{{urlPath}}tianjia.png"></image>
+      </view>
+    </view>
+  </block>
+  <view wx:if="{{csrNeed > 2}}" bindtap="csrCtrl" class="clickDown">
+    <block wx:if="{{csrHidden == 'none'}}">
+      点击显示全部职位
+      <image class="donwIcon" src="{{urlPath}}xiajian1.png"></image>
+    </block>
+    <block wx:if="{{csrHidden == 'block'}}">
+      点击隐藏全部职位
+      <image class="donwIcon" src="{{urlPath}}shangjian1.png"></image>
+    </block>
+  </view>
+  <view  wx:if="{{csrNeed == 0}}" style="text-align:center;height:80rpx;line-height:80rpx;font-size:9pt;background-color:white;width:100%;color:#888;">暂无职位</view>
+</view>
+
+<view class="head">
+  <text>管理合伙人 {{glSelected}}/{{glNeed}}</text>
+  <text>{{glShenhe}}人待审核</text>
+  <text bindtap="goToGlZhiweiAdd" wx:if="{{projectUser == userId}}" class="clickG">添加新职位</text>
+</view>
+<view class="card">
+  <block wx:for="{{glList}}" wx:for-item="i">
+    <view wx:if="{{index <2}}" class="card-box">
+      <view class="position">
+        <text>{{i.name}}</text>
+        <text wx:if="{{i.shenhe_list.length == 0 && projectUser == userId}}" bindtap="goToGlZhiweiEdit" data-id="{{i.id}}" class="clickG">编辑</text>
+      </view>
+      <block wx:for="{{i.shenhe_list}}" wx:for-item="j">
+        <view bindtap="goToZhiweiQyrDetail" data-id="{{j.id}}" class="headPortrait">
+          <image class="headImg" src="{{j.headpic}}"></image>
+          <view class="name  maTop">
+            <view style="height:40rpx;">{{j.xingming}}</view>
+            <view style="height:40rpx;">{{j.zhiwei}}</view>
+            <image class="headIcon" src="{{urlPath}}ji.png"></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{i.shenhe_list.length == 0  && i.daishenhe_counts >= 0}}">
+        <view bindtap="goToZhiweiSqrList" data-id="{{j.id}}" data-name="{{i.name}}" class="headPortrait">
+          <image class="headImg" src="{{urlPath}}liebiao.png"></image>
+          <view class="nameDown click maTop">{{i.daishenhe_counts}}人待审核</view>
+          <image class="headIconR maTopRight" src="{{urlPath}}arrows01.png"></image>
+        </view>
+      </block>
+      <view wx:if="{{glSelected < glNeed  && projectUser != userId}}" class="zhiwei-add">
+        <image bindtap="goToGlZhiweiShenqing" data-id="{{i.id}}" src="{{urlPath}}tianjia.png"></image>
+      </view>
+    </view>
+    <view wx:else class="card-box" style="display:{{glHidden}}">
+      <view class="position">
+        <text>{{i.name}}</text>
+        <text bindtap="goToGlZhiweiEdit" data-id="{{i.id}}" wx:if="{{i.shenhe_list.length == 0 && projectUser == userId}}" class="clickG">编辑</text>
+      </view>
+      <block wx:for="{{i.shenhe_list}}" wx:for-item="j">
+        <view bindtap="goToZhiweiQyrDetail" data-id="{{j.id}}" class="headPortrait">
+          <image class="headImg" src="{{j.headpic}}"></image>
+          <view class="name  maTop">
+            <view style="height:40rpx;">{{j.xingming}}</view>
+            <view style="height:40rpx;">{{j.zhiwei}}</view>
+            <image class="headIcon" src="{{urlPath}}ji.png"></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{i.shenhe_list.length == 0 && i.daishenhe_counts >= 0}}">
+        <view bindtap="goToZhiweiSqrList" data-id="{{j.id}}" data-name="{{i.name}}" class="headPortrait">
+          <image class="headImg" src="{{urlPath}}liebiao.png"></image>
+          <view class="nameDown click maTop">{{i.daishenhe_counts}}人待审核</view>
+          <image class="headIconR maTopRight" src="{{urlPath}}arrows01.png"></image>
+        </view>
+      </block>
+      <view wx:if="{{glSelected < glNeed  && projectUser != userId}}" class="zhiwei-add">
+        <image bindtap="goToGlZhiweiShenqing" data-id="{{i.id}}" src="{{urlPath}}tianjia.png"></image>
+      </view>
+    </view>
+  </block>
+  <view wx:if="{{glNeed > 2}}" bindtap="glCtrl" class="clickDown">
+    <block wx:if="{{glHidden == 'none'}}">
+      点击显示全部职位
+      <image class="donwIcon" src="{{urlPath}}xiajian1.png"></image>
+    </block>
+    <block wx:if="{{glHidden == 'block'}}">
+      点击隐藏全部职位
+      <image class="donwIcon" src="{{urlPath}}shangjian1.png"></image>
+    </block>
+  </view>
+   <view  wx:if="{{glNeed ==0}}" style="text-align:center;height:80rpx;color:#888;line-height:80rpx;font-size:9pt;background-color:white;width:100%;">暂无职位</view>
+</view>
+
+<view class="headDown">
+  <text>渠道合伙人 {{qdSelected}}/{{qdNeed}}</text>
+  <text>{{qdShenhe}}人待审核</text>
+</view>
+<view class="cardDown">
+
+  <block wx:for="{{qdUpList}}" wx:for-item="i">
+    <view class="position">
+      <text>线上</text>
+      <text bindtap="goToXianshangEdit" data-id="{{i.id}}" wx:if="{{qdUpEditCtrl == true}}" class="clickG   maLeft">编辑</text>
+      <text bindtap="goToXianshangAdd" data-id="{{i.id}}" wx:if="{{qdUpAddCtrl == true}}" class="clickG ">添加新招募</text>
+    </view>
+    <block wx:for="{{i.shenhe_list}}" wx:for-item="j" wx:for-index="jx">
+      <view wx:if="{{jx == 0 || jx == 1}}" bindtap="goToQdZhiweiQyrDetail" data-id="{{j.id}}" class="headPortrait">
+        <image class="headImg" src="{{j.headpic}}"></image>
+        <view class="name  maTop">
+          <view style="height:40rpx;">{{j.xingming}}</view>
+          <view style="height:40rpx;">{{j.zhiwei}}</view>
+          <image class="headIcon" src="{{urlPath}}ji.png"></image>
+        </view>
+      </view>
+      <view wx:else bindtap="goToQdZhiweiQyrDetail" data-id="{{j.id}}" class="headPortrait" hidden="{{qdUpHidden}}">
+        <image class="headImg" src="{{j.headpic}}"></image>
+        <view class="name  maTop">
+          <view style="height:40rpx;">{{j.xingming}}</view>
+          <view style="height:40rpx;">{{j.zhiwei}}</view>
+          <image class="headIcon" src="{{urlPath}}ji.png"></image>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{qdDownAddCtrl ==false && i.daishenhe_counts >= 0}}">
+      <view bindtap="goToZhiweiSqrList" data-id="{{i.id}}" data-name="线上" class="headPortrait">
+        <image class="headImg" src="{{urlPath}}liebiao.png"></image>
+        <view class="nameDown click maTop">{{i.daishenhe_counts}}人待审核</view>
+        <image class="headIconR maTopRight" src="{{urlPath}}arrows01.png"></image>
+      </view>
+    </block>
+    <view wx:if="{{qdUpSelected < qdUpNeed  && projectUser != userId}}" class="zhiwei-add">
+      <image bindtap="goToXianshangShenqing" data-id="{{i.id}}" src="{{urlPath}}tianjia.png"></image>
+    </view>
+  </block>
+
+  <view wx:if="{{qdUpSelected > 2}}" bindtap="qdUpCtrl" class="clickDown">
+    <block wx:if="{{qdUpHidden == true}}">
+      点击显示全部
+      <image class="donwIcon" src="{{urlPath}}xiajian1.png"></image>
+    </block>
+    <block wx:if="{{qdUpHidden == false}}">
+      点击隐藏其他
+      <image class="donwIcon" src="{{urlPath}}shangjian1.png"></image>
+    </block>
+  </view>
+
+</view>
+<view class="cardDown">
+  <block wx:for="{{qdDownList}}" wx:for-item="i">
+    <view class="position">
+      <text>线下</text>
+      <text bindtap="goToXianxiaEdit" data-id="{{i.id}}" wx:if="{{qdDownEditCtrl == true}}" class="clickG   maLeft">编辑</text>
+      <text bindtap="goToXianxiaAdd" data-id="{{i.id}}" wx:if="{{qdDownAddCtrl == true}}" class="clickG ">添加新招募</text>
+    </view>
+    <block wx:for="{{i.shenhe_list}}" wx:for-item="j" wx:for-index="jx">
+      <view wx:if="{{jx == 0 || jx == 1}}" bindtap="goToQdZhiweiQyrDetail" data-id="{{j.id}}" class="headPortrait">
+        <image class="headImg" src="{{j.headpic}}"></image>
+        <view class="name  maTop">
+          <view style="height:40rpx;">{{j.xingming}}</view>
+          <view style="height:40rpx;">{{j.zhiwei}}</view>
+          <image class="headIcon" src="{{urlPath}}ji.png"></image>
+        </view>
+      </view>
+      <view wx:else bindtap="goToQdZhiweiQyrDetail" data-id="{{j.id}}" class="headPortrait" hidden="{{qdDownHidden}}">
+        <image class="headImg" src="{{j.headpic}}"></image>
+        <view class="name  maTop">
+          <view style="height:40rpx;">{{j.xingming}}</view>
+          <view style="height:40rpx;">{{j.zhiwei}}</view>
+          <image class="headIcon" src="{{urlPath}}ji.png"></image>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{qdDownAddCtrl ==false && i.daishenhe_counts >= 0}}">
+      <view bindtap="goToZhiweiSqrList" data-id="{{i.id}}" data-name="线下" class="headPortrait">
+        <image class="headImg" src="{{urlPath}}liebiao.png"></image>
+        <view class="nameDown click maTop">{{i.daishenhe_counts}}人待审核</view>
+        <image class="headIconR maTopRight" src="{{urlPath}}arrows01.png"></image>
+      </view>
+    </block>
+    <view wx:if="{{qdDownSelected < qdDownNeed  && projectUser != userId}}" class="zhiwei-add">
+      <image bindtap="goToXianxiaShenqing" data-id="{{i.id}}" src="{{urlPath}}tianjia.png"></image>
+    </view>
+  </block>
+
+  <view  wx:if="{{qdDownSelected > 2}}" bindtap="qdDownCtrl" class="clickDown">
+    <block wx:if="{{qdDownHidden == true}}">
+      点击显示全部
+      <image class="donwIcon" src="{{urlPath}}xiajian1.png"></image>
+    </block>
+    <block wx:if="{{qdDownHidden == false}}">
+      点击隐藏其他
+      <image class="donwIcon" src="{{urlPath}}shangjian1.png"></image>
+    </block>
+  </view>
+
+</view>

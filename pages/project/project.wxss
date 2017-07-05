@@ -1,0 +1,283 @@
+page {
+  background: #f7f7f7;
+  font-family: PingFangRegular;
+}
+
+
+.swiper-containe {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-image {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 40rpx;
+}
+
+.btnleft {
+  width: 49.3%;
+  border: 1rpx solid #ccc !important;
+  padding-bottom: 0%;
+  color: #808080 !important;
+  font-size: 4vw !important;
+  background-color: #fff;
+  position: relative;
+  margin: 0;
+  height: 100%;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.btnleft picker{
+  width:60%;
+  height:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.tri {
+   width:40%;
+  height:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.tri image {
+  width: 30rpx;
+  height: 40rpx;
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right:20rpx;
+}
+
+.btnright {
+  width: 49.3%;
+  border: 1rpx solid #ccc !important;
+  padding-bottom: 0%;
+  color: #808080 !important;
+  margin: 0 !important;
+  font-size: 4vw !important;
+  background-color: #fff;
+  display: block;
+  height: 100%;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 3px;
+}
+
+.tuijian {
+  float: right;
+  width: 175rpx;
+  height: 150rpx;
+  margin-top: -190rpx;
+  opacity: 0.4;
+}
+
+.top {
+  width: 100%;
+  height: 200rpx;
+  background: white;
+  font-size: 4vw;
+}
+
+.below {
+  width: 100%;
+  height: 50rpx;
+  background: white;
+  margin-bottom: 40rpx;
+  font-size: 4vw;
+}
+
+.piao {
+  float: left;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: white;
+  border-top: 1px solid rgb(8, 187, 6);
+  border-bottom: 1px solid rgb(8, 187, 6);
+  border-right: 1px solid rgb(8, 187, 6);
+  border-top-right-radius: 25rpx;
+  border-bottom-right-radius: 25rpx;
+  position: relative;
+  top: -25rpx;
+  left: 0rpx;
+  z-index: 9;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: rgb(8, 187, 6);
+  padding-left: 10rpx;
+  box-shadow: 3px 2px 7px rgba(128, 128, 128, 0.5);
+}
+
+.jiantou {
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 50rpx;
+  margin-bottom: -3rpx;
+  padding-right: 15rpx;
+}
+
+.touxiang {
+  float: left;
+  width: 25%;
+  height: 100%;
+}
+
+.headpic {
+  float: left;
+  width: 130rpx;
+  height: 130rpx;
+  position: relative;
+  top: -10rpx;
+  left: 20rpx;
+  z-index: 1;
+}
+
+.xiangmu {
+  float: left;
+  width: 40%;
+  height: 170rpx;
+  padding-left: 1%;
+  padding-top: 30rpx;
+}
+
+.mingcheng {
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.chengshi {
+  height: 50rpx;
+  line-height: 50rpx;
+  color: rgb(153, 153, 153);
+}
+
+.chuangshiren {
+  height: 50rpx;
+  line-height: 50rpx;
+  color: rgb(153, 153, 153);
+}
+
+.shuzi {
+  float: right;
+  width: 34%;
+  height: 170rpx;
+  padding-top: 30rpx;
+}
+
+.shuzi view {
+  height: 35rpx;
+  line-height: 35rpx;
+  color: rgb(153, 153, 153);
+}
+
+.shuzi image {
+  float: right;
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: -120rpx;
+}
+
+.below view {
+  float: left;
+  width: 33%;
+  height: 100%;
+  color: rgb(153, 153, 153);
+  border-top: 1px solid rgb(247, 247, 247);
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.below text {
+  color: black;
+}
+
+.zhezhao {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: 0.7;
+  z-index: 99
+}
+.zhezhaoh {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: 0.7;
+  z-index: 99
+}
+
+.zhezhaotop{
+  margin-top:40rpx;
+  opacity: 1;
+}
+.zhezhaog{
+  color:white;
+  border-bottom:1px solid rgb(184, 184, 184);
+  margin-left:5%;
+  height:100rpx;
+  font-size: 35rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  opacity: 1;
+}
+.zhezhaog picker{
+  width:55%;
+}
+.zhezhao image{
+  width:35rpx;
+  height:35rpx;
+  opacity: 1;
+}
+.zhezhaobelow{
+  margin-top:80rpx;
+  opacity: 1;
+}
+.zhezhaoa{
+  color:white;
+  border-bottom:1px solid rgb(184, 184, 184);
+  margin-left:5%;
+  height:50rpx;
+  line-height: 50rpx;
+  font-size: 35rpx;
+  opacity: 1;
+}
+.shaixuanbtn{
+  position: absolute;
+  top:60%;
+  left:50%;
+  width:200rpx;
+  height:70rpx;
+  margin:auto;
+  margin-left:-100rpx;
+  line-height: 70rpx;
+  opacity: 1;
+}
+.liandong{
+  width:35%;
+}

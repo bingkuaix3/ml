@@ -1,0 +1,43 @@
+<!--zhiweizmxianxia.wxml-->
+<view class="{{firstHidden}}">
+  <view class="text">数字平台地址</view>
+  <input style="text-align:center;" bindinput="recordAddress" value="{{address}}" placeholder="请输入数字平台地址" />
+  <view class="btn maTop">
+    <view bindtap="back" class="btnLeft">取消</view>
+    <view bindtap="firstNext" class="btnRight">下一步</view>
+  </view>
+</view>
+<view class="{{secondHidden}}">
+  <view class="text">最小区域范围</view>
+  <view bindtap="selectZone1" class="neirong  ">省会城市
+    <image hidden="{{zone1}}" class="Icon" src="{{urlPath}}duihao.png"></image>
+  </view>
+  <view bindtap="selectZone2" class="neirong matop">地级市
+    <image hidden="{{zone2}}" class="Icon" src="{{urlPath}}duihao.png"></image></view>
+  <view bindtap="selectZone3" class="neirong matop">县区
+    <image hidden="{{zone3}}" class="Icon" src="{{urlPath}}duihao.png"></image></view>
+  <view bindtap="selectZone4" class="neirong matop">乡镇
+    <image hidden="{{zone4}}" class="Icon" src="{{urlPath}}duihao.png"></image></view>
+  <view bindtap="selectZone5" class="neirong matop">社区
+    <image hidden="{{zone5}}" class="Icon" src="{{urlPath}}duihao.png"></image></view>
+  <view class="btn">
+    <view bindtap="secondBefore" class="btnLeft">上一步</view>
+    <view bindtap="secondNext" class="btnRight">下一步</view>
+  </view>
+</view>
+<view class="{{thirdHidden}}">
+  <view class="text">加盟或代理费用</view>
+   <input style="text-align:center;"  bindinput="recordFeiyong" value="{{feiyong}}" type="number"  placeholder="请输入加盟或代理费用" />
+  <view class="btn maTop">
+    <view bindtap="thirdBefore" class="btnLeft">上一步</view>
+    <view bindtap="thirdNext" class="btnRight">下一步</view>
+  </view>
+</view>
+<view class="{{forthHidden}}">
+  <view class="text">合伙人数量</view>
+  <input style="text-align:center;"  bindinput="recordAmount" value="{{amount}}" type="number"  placeholder="请输入合伙人数量" />
+  <view class="btn maTop">
+    <view bindtap="forthBefore"  class="btnLeft">上一步</view>
+    <view bindtap="sure" class="btnRight">确认</view>
+  </view>
+</view>

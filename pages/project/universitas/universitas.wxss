@@ -1,0 +1,140 @@
+/* renheliebiao.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  background-color: #fff;
+}
+.card-box{
+  width:100%;
+}
+.cardDown {
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}
+.zhiwei-add{
+  height:132rpx;
+  margin:0rpx;
+  display: flex;
+  justify-content: center;
+}
+.zhiwei-add image{
+  width:100rpx;
+  height:100rpx;
+  margin:16rpx;
+}
+.head {
+  font-size: 11pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 30rpx;
+  padding: 30rpx 0 16rpx 0;
+  border-bottom: 1px solid #f7f7f7;
+}
+.headDown {
+  background-color: #f7f7f7;
+  font-size: 11pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 30rpx;
+  padding: 30rpx 0 16rpx 0;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.click {
+  color: #576b95;
+}
+.clickG {
+  color: #09BB07;
+}
+
+.position {
+  font-size: 11pt;
+  margin: 0 30rpx;
+  padding: 30rpx 0 16rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.headPortrait {
+  margin: 0rpx 30rpx 0rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #f7f7f7;
+  position: relative;
+}
+
+.headImg {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin-top: 30rpx;
+}
+
+.name {
+  height: 100rpx;
+  margin: 0rpx 0 0 30rpx;
+  font-size:9pt;
+  line-height: 1.4;
+  color: #888;
+  flex:1;
+}
+
+.headIcon {
+  width: 50rpx;
+  height: 50rpx;
+}
+.headIconR {
+  width: 30rpx;
+  height: 66rpx;
+  position: absolute;
+  top:30rpx;
+  right: 0rpx;
+}
+.nameDown {
+  width: 260rpx;
+  height: 100rpx;
+  margin: 0rpx 0 0 30rpx;
+  font-size: 11pt;
+  line-height: 4;
+  text-align: center;
+}
+
+.clickDown {
+  margin: 0rpx 30rpx;
+  padding: 30rpx 0;
+  text-align: center;
+  font-size: 11pt;
+  color: #09bb07;
+}
+.donwIcon{
+  width: 40rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}
+.maLeft{
+  margin-left: 300rpx;
+}
+.maTop{
+  margin-top: 30rpx;
+}
+.maTopRight{
+  margin-top: 26rpx;
+}
+.area{
+  padding: 80rpx 0 0rpx 240rpx;
+  font-size: 11pt;
+  color: #576b95;
+}

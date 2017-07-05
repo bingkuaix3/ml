@@ -1,0 +1,85 @@
+/* pages/wo/caifubao/chongzhi/chongzhi.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  letter-spacing: 1.2rpx;
+}
+.line {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  border-top: 1px solid #f7f7f7;
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;
+  margin-top: 20px;
+
+}
+.line-tag {
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  color: #353535;
+  font-size: 13px;
+  text-align: center;
+}
+
+.line-input {
+  width: auto;
+  height: 40px;
+  border: 0px;
+  font-size: 11pt;
+  flex: 1;
+  color: #f90;
+}
+
+.money {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.money-box {
+  width: 300px;
+  height: 120px;
+}
+.box{
+  float:left;
+  width:80px;
+  height:40px;
+  border:1px solid #f7f7f7;
+  background-color:white;
+  line-height:40px;
+  text-align:center;
+  font-size:11pt;
+  color:#353535;
+  margin:10px 5px 0px 5px;
+}
+.box-active{
+ border: 1rpx solid #09bb07;
+}
+.shuoming{
+  float:left;
+  width:100%;
+  height:24px;
+  line-height:24px;
+  color:#353535;
+  font-size:11pt;
+  font-weight:bold;
+}
+.content{
+  float:left;
+  width:100%;
+  height:auto;
+  font-size:9pt;
+  color:#888;
+  line-height:16px;
+  margin-top:5px;
+}
+.chongzhi-btn{
+  width:100%;
+  height:40px;
+  line-height:40px;
+  font-size:11pt;
+}

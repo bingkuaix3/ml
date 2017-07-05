@@ -1,0 +1,180 @@
+<view bindtap="settingHead" style="border-top:1px solid #e0e0e0;" class="line">
+  <text class="line-title">头像</text>
+  <view wx:if="{{head != ''}}" class="line-value">
+    <image class="line-image" src="{{head}}"> </image>
+  </view>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view class="line-tag">
+  <text class="line-tag-value">基础信息</text>
+</view>
+<view bindtap="showNameModal" class="line" style="border-top:1px solid #e0e0e0;">
+  <text class="line-title">姓名</text>
+  <text wx:if="{{name != ''}}" class="line-value">{{name}}</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view bindtap="showSexModal" class="line">
+  <text class="line-title">性别</text>
+  <text wx:if="{{sex != ''}}" class="line-value">{{sex}}</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view bindtap="showBirthModal" class="line">
+  <text class="line-title">生日</text>
+  <text wx:if="{{birth != ''}}" class="line-value">{{birth}}</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view bindtap="showPhoneModal" class="line">
+  <text class="line-title">手机号</text>
+  <text wx:if="{{phone != ''}}" class="line-value">{{phone}}</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view bindtap="showEmailModal" class="line">
+  <text class="line-title">邮箱</text>
+  <text wx:if="{{email != ''}}" class="line-value">{{email}}</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view bindtap="showCityModal" class="line">
+  <text class="line-title">城市</text>
+  <text wx:if="{{city != ''}}" class="line-value">{{city}}</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view class="line-tag">
+  <text class="line-tag-value">职务信息</text>
+</view>
+<view bindtap="showHangyeModal" style="border-top:1px solid #e0e0e0;" class="line">
+  <text class="line-title">所属行业</text>
+  <text wx:if="{{hangye != ''}}" class="line-value">{{hangye}}</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view bindtap="showCompanyModal" class="line">
+  <text class="line-title">公司</text>
+  <text wx:if="{{company != ''}}" class="line-value">{{company}}</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view bindtap="showZhiweiModal" class="line">
+  <text class="line-title">职位</text>
+  <text wx:if="{{zhiwei != ''}}" class="line-value">{{zhiwei}}</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view bindtap="showGuanzhuModal" class="line">
+  <text class="line-title">关注点</text>
+  <text wx:if="{{guanzhu != ''}}" class="line-value">{{guanzhu}}</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view bindtap="showBangongModal" class="line">
+  <text class="line-title">办公地址</text>
+  <text wx:if="{{bangong != ''}}" class="line-value">查看</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view bindtap="showMingpianModal" class="line">
+  <text class="line-title">名片</text>
+  <text wx:if="{{mingpian != ''}}" class="line-value">查看</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<view bindtap="showShouhuoModal" class="line" style="margin-bottom:10px;">
+  <text class="line-title">收货地址</text>
+  <text wx:if="{{shouhuo != ''}}" class="line-value">查看</text>
+  <text wx:else class="line-value" style="color:#999;">未设置</text>
+  <image class="line-right" src="{{urlPath}}right.png"></image>
+</view>
+<!--设置姓名模态框-->
+<modal title="设置姓名" hidden="{{nameModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="nameModalBindConfirm" bindcancel="nameModalBindCancel">
+  <input class="modal-input" placeholder="请输入您的姓名" bindinput="nameInput" type="text" value="{{name}}" />
+</modal>
+<!--设置性别模态框-->
+<modal title="设置性别" hidden="{{sexModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="sexModalBindConfirm" bindcancel="sexModalBindCancel">
+  <radio-group class="modal-sex" bindchange="sexChange">
+    <label class="radio" wx:for="{{sexItems}}" wx:key="{{sexItems}}">
+      <radio value="{{item.value}}" checked="{{item.checked}}" />{{item.name}}
+    </label>
+  </radio-group>
+</modal>
+<!--设置生日模态框-->
+<modal title="设置生日" hidden="{{birthModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="birthModalBindConfirm" bindcancel="birthModalBindCancel">
+  <picker class="modal-date" mode="date" value="{{birth}}" start="1900-09-01" end="3017-09-01" bindchange="birthChange">
+    <view class="picker">
+      生日:
+      <text wx:if="{{newBirth != ''}}"> {{newBirth}}</text>
+      <text wx:else style="color:red;">请选择</text>
+    </view>
+  </picker>
+</modal>
+<!--设置关注点模态框-->
+<modal title="设置关注点" hidden="{{guanzhuModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="guanzhuModalBindConfirm" bindcancel="guanzhuModalBindCancel">
+  <checkbox-group class="modal-guanzhu" bindchange="guanzhuChange">
+    <label class="checkbox" wx:for="{{guanzhuItems}}">
+      <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </checkbox-group>
+</modal>
+
+
+<!--设置行业模态框-->
+<modal title="设置行业" hidden="{{hangyeModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="hangyeModalBindConfirm" bindcancel="hangyeModalBindCancel">
+  <picker mode="selector" class="modal-hangye" range="{{hangyeItems}}" value="{{hangyeIndex}}" bindchange="hangyeChange">
+    所属行业：
+    <text wx:if="{{newHangye != ''}}"> {{newHangye}}</text>
+    <text wx:else style="color:red;">请选择</text>
+  </picker>
+</modal>
+<!--设置邮箱模态框-->
+<modal title="设置邮箱" hidden="{{emailModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="emailModalBindConfirm" bindcancel="emailModalBindCancel">
+  <input class="modal-input" placeholder="请输入您的邮箱" bindinput="emailInput" type="text" value="{{email}}" />
+</modal>
+<!--设置公司模态框-->
+<modal title="设置公司名称" hidden="{{companyModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="companyModalBindConfirm" bindcancel="companyModalBindCancel">
+  <input class="modal-input" placeholder="请输入您的公司名称" bindinput="companyInput" type="text" value="{{company}}" />
+</modal>
+<!--设置职位模态框-->
+<modal title="设置职位" hidden="{{zhiweiModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="zhiweiModalBindConfirm" bindcancel="zhiweiModalBindCancel">
+  <input class="modal-input" placeholder="请输入您的公司职位" bindinput="zhiweiInput" type="text" value="{{zhiwei}}" />
+</modal>
+<!--设置手机号模态框-->
+<modal title="设置手机号" hidden="{{phoneModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="phoneModalBindConfirm" bindcancel="phoneModalBindCancel">
+  <input class="modal-input" placeholder="请输入您的手机号" bindinput="phoneInput" type="number" value="{{phone}}" />
+  <view class="code-box">
+    <input class="code-input" placeholder="验证码" bindinput="codeInput" type="number" value="{{newCode}}" />
+    <button bindtap="sendCode" class="code-button" type="warn" disabled="{{btnDisabled}}">{{btnText}}</button>
+  </view>
+</modal>
+<!--设置办公模态框-->
+<modal title="设置办公地址" hidden="{{bangongModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="bangongModalBindConfirm" bindcancel="bangongModalBindCancel">
+  <input class="modal-input" placeholder="请输入您的办公地址" bindinput="bangongInput" type="text" value="{{bangong}}" />
+</modal>
+<!--设置收货模态框-->
+<modal title="设置收货地址" hidden="{{shouhuoModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="shouhuoModalBindConfirm" bindcancel="shouhuoModalBindCancel">
+  <input class="modal-input" placeholder="请输入您的收货地址" bindinput="shouhuoInput" type="text" value="{{shouhuo}}" />
+</modal>
+<!--设置城市模态框-->
+<modal title="设置城市" hidden="{{cityModalHidden}}" confirm-text="设置" cancel-text="取消" bindconfirm="cityModalBindConfirm" bindcancel="cityModalBindCancel">
+  <view bindtap="choosearea" class="modal-city">选择城市：{{newCity}}</view>
+
+</modal>
+<view wx:if="{{isShow}}" class="picker-view">
+  <button class="city-left" bindtap="cityModalBindCancel" type="warn">取消</button>
+  <button class="city-right" bindtap="cityModalBindConfirm" type="primary">确定</button>
+  <picker-view style="width:100%;height:100%;" indicator-style="height: 50px;" value="{{value}}" bindchange="cityChange">
+    <picker-view-column>
+      <view wx:for="{{proviceData}}" data-province="{{item}}" class="addr-item">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{cityData}}" data-city="{{item}}" class="addr-item">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column wx:if="{{showDistrict}}">
+      <view wx:for="{{districtData}}" class="addr-item">{{item.fullNameDot}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

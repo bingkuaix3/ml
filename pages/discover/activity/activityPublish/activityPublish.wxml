@@ -1,0 +1,137 @@
+<!--zhaoMuXianShang.wxml-->
+<!--活动类型-->
+<view style="{{huodong==1?'display:block':'display:none'}}">
+  <view class="text">请选择活动类型</view>
+  <view class="card" bindtap="xianshang">
+    <view class="name">
+      <view class="names">线上活动</view>
+      <image class="icon" style="{{type==1?'display:block':'display:none'}}" src="{{urlPath}}duihao.png"></image>
+    </view>
+  </view>
+  <view class="card" bindtap="xianxia">
+    <view class="name">
+      <view class="names">线下活动</view>
+      <image class="icon" style="{{type==2?'display:block':'display:none'}}" src="{{urlPath}}duihao.png"></image>
+    </view>
+  </view>
+  <!--按钮-->
+  <view class="btn">
+    <view class="btnLeft" bindtap="cancel">取消</view>
+    <view class="btnRight" bindtap="firstnext">下一步</view>
+  </view>
+</view>
+<!--活动名称-->
+<view style="{{mingcheng==1?'display:block':'display:none'}}">
+  <view class="text">请输入活动名称</view>
+  <view class="list">
+    <view class="names">活动名称:</view>
+    <input class="inputs" placeholder="请输入活动名称" bindinput="input" bindblur="inputb"/>
+  </view>
+
+  <!--按钮-->
+  <view class="btn">
+    <view class="btnLeft" bindtap="thirdcancel">上一步</view>
+    <view class="btnRight" bindtap="thirdnext">下一步</view>
+  </view>
+</view>
+<!--活动封面-->
+<view style="{{fengmian==1?'display:block':'display:none'}}">
+  <view class="flex">
+    <view class="text middle">活动封面</view>
+    <button type="primary" class="btnUp" bindtap="pic">{{pic==""?'添加':'修改'}}</button>
+  </view>
+  <image class="img" mode="aspectFit" src="{{pic}}"></image>
+
+  <!--按钮-->
+  <view class="btn">
+    <view class="btnLeft" bindtap="secondcancel">取消</view>
+    <view class="btnRight" bindtap="secondnext">下一步</view>
+  </view>
+</view>
+<!--活动时间-->
+<view style="{{shijian==1?'display:block':'display:none'}}">
+ <view class="text">请选择活动开始时间</view>
+  <view class="list">
+    <picker mode="date" start="{{currenttime}}" end="2030-09-01" bindchange="csdata">
+      <view class="picker">
+        开始日期: {{sdata==''?'请选择活动开始日期':sdata}}
+      </view>
+    </picker>
+  </view>
+  <view class="list">
+    <picker mode="time" start="00:00" end="24:00" bindchange="cstime">
+      <view class="picker">
+        开始时间: {{stime==''?'请选择活动开始时间':stime}}
+      </view>
+    </picker>
+  </view>
+  <view class="text">请选择活动结束时间</view>
+  <view class="list">
+    <picker mode="date" start="{{currenttime}}" end="2030-09-01" bindchange="cedata">
+      <view class="picker">
+        结束日期: {{edata==''?'请选择活动结束日期':edata}}
+      </view>
+    </picker>
+  </view>
+  <view class="list">
+    <picker mode="time" start="00:00" end="24:00" bindchange="cetime">
+      <view class="picker">
+        结束时间: {{etime==''?'请选择活动结束时间':etime}}
+      </view>
+    </picker>
+  </view>
+  <!--按钮-->
+  <view class="btn">
+    <view class="btnLeft" bindtap="fourthcancel">上一步</view>
+    <view class="btnRight" bindtap="fourthnext">下一步</view>
+  </view>
+</view>
+<!--活动地址人数-->
+<view style="{{dizhi==1?'display:block':'display:none'}}">
+  <view class="text">请输入活动地址</view>
+  <view class="list">
+    <picker bindchange="xuanzesheng" value="{{index}}" range="{{sheng}}">
+      <view class="classname">
+        <view class="names" style="display:inline-block">省份:</view>{{province==""?'请选择':province}}</view>
+    </picker>
+  </view>
+  <view class="list">
+    <picker disabled="{{disabled== 1 ? 'disabled' :''}}" bindchange="xuanzeshi" value="{{index}}" range="{{shi}}">
+      <view class="classname">
+        <view class="names" style="display:inline-block">城市:</view>{{city==""?'请选择':city}}</view>
+    </picker>
+  </view>
+  <view class="list">
+    <view class="names">详细地址:</view>
+    <input class="inputs" placeholder="{{address==''?'请输入详细地址':address}}" bindinput="inputa" bindblur="inputab"/>
+  </view>
+  <view class="text">请输入活动人数</view>
+  <view class="list">
+    <view class="names">人数:</view>
+    <input class="inputs" type="number" placeholder="{{people==''?'请输入活动人数':people}}" bindinput="inputp" bindblur="inputpb"/>
+  </view>
+
+  <!--按钮-->
+  <view class="btn">
+    <view class="btnLeft" bindtap="sixthcancel">上一步</view>
+    <view class="btnRight" bindtap="confirm">完成</view>
+  </view>
+</view>
+<!--活动是否收费-->
+<view style="{{feiyong==1?'display:block':'display:none'}}">
+  <view class="text">请选择是否收费</view>
+  <view class="body-view">收费
+    <switch checked="{{check}}" bindchange="mschange" class="big" />
+  </view>
+   <view class="classname" style="{{check==true?'display:block':'display:none'}}">
+    <view class="text">请输入门票价格</view>
+    <view class="list">
+      <view class="names" style="display:inline-block">价格(元):</view>
+      <input class="inputs" value="{{money}}" type="number" style="display:inline-block" placeholder="请输入门票价格" bindinput="inputm" bindblur="inputmb"/>
+    </view>
+  </view>
+  <view class="btn">
+    <view class="btnLeft" bindtap="fifthcancel">上一步</view>
+    <view class="btnRight" bindtap="fifthnext">{{type==1?'完成':'下一步'}}</view>
+  </view>
+</view>

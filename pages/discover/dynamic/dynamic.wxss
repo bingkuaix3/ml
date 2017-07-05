@@ -1,0 +1,229 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: #fff;
+}
+
+.biaoti {
+  font-size: 17pt;
+  margin: 60rpx 0 30rpx 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.card {
+  margin: 0 30rpx;
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.require {
+  font-size: 11pt;
+  padding: 30rpx 0 16rpx 0;
+}
+
+.content {
+  font-size: 11pt;
+  line-height: 1.4;
+  color: #888;
+  letter-spacing: 1.2rpx;
+}
+
+.overFlowText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: 200rpx;
+}
+
+.img image {
+  width: 220rpx;
+  height: 140rpx;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+video {
+  width: 220rpx;
+  height: 140rpx;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.cardUp {
+  margin: 0rpx 30rpx 30rpx 0rpx;
+  background-color: #fff;
+  height: 170rpx;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.box1 {
+  width: 140 rpx;
+  height: 140rpx;
+  margin: 30rpx 0rpx;
+}
+
+.headPortrait {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+
+.icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.text {
+  height: 200rpx;
+  width: auto;
+  line-height: 1.4;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+}
+
+.textRight {
+  font-size: 11pt;
+  position: absolute;
+  top: 70rpx;
+  right: 0rpx;
+  width: auto;
+}
+
+.name {
+  font-size: 11pt;
+  color: #353535;
+  height: 40rpx;
+}
+
+.title {
+  font-size: 11pt;
+  color: #888;
+  height: 40rpx;
+}
+
+.date {
+  height: 90rpx;
+}
+
+.dateText {
+  line-height: 90rpx;
+  font-size: 11pt;
+  color: #888;
+  width: 300rpx;
+  float: left;
+}
+
+.iconOne {
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+  margin-left: 40rpx;
+  margin-top: 16rpx;
+}
+
+.down {
+  height: 30rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f7f7f7;
+}
+
+.cardDown {
+  height: 30rpx;
+  margin: 0 30rpx;
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.inputview {
+  width: 100%;
+  height: 120rpx;
+  background: #fafafa;
+  border-top: 1px solid #cacaca;
+  bottom: 450rpx;
+  position: fixed;
+}
+
+.input {
+  float: left;
+  width: 79%;
+  margin-left: 2%;
+  margin-top: 16rpx;
+  height: 60rpx;
+  background: #fcfcfc;
+  border: 1px solid #ebebeb;
+  border-radius: 8rpx;
+  font-size: 9pt;
+  padding-left: 10rpx;
+  margin-bottom: 16rpx;
+}
+
+.fasongh {
+  margin-right: 3%;
+  float: right;
+  line-height: 120rpx;
+  margin-top: 16rpx;
+  width: 10%;
+  height: 60rpx;
+  background: #e6e6e6;
+  color: #d2d2d2;
+  border-radius: 7rpx;
+  font-size: 9pt;
+  border: 1px solid #d0d0d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fasongl {
+  margin-right: 3%;
+  float: right;
+  line-height: 120rpx;
+  margin-top: 16rpx;
+  width: 10%;
+  height: 60rpx;
+  background: #1bad16;
+  color: white;
+  border-radius: 7rpx;
+  font-size: 9pt;
+  border: 1px solid #e0eccd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fabu {
+  background: white;
+}
+
+.click {
+  font-size: 13pt;
+  padding-top: 30rpx;
+  padding-bottom: 16rpx;
+  text-align: center;
+  color: #09bb07;
+  border-top: 1rpx solid #f7f7f7;
+  border-bottom: 1rpx solid #f7f7f7;
+}
+
+.click image {
+  width: 40rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}

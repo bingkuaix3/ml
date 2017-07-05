@@ -1,0 +1,371 @@
+<!--activityBao.wxml-->
+<view class="classname" style="{{main==0?'display:none':'display:block'}}">
+  <view class="top">
+    <view class="top-left">
+      <view class="top-box">
+        <view class="{{displayl==0?'top-box-name':'top-box-name top-active'}}" bindtap="changel">我发起的活动</view>
+        <view class="{{displayl==0?'top-box-bar':'top-box-bar1'}}"></view>
+      </view>
+    </view>
+    <view class="top-right">
+      <view class="top-box ">
+        <view class="{{displayr==0?'top-box-name':'top-box-name top-active'}}" bindtap="changer">合伙人的活动</view>
+        <view class="{{displayr==0?'top-box-bar':'top-box-bar1'}}"></view>
+      </view>
+    </view>
+  </view>
+  <view class="middle">
+    <view bindtap="goToPublish" class="middle-box">发起新活动 </view>
+  </view>
+
+  <view class="guanzhu-box" style="{{displayl==0?'display:none':displayww==1?'display:block':'display:none'}}">
+    <view class="guanzhu-box-top" style="{{w==0?'display:none':'display:block'}}">
+      <text class="guanzhu-box-top-name">未结束的活动</text>
+      <text class="guanzhu-box-top-all" bindtap="displayw">{{displayw==0?'查看全部':'收起列表'}}</text>
+    </view>
+    <block wx:for="{{listw}}">
+      <view class="guanzhu-box-bottom" style="{{item.a==0?displayw==1?'':index>1?'display:none':'':'display:none'}}" bindtap="bianjiw" data-index="{{index}}">
+        <view>
+          <image class="guanzhu-bb-left1" src="{{item.pic}}" mode="aspectFill"></image>
+        </view>
+        <view class="guanzhu-bb-middle">
+          <view class="wid">
+            <view class="classname">{{item.name}}</view>
+            <view class="classname" style="color:#888">{{item.activitytime}}</view>
+            <view class="classname" style="color:#888">{{item.city}}</view>
+          </view>
+          <image class="img" src="{{item.type==1?urlPath+'xianshang.png':urlPath+'xianxia.png'}}"></image>
+          <view class="wid">
+            <button class="preview" type="primary" bindtap="jumpdetail" data-id="{{item.ID}}">预览</button>
+          </view>
+        </view>
+
+      </view>
+      <view class="classname" style="{{item.b==0?'display:none':'display:block'}}">
+        <view class="details">
+          <view class="cardDetails" bindtap="nchange" data-index="{{index}}" data-id="{{item.ID}}">
+            <view>活动名称</view>
+            <view class="cardDetailsr">
+              <view class="classname" style="margin-right:20rpx">{{item.name}}</view>
+              <image class="Icon" src="{{urlPath}}arrows.png"></image>
+            </view>
+          </view>
+          <modal title="修改名称" hidden="{{name}}" confirm-text="确定" cancel-text="取消" bindconfirm="nameco" bindcancel="nameca">
+            <input placeholder="请输入活动名称" bindinput="inputname" />
+          </modal>
+          <view class="cardDetails" bindtap="dchange" data-index="{{index}}" data-id="{{item.ID}}">
+            <view>活动介绍</view>
+            <image class="Icon" src="{{urlPath}}arrows.png"></image>
+          </view>
+          <modal title="修改介绍" hidden="{{descs}}" confirm-text="确定" cancel-text="取消" bindconfirm="descsco" bindcancel="descsca">
+            <textarea placeholder="{{item.descs==''?'请输入活动介绍':item.descs}}" bindinput="inputdescs" bindlinechange="descschange" />
+          </modal>
+          <view class="cardDetails" bindtap="pchange" data-index="{{index}}" data-id="{{item.ID}}" data-pic="{{item.pic}}">
+            <view>活动封面</view>
+            <view class="cardDetailsr">
+              <image src="{{item.ispic==0?'':urlPath+'tupian.png'}}" class="imageT"></image>
+              <image class="Icon" src="{{urlPath}}arrows.png"></image>
+            </view>
+          </view>
+          <view class="cardDetails" bindtap="tchange" data-index="{{index}}" data-id="{{item.ID}}">
+            <view>活动时间</view>
+            <view class="cardDetailsr">
+              <view class="classname" style="margin-right:20rpx">{{item.activitytime}}~{{item.endtime}}</view>
+              <image class="Icon" src="{{urlPath}}arrows.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="details">
+          <view class="cardDetails" bindtap="{{item.address==''?'':'achange'}}" data-index="{{index}}" data-id="{{item.ID}}" data-people="{{item.people}}" data-province="{{item.province}}" data-city="{{item.city}}" data-address="{{item.address}}">
+            <view>地址和人数</view>
+            <view class="cardDetailsr">
+              <view class="classname" style="margin-right:20rpx">{{item.address==""?'线上':item.address}}/{{item.people==0?'无':item.people}}</view>
+              <image class="Icon" src="{{urlPath}}arrows.png"></image>
+            </view>
+          </view>
+          <view class="cardDetails" bindtap="schange" data-index="{{index}}" data-id="{{item.ID}}" data-shuke="{{item.shuke_level}}" data-zhike="{{item.zhike_level}}" data-shike="{{item.shike_level}}" data-jinke="{{item.jinke_level}}" data-haike="{{item.haike_level}}"
+            data-huike="{{item.huike_level}}" data-chuangke="{{item.chuangke_level}}" data-jike="{{item.jike_level}}" data-weike="{{item.weike_level}}">
+            <view>生态位</view>
+            <view class="cardDetailsr">
+              <image style="{{item.shuke_level==0?'display:none':'display:inline-block'}}" class="guanzhu-bb-right" src="{{urlPath}}shu-click.png"></image>
+              <image style="{{item.zhike_level==0?'display:none':'display:inline-block'}}" class="guanzhu-bb-right" src="{{urlPath}}zhi-click.png"></image>
+              <image style="{{item.shike_level==0?'display:none':'display:inline-block'}}" class="guanzhu-bb-right" src="{{urlPath}}shi-click.png"></image>
+              <image style="{{item.jinke_level==0?'display:none':'display:inline-block'}}" class="guanzhu-bb-right" src="{{urlPath}}jin-click.png"></image>
+              <image style="{{item.haike_level==0?'display:none':'display:inline-block'}}" class="guanzhu-bb-right" src="{{urlPath}}hai-click.png"></image>
+              <image style="{{item.huike_level==0?'display:none':'display:inline-block'}}" class="guanzhu-bb-right" src="{{urlPath}}hui-click.png"></image>
+              <image style="{{item.chuangke_level==0?'display:none':'display:inline-block'}}" class="guanzhu-bb-right" src="{{urlPath}}chuang-click.png"></image>
+              <image style="{{item.jike_level==0?'display:none':'display:inline-block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji-click.png"></image>
+              <image style="{{item.weike_level==0?'display:none':'display:inline-block'}}" class="guanzhu-bb-right" src="{{urlPath}}wei-click.png"></image>
+              <image class="Icon" src="{{urlPath}}arrows.png"></image>
+            </view>
+          </view>
+          <view class="cardDetails" bindtap="jchange" data-index="{{index}}" data-id="{{item.ID}}" >
+            <view>嘉宾</view>
+
+            <image class="Icon" src="{{urlPath}}arrows.png"></image>
+          </view>
+          <view class="cardDetails" bindtap="mchange" data-index="{{index}}" data-id="{{item.ID}}" data-money="{{item.chargemoney}}">
+            <view>费用</view>
+            <view class="cardDetailsr">
+              <view class="classname" style="margin-right:20rpx">{{item.chargemoney==0?'免费':item.chargemoney}}</view>
+              <image class="Icon" src="{{urlPath}}arrows.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="guanzhu-box" style="{{displayl==0?'display:none':displayyw==1?'display:block':'display:none'}}">
+    <view class="guanzhu-box-top" style="{{y==0?'display:none':'display:block'}}">
+      <text class="guanzhu-box-top-name">已结束的活动</text>
+      <text class="guanzhu-box-top-all" bindtap="displayy">{{displayy==0?'查看全部':'收起列表'}}</text>
+    </view>
+    <block wx:for="{{listy}}">
+      <view class="guanzhu-box-bottom" style="{{item.a==0?displayy==1?'':index>1?'display:none':'':'display:none'}}" bindtap="bianjiy">
+        <view>
+          <image class="guanzhu-bb-left1" src="{{item.pic}}" mode="aspectFill"></image>
+        </view>
+        <view class="guanzhu-bb-middle">
+          <view class="wid">
+            <view class="classname">{{item.name}}</view>
+            <view class="classname" style="color:#888">{{item.activitytime}}</view>
+            <view class="classname" style="color:#888">{{item.city}}</view>
+          </view>
+          <image class="img" src="{{item.type==1?'{{urlPath}}xianshang.png':'{{urlPath}}xianxia.png'}}"></image>
+          <view class="wid">
+            <button class="preview" type="primary" bindtap="jumpdetail" data-id="{{item.ID}}">预览</button>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="guanzhu-box" style="{{displayr==0?'display:none':displayhw==1?'display:block':'display:none'}}">
+    <view class="guanzhu-box-top" style="{{h==0?'display:none':'display:block'}}">
+      <text class="guanzhu-box-top-name">参与的活动</text>
+      <text class="guanzhu-box-top-all" bindtap="displayh">{{displayh==0?'查看全部':'收起列表'}}</text>
+    </view>
+    <view class="guanzhu-box-bottom" wx:for="{{listh}}" style="{{item.a==0?displayh==1?'':index>1?'display:none':'':'display:none'}}" bindtap="bianjih">
+      <view>
+        <image class="guanzhu-bb-left1" src="{{item.pic}}" mode="aspectFill"></image>
+      </view>
+      <view class="guanzhu-bb-middle">
+        <view class="wid">
+          <view class="classname">{{item.name}}</view>
+          <view class="classname" style="color:#888">{{item.activitytime}}</view>
+          <view class="classname" style="color:#888">{{item.city}}</view>
+        </view>
+        <image class="img" src="{{item.type==1?urlPath+'xianshang.png':urlPath+'xianxia.png'}}"></image>
+        <view class="wid">
+          <button class="preview" type="primary" bindtap="jumpdetail" data-id="{{item.ID}}">预览</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--修改封面-->
+<view class="block " style="{{fengmian==1?'display:block':'display:none'}}">
+  <view class="flex">
+    <view class="text middle">活动封面</view>
+    <button bindtap="uploadpic" class="btnUp">修改</button>
+  </view>
+  <image mode="aspectFill" class="imgf" src="{{pic}}"></image>
+  <view class="btn">
+    <button type="primary" class="btnprimary" bindtap="fcan"> 返回 </button>
+  </view>
+</view>
+<!--修改封面-->
+
+<!--修改时间-->
+<view class="block" style="{{shijian==1?'display:block':'display:none'}}">
+  <view class="text">请选择活动开始时间</view>
+  <view class="list">
+    <picker mode="date" start="{{currenttime}}" end="2030-09-01" bindchange="csdata">
+      <view class="picker">
+        开始日期: {{sdata==''?'请选择活动开始日期':sdata}}
+      </view>
+    </picker>
+  </view>
+  <view class="list">
+    <picker mode="time" start="00:00" end="24:00" bindchange="cstime">
+      <view class="picker">
+        开始时间: {{stime==''?'请选择活动开始时间':stime}}
+      </view>
+    </picker>
+  </view>
+  <view class="text">请选择活动结束时间</view>
+  <view class="list">
+    <picker mode="date" start="{{currenttime}}" end="2030-09-01" bindchange="cedata">
+      <view class="picker">
+        结束日期: {{edata==''?'请选择活动结束日期':edata}}
+      </view>
+    </picker>
+  </view>
+  <view class="list">
+    <picker mode="time" start="00:00" end="24:00" bindchange="cetime">
+      <view class="picker">
+        结束时间: {{etime==''?'请选择活动结束时间':etime}}
+      </view>
+    </picker>
+  </view>
+  <!--按钮-->
+  <view class="btn">
+    <view class="btnLeft" bindtap="tcan">取消</view>
+    <view class="btnRight" bindtap="tcon">确定</view>
+  </view>
+</view>
+<!--修改时间-->
+
+<!--x修改地址人数-->
+<view class="block" style="{{address==1?'display:block':'display:none'}}">
+  <view class="text">请输入活动地址</view>
+  <view class="list">
+    <picker bindchange="xuanzesheng" value="{{index}}" range="{{sheng}}">
+      <view class="classname">
+        <view class="name">省份:</view>{{province==""?'请选择':province}}</view>
+    </picker>
+  </view>
+  <view class="list">
+    <picker disabled="{{disabled== 1 ? 'disabled' :''}}" bindchange="xuanzeshi" value="{{index}}" range="{{shi}}">
+      <view class="classname">
+        <view class="name">城市:</view>{{city==""?'请选择':city}}</view>
+    </picker>
+  </view>
+  <view class="list">
+    <view class="name">详细地址:</view>
+    <input class="inputs" placeholder="{{address1==''?'请输入详细地址':address1}}" bindinput="inputa" />
+  </view>
+  <view class="text">请输入活动人数</view>
+  <view class="list">
+    <view class="name">人数:</view>
+    <input class="inputs" placeholder="{{people==''?'请输入活动人数':people}}" bindinput="inputp" />
+  </view>
+
+  <!--按钮-->
+  <view class="btn">
+    <view class="btnLeft" bindtap="acan">取消</view>
+    <view class="btnRight" bindtap="acon">确定</view>
+  </view>
+</view>
+<!--修改地址人数-->
+
+<!--活动是否收费-->
+<view class="block" style="{{money==1?'display:block':'display:none'}}">
+  <view class="text">请选择是否收费</view>
+  <view class="body-view">收费
+    <switch checked="{{check}}" bindchange="mschange" class="big" />
+  </view>
+  <view class="classname" style="{{check==true?'display:block':'display:none'}}">
+    <view class="text">请输入门票价格</view>
+    <view class="list">
+      <view class="name" style="display:inline-block">价格(元):</view>
+      <input class="inputs" style="display:inline-block" placeholder="请输入门票价格" bindinput="inputm" />
+    </view>
+  </view>
+
+  <view class="btn">
+    <view class="btnLeft" bindtap="mcan">取消</view>
+    <view class="btnRight" bindtap="mcon">确定</view>
+  </view>
+</view>
+<!--活动是否收费-->
+
+<!--选择系统生态位-->
+<view class="block" style="{{state==1?'display:block':'display:none'}}">
+  <view class="text">请选择系统生态位</view>
+
+  <view class="jiugongge">
+    <view bindtap="chooseChuangke" class="jiuke">
+      <image wx:if="{{chooseChuangke==0}}" class="IconJiu" src="{{urlPath}}chuang.png"></image>
+      <text wx:if="{{chooseChuangke==0}}">创客</text>
+      <image wx:if="{{chooseChuangke!=0}}" class="IconJiu" src="{{urlPath}}chuangClick.png"></image>
+      <text wx:if="{{chooseChuangke!=0}}" style="color:#576b95;">创客</text>
+    </view>
+
+    <view bindtap="chooseJike" class="jiuke">
+      <image wx:if="{{chooseJike==0}}" class="IconJiu" src="{{urlPath}}ji.png"></image>
+      <text wx:if="{{chooseJike==0}}">极客</text>
+      <image wx:if="{{chooseJike!=0}}" class="IconJiu" src="{{urlPath}}jiClick.png"></image>
+      <text wx:if="{{chooseJike!=0}}" style="color:#576b95;">极客</text>
+    </view>
+    <view bindtap="chooseJinke" class="jiuke">
+      <image wx:if="{{chooseJinke==0}}" class="IconJiu" src="{{urlPath}}jin.png"></image>
+      <text wx:if="{{chooseJinke==0}}">金客</text>
+      <image wx:if="{{chooseJinke!=0}}" class="IconJiu" src="{{urlPath}}jinClick.png"></image>
+      <text wx:if="{{chooseJinke!=0}}" style="color:#576b95;">金客</text>
+    </view>
+    <view bindtap="chooseShuke" class="jiuke">
+      <image wx:if="{{chooseShuke ==0}}" class="IconJiu" src="{{urlPath}}shu.png"></image>
+      <text wx:if="{{chooseShuke ==0}}">数客</text>
+      <image wx:if="{{chooseShuke !=0}}" class="IconJiu" src="{{urlPath}}shuClick.png"></image>
+      <text wx:if="{{chooseShuke !=0}}" style="color:#576b95;">数客</text>
+    </view>
+    <view bindtap="chooseZhike" class="jiuke">
+      <image wx:if="{{chooseZhike ==0}}" class="IconJiu" src="{{urlPath}}zhi.png"></image>
+      <text wx:if="{{chooseZhike ==0}}">智客</text>
+      <image wx:if="{{chooseZhike !=0}}" class="IconJiu" src="{{urlPath}}zhiClick.png"></image>
+      <text wx:if="{{chooseZhike !=0}}" style="color:#576b95;">智客</text>
+    </view>
+    <view bindtap="chooseShike" class="jiuke">
+      <image wx:if="{{chooseShike ==0}}" class="IconJiu" src="{{urlPath}}shi.png"></image>
+      <text wx:if="{{chooseShike ==0}}">师客</text>
+      <image wx:if="{{chooseShike !=0}}" class="IconJiu" src="{{urlPath}}shiClick.png"></image>
+      <text wx:if="{{chooseShike !=0}}" style="color:#576b95;">师客</text>
+    </view>
+    <view bindtap="chooseWeike" class="jiuke">
+      <image wx:if="{{chooseWeike == 0}}" class="IconJiu" src="{{urlPath}}wei.png"></image>
+      <text wx:if="{{chooseWeike == 0}}">威客</text>
+      <image wx:if="{{chooseWeike != 0}}" class="IconJiu" src="{{urlPath}}weiClick.png"></image>
+      <text wx:if="{{chooseWeike != 0}}" style="color:#576b95;">威客</text>
+    </view>
+    <view bindtap="chooseHuike" class="jiuke">
+      <image wx:if="{{chooseHuike == 0}}" class="IconJiu" src="{{urlPath}}hui.png"></image>
+      <text wx:if="{{chooseHuike == 0}}">慧客</text>
+      <image wx:if="{{chooseHuike != 0}}" class="IconJiu" src="{{urlPath}}huiClick.png"></image>
+      <text wx:if="{{chooseHuike != 0}}" style="color:#576b95;">慧客</text>
+    </view>
+    <view bindtap="chooseHaike" class="jiuke">
+      <image wx:if="{{chooseHaike ==0}}" class="IconJiu" src="{{urlPath}}hai.png"></image>
+      <text wx:if="{{chooseHaike ==0}}">嗨客</text>
+      <image wx:if="{{chooseHaike !=0}}" class="IconJiu" src="{{urlPath}}haiClick.png"></image>
+      <text wx:if="{{chooseHaike !=0}}" style="color:#576b95;">嗨客</text>
+    </view>
+  </view>
+
+  <!--按钮-->
+  <view class="btn1">
+    <button class="btn1" type="primary" bindtap="scon">完成</button>
+  </view>
+</view>
+<!--选择系统生态位-->
+
+<!--活动嘉宾-->
+<view class="block" style="{{jiabin==1?'display:block':'display:none'}}">
+  <view class="text">邀请新嘉宾</view>
+  <view class="card">
+    <view class="list flex">
+      <view class="namej">邀请新嘉宾:</view>
+      <view class="btnLeft" bindtap="jump">邀请嘉宾</view>
+    </view>
+  </view>
+  <view class="text">已邀请嘉宾</view>
+
+  <scroll-view scroll-y class="box" style="height:{{winHeight -115 -150}}px">
+    <view class="card" wx:for="{{listj}}" wx:key="{{this}}">
+      <view class="list flex">
+        <view class="namejl">
+          <image class="img cir" src="{{item.headpic}}"></image>
+          <view style="margin-left:20rpx">{{item.xingming}}</view>
+        </view>
+        <view class="btnUp1" bindtap="canj" data-id="{{item.id}}" data-index="{{index}}">取消邀请</view>
+      </view>
+    </view>
+ 
+  </scroll-view>
+
+  <!--按钮-->
+  <view class="btn1">
+    <button class="btn1" type="primary" bindtap="jcon">完成</button>
+  </view>
+</view>
+<!--活动嘉宾-->

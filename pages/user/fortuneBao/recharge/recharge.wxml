@@ -1,0 +1,42 @@
+<view class="line">
+  <text class="line-tag">充值金额：</text>
+  <input bindinput="recordMoney" class="line-input" type="number" value="{{money}}" />
+</view>
+<view class="money">
+  <view class="money-box">
+    <view bindtap="selectMoney" data-money="50" class="box {{boxState1}}" style="margin-left:18px;"> 
+        50元
+    </view>
+    <view bindtap="selectMoney" data-money="200" class="box {{boxState2}}">
+       200元
+    </view>
+    <view bindtap="selectMoney" data-money="500" class="box {{boxState3}}">
+        500元
+    </view>
+    <view bindtap="selectMoney" data-money="1000" class="box {{boxState4}}" style="margin-left:18px;">
+        1000元
+    </view>
+    <view bindtap="selectMoney" data-money="5000" class="box {{boxState5}}">
+        5000元
+    </view>
+    <view bindtap="selectMoney" data-money="10000" class="box {{boxState6}}">
+        10000元
+    </view>
+  </view>
+</view>
+<view class="money">
+  <view class="money-box" style="width:260px;height:200px;">
+      <text class="shuoming">美丽币充值支付条款说明</text>
+      <text class="content">1、美丽币是美丽互联创业互助系统中通用的虚拟交易币，可以进行课程、活动行为的支付。</text>
+       <text class="content">2、单次支付的范围是1-20000元。</text>
+        <text class="content">3、直接通过微信支付进行充值。1元人民币等于1美丽币。</text>
+          <text class="content">4、美丽币可以在身份验证后，随时可以提现到微信钱包。</text>
+            <text class="content">5、最终解释权归美丽互联创业互助生态系统及美丽互联（北京）科技有限公司</text>
+  </view>
+</view>
+
+<view class="money" style="height:50px;">
+  <view class="money-box" style="width:270px;margin-bottom:10px;">
+      <button bindtap="zhifu" type="primary" class="chongzhi-btn">支付</button>
+  </view>
+</view>

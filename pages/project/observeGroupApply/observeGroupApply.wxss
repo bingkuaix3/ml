@@ -1,0 +1,137 @@
+page {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  font-size: 11pt;
+}
+.cardTop{
+  width: 100%;
+  height:200px;
+  overflow:hidden;
+}
+.tupian{
+  width: 100%;
+  float: left;
+  height: 100%;
+}
+.headLine {
+  font-size: 17pt;
+  line-height:13;
+  position: absolute;
+  right: 90rpx;
+  margin: 0 auto;
+  letter-spacing: 2rpx;
+  color: #353535;
+  font-weight: 900;
+  
+}
+.biaoti{
+  padding: 15px 0 8px 15px;
+  font-size: 11pt;
+  opacity: 0.6;
+}
+.biaotiDown{
+  padding: 15px 0 8px 0 ;
+  font-size: 11pt;
+}
+
+.card1{
+  padding: 0rpx 15px;
+  margin: 20px 0 0 0;
+  background-color: #fff;
+}
+
+
+.cardDown{
+  padding: 0 0 15px 15px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+.content{
+  font-size: 9pt;
+  color: #888;
+  line-height: 1.4;
+  letter-spacing: 1.2rpx;
+}
+.overFlowText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.left{
+  width: 48%;
+  display: flex;
+  flex-direction: row;
+  line-height: 25px;
+  justify-content: space-around;
+  padding: 0 1%;
+}
+.right{
+  width: 48%;
+  display: flex;
+  flex-direction: row;
+  line-height: 25px;
+  justify-content: space-around;
+  padding: 0 10%;
+}
+.Icon{
+  width: 25px;
+  height: 25px;
+  
+}
+.text{
+  color: #576b95;
+  font-size: 9pt;
+}
+.textLeft{
+  color: #576b95;
+  font-size: 9pt;
+   margin-left:10px;
+}
+.paTop{
+  padding: 0 0 15px 0;
+}
+
+.xiabiao{
+  font-size: 13pt;
+  font-weight: 700;
+  text-align: center;
+  margin-top:20px;
+  margin-bottom: 15px;
+}
+.time{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.IconDown{
+  width: 83px;
+  height: 60px;
+}
+.val{
+  margin-top:-60px;
+  height:60px;
+  line-height: 60px;
+  font-size:30pt;
+  color:white;
+  font-weight:700;
+  margin-left:15px;
+  letter-spacing:10px;
+}
+.text{
+  text-align: center;
+}
+.shenqing{
+  margin:10px 15px 10px 15px;
+  font-size:11pt;
+  color:white;
+  line-height:90rpx;
+  height:90rpx;
+}

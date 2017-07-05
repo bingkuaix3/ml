@@ -1,0 +1,60 @@
+<!--Wisdom.wxml-->
+<!--JobDetails.wxml-->
+<view class="box1">
+  <view class="card">
+    <view class="require">{{zhtitle}}</view>
+    <view class="content  overFlowText">{{zhcontent}}</view>
+  </view>
+</view>
+<view class="fabu">
+  <view class="click" bindtap="fabu">发布</view>
+</view>
+
+
+<view wx:for="{{list}}" wx:key="{{this}}" class="box">
+  <view class="card" style="{{shenfen==0?item.state==0?'display:none':'display:block':'display:block'}}">
+    <view class="cardUp">
+      <view class="box1">
+        <image class="headPortrait" src="{{item.headpic}}"></image>
+      </view>
+      <view class="text">
+        <view class="name">{{item.memname}}</view>
+        <view class="title">{{item.city}}</view>
+        <view class="classname">
+          {{item.shenfen}}
+          <!--<image class="icon" src="{{item.shenfen}}"></image>-->
+        </view>
+      </view>
+      <view class="show" data-number="{{index}}" data-id="{{item.id}}" data-xianshi="{{item.state}}" bindtap="xianshi" style="{{shenfen==0?'display:none':'display:block'}}">{{item.state==0?'显示该条信息':'隐藏该条信息'}}</view>
+    </view>
+    <view class="content overFlowText">{{item.answers}}</view>
+    <view class="accessory">
+      <text style="float:left;" data-id="{{item.id}}" bindtap="yulan" hidden="{{sfhide}}" style="{{shenfen==1?item.counts==1 ? 'display:block':'display:none':item.memid==memid?item.counts==1 ? 'display:block':'display:none':'display:none'}}">查看附件</text>
+    </view>
+    <view class="date">
+      <view class="dateText">{{item.createtime}}</view>
+      <image class="iconOne" src="{{urlPath}}pinglun.png" bindtap="pinglun" data-type="pinglun" data-number="{{index}}" data-id="{{item.id}}" data-toid="0" data-memid="{{item.memid}}"></image>
+      <image class="iconOne" data-id="{{item.id}}" data-dianzan="{{item.isdianzan}}" data-number="{{index}}" bindtap="dianzan" src="{{item.isdianzan==0? urlPath+'down01.png':urlPath+'downC01.png'}}"></image>
+    </view>
+
+    <view class="click" data-number="{{index}}" data-id="{{item.id}}" data-zhankai="{{item.a}}" data-memid="{{item.memid}}" style="{{item.nums==1?'display:block':'display:none'}}" bindtap="zhankai">{{item.a=='0' ? '点击展开评论':'点击隐藏评论'}}
+      <image src="{{item.a==0? urlPath+'xiajian1.png':urlPath+'xiajian2.png'}}"></image>
+    </view>
+    <view class="down" wx:for="{{item.b}}" wx:key="{{item.b}}" wx:for-index="idx" wx:for-item="ite" style="{{item.a=='0' ? 'display:none':'display:block'}}" data-type="huifu" data-id="{{item.id}}" data-number="{{index}}" data-toid="{{ite.memid}}" data-memid="{{ite.memid}}" data-toname="{{ite.memename}}"
+      bindtap="pinglun">
+      <view class="require">{{ite.memename}}{{ite.to_memname==""?'':' 回复 '+ite.to_memname}}</view>
+      <view class="content overFlowText">{{ite.descs}}</view>
+    </view>
+  </view>
+
+</view>
+<view class="inputview" style="display:{{display}}">
+  <input placeholder="{{placeholder}}" placeholder-style="font-size:9pt;margin-left:10rpx;" class="input" focus="{{focus}}" bindinput="input" bindconfirm="tianjia" value="{{value}}" bindblur="shouqi" confirm-type="done" confirm-hold="{{hold}}" />
+  <view class="{{input==''?'fasongh':'fasongl'}}" bindtap="tianjia">发送</view>
+  <image src="{{urlPath}}upload.png" bindtap="upload" style="{{memid==memidt?'display:block':'display:none'}}"></image>
+</view>
+
+<view class="inputview" style="display:{{fabudis}}">
+  <input placeholder="" placeholder-style="font-size:9pt;margin-left:10rpx;" class="input" focus="{{focusf}}" bindconfirm="tianjiaf" bindblur="shouqif" bindinput="fabuinput" confirm-hold="{{holdf}}" />
+  <view class="{{fabuinput==''?'fasongh':'fasongl'}}" bindtap="tianjiaf">发送</view>
+</view>

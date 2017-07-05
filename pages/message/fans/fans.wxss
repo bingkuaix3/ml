@@ -1,0 +1,45 @@
+/* fans.wxss */
+page {
+  background-color: #f7f7f7;
+  height: 100%;
+}
+
+.line {
+  height:90rpx;
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;
+  background-color:white;
+  padding: 16rpx 0;
+  margin: 0 30rpx;
+}
+.card {
+  padding: 16rpx 0;
+  background-color: #fff;
+}
+
+.head {
+  width: 80rpx;
+  height:80rpx;
+  border-radius: 40rpx;
+  margin: 5rpx 20rpx 5rpx 0rpx;
+}
+
+.name {
+  width: auto;
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 10pt;
+  color: #353535;
+  letter-spacing: 1.2rpx;
+}
+
+.time {
+  width: auto;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 10pt;
+  color: #666;
+  letter-spacing: 1.2rpx;
+}
+

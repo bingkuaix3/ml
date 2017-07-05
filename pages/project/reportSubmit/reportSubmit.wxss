@@ -1,0 +1,122 @@
+/* guanchabaogao.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  color: #888;
+  margin: 0;
+  padding: 0;
+}
+.biaoti{
+  width: 100%;
+  padding: 60rpx 0  30rpx  0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 13pt;
+  color: #353535;
+  font-weight: 700;
+  letter-spacing: 5rpx;
+}
+.input{
+  height: 90px;
+  background-color: #fff;
+  border: 1rpx solid #888;
+  border-radius: 8rpx;
+  font-size: 11pt;
+  line-height: 1.4;
+  letter-spacing: 1.2rpx;
+  margin: 0 auto;
+  display: flex;
+  flex:1;
+   padding: 16rpx;
+  
+  
+}
+.inputUp{
+  height: auto;
+  margin:  0 auto;
+  background-color: #fff;
+  border: 1rpx solid #888;
+  border-radius: 8rpx;
+  font-size: 11pt;
+  line-height: 1.4;
+  letter-spacing: 1.2rpx;
+  display: flex;
+  flex:1;
+  padding: 16rpx 0rpx;
+  text-align: center;
+  
+}
+
+.issue{
+  width: 300px;
+  margin:0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  
+}
+.issueImg{
+  width: 70rpx;
+  height: 44rpx;
+  display: block;
+  margin: 30rpx 40rpx 30rpx 0rpx;
+
+}
+.issueBtn{
+  width: 130rpx;
+  height: 50rpx;
+  background-color: #09bb07;
+  margin: auto 0;
+  margin-left: 10rpx;
+  font-size: 9pt;
+  line-height: 50rpx;
+  text-align:center;
+  display: block;
+  color: #fff;
+}
+ 
+.star{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+.starS{
+  width: 48rpx;
+  height: 46rpx;
+  display: block;
+  margin-right: 16rpx;
+  text-align: center;
+  font-size: 11pt;
+  color: #888;
+}
+.block{
+  display: block;
+}
+.none{
+  display: none;
+}
+.tuku{
+  height: auto;
+  margin: 20px 15px 20px 15px;
+
+}
+.tupian{
+  float:left;
+  width: 100px;
+  height: 100px;
+  border:2px solid #ccc;
+  margin-top:10px;
+}
+.tupianS{
+  width: 100%;
+  height: 100%;
+}
+.shanchu{
+  width: 20px;
+  height: 20px;
+  float:right;
+  z-index:999;
+}

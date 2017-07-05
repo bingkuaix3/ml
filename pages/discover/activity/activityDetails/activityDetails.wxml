@@ -1,0 +1,60 @@
+<!--activityDetails.wxml-->
+<block wx:for="{{list}}" wx:key="{{this}}">
+  <image class="cover" src="{{item.pic}}"></image>
+  <view class="card">
+    <view class="title">{{item.name}}</view>
+    <view class="text">
+      <view>{{item.activitytime}}</view>
+      <view>{{item.address}}</view>
+      <view>{{item.counts}}/{{item.people}}人</view>
+      <view class="textDown" style="justify-content: flex-start">
+        <image style="{{item.shuke_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+        <image style="{{item.zhike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+        <image style="{{item.shike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+        <image style="{{item.jinke_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+        <image style="{{item.haike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+        <image style="{{item.huike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+        <image style="{{item.chuangke_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+        <image style="{{item.jike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+        <image style="{{item.weike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+      </view>
+    </view>
+    <image class="Icon" src="{{item.ischarge==0? urlPath+'mianfei.png':urlPath+'shoufei.png'}}"></image>
+  </view>
+  <view class="Guests">
+    <!--
+ wx:for="{{listt}}" wx:for-item="itet" wx:for-index="idxt"
+-->
+    <view class="title">活动嘉宾</view>
+    <scroll-view class="scroll" scroll-x="true" style="display:inline-block;white-space: nowrap;{{itet.length==0?'display:none':'width:100%;display:block'}}">
+    <view class="scrolll">
+      <view class="scrollview" wx:for="{{listt}}" wx:for-item="itet" wx:for-index="idxt">
+        <image class="img" src="{{itet.headpic}}"></image>
+        <view style="height:60rpx;text-align:center;font-siez:9pt">{{itet.zhiwu}}</view>
+      </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="cardDown">
+    <view class="title">活动介绍</view>
+    <view class="text overflow">{{descs}}</view>
+    <view class="clickDown" bindtap="zhankai" style="{{display==0?'display:none':'display:block'}}">{{jiantou==0?'点击显示全部':'点击隐藏'}}
+      <image class="donwIcon" src="{{jiantou==0? urlPath+'xiajian1.png':urlPath+'xiajian2.png'}}"></image>
+    </view>
+  </view>
+  <view class="Guests">
+    <view class="title">已报名 {{item.counts}}/{{item.people}}</view>
+    <view class="GuestsRow">
+      <block wx:for="{{lists}}" wx:for-item="ites" wx:for-index="idxs">
+        <view class="GuestsDown">
+          <image class="imgs" src="{{ites.headpic}}"></image>
+          <view>
+            {{ites.shenfen}}
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</block>
+<button bindtap="goToJoin" wx:if="{{isJoin == '0'}}" class="canjia" type="primary">参与活动</button>
+<button  wx:if="{{isJoin == '1'}}" disabled="true" class="canjia" type="default">已参与活动</button>

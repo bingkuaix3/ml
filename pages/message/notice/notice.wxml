@@ -1,0 +1,16 @@
+<!--notice.wxml-->
+<view class="top"></view>
+<view wx:for="{{list}}" class="box">
+  <view class="card">
+    <view bindtap="control" class="line" data-id="{{item.id}}" data-type="{{item.type}}">
+      <view class="time">
+        <view class="content-title2" style="color:#777;font-szie:9pt;">{{item.riqi}}</view>
+        <view class="content-title2">{{item.biaoti}}</view>
+      </view>
+      <view wx:if="{{item.type == '0'}}" class="status"></view>
+    </view>
+    <view style="{{item.a=='0'?'display:none':'display:block'}}" class="content">
+      <view class="content-content">{{item.neirong}}</view>
+    </view>
+  </view>
+</view>

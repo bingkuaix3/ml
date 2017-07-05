@@ -1,0 +1,141 @@
+<!--faxian.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image bindtap="goToKecheng" data-kecheng="{{item.kechengid}}" src="{{item.pic}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="top">
+  <view bindtap="goToHome" class="top-box1">
+    <image class="img" src="{{urlPath}}zhuye.png"></image>
+    <text class="box1-text">主页</text>
+  </view>
+  <view bindtap="goToActivity" class="top-box1">
+    <image class="img" src="{{urlPath}}activity.png"></image>
+    <text class="box1-text"> 活动</text>
+  </view>
+  <view bindtap="goToDynamic" class="top-box1">
+    <image class="img" src="{{urlPath}}dongtai.png"></image>
+    <text class="box1-text">动态</text>
+  </view>
+  <view bindtap="goToPartner" class="top-box2">
+    <image class="img" src="{{urlPath}}partner.png"></image>
+    <text class="box1-text"> 合伙人</text>
+  </view>
+</view>
+<view  class="middle">
+  <view bindtap="goToCover" class="middle-box1" style="margin-top:20rpx;"> 
+    <image class="img-down-left" src="{{urlPath}}cover.png"></image>
+    <text class="box1-text"> 封面人物</text>
+  </view>
+  <view class="middle-box2">
+    <view bindtap="ctrlPlay" class="middle-box2-up">
+      <image wx:if="{{isPlay== false}}" src="{{urlPath}}stereo.png" class="middle-right-img"></image>
+      <text  wx:if="{{isPlay== false}}"  class="box1-text-up"> 今日播放</text>
+       <image wx:if="{{isPlay== true}}" src="{{urlPath}}pause.png" class="middle-right-img"></image>
+      <text  wx:if="{{isPlay== true}}"  class="box1-text-up"> 停止播放</text>
+    </view>
+    <view bindtap="goToWalkman" class="middle-box2-down">
+      <image src="{{urlPath}}hear.png" class="middle-right-img"></image>
+      <text class="box1-text-up"> 随身听</text>
+    </view>
+  </view>
+</view>
+<view wx:if="{{hehuoren_status=='1'}}" class="guanzhu-box" style="margin-top:20rpx;">
+  <view class="guanzhu-box-top">
+    <image class="guanzhu-box-top-icon" src="{{urlPath}}partner.png"></image>
+    <text class="guanzhu-box-top-name">合伙人</text>
+    <text class="guanzhu-box-top-all">查看全部</text>
+  </view>
+  <view class="guanzhu-box-bottom">
+    <image class="guanzhu-bb-left1" src="{{hehuoren_image}}"></image>
+    <view class="guanzhu-bb-middle">
+      <view class="guanzhu-bbm-box" style="margin-top:20rpx;">{{hehuoren_name}}</view>
+      <view class="guanzhu-bbm-box">{{hehuoren_gongsi}}</view>
+      <view class="guanzhu-bbm-box">{{hehuoren_zhiwu}}</view>
+      <view class="guanzhu-bbm-box">{{hehuoren_chengshi}}</view>
+    </view>
+    <image class="guanzhu-bb-right" src="{{urlPath}}wo_bg.jpg"></image>
+  </view>
+</view>
+<!--<view wx:if="{{xiangmu_status=='1'}}" class="guanzhu-box">
+  <view class="guanzhu-box-top">
+    <image class="guanzhu-box-top-icon" src="{{urlPath}}article.png"></image>
+    <text class="guanzhu-box-top-name">项目</text>
+    <text class="guanzhu-box-top-all">查看全部</text>
+  </view>
+  <view class="guanzhu-box-bottom2">
+    <view bindtap="goToXiangqing" class="top2" data-id="{{xiangmu_id}}">
+      <view class="touxiang">
+        <view class="piao">{{xiangmu_piao}}票
+          <image wx:if="{{xiangmu_flag=='1'}}" class="jiantou" src="{{urlPath}}up2.png"></image>
+          <image wx:if="{{xiangmu_flag=='2'}}" class="jiantou" src="{{urlPath}}up2.png"></image>
+          <image wx:if="{{xiangmu_flag=='3'}}" class="jiantou" src="{{urlPath}}flat.png"></image>
+        </view>
+        <image class="headpic" src="{{xiangmu_pic}}"></image>
+      </view>
+      <view class="xiangmu">
+        <view class="mingcheng">{{xiangmu_name}}</view>
+        <view class="chengshi">{{xiangmu_city}}</view>
+        <view class="chuangshiren">{{xiangmu_memname}}</view>
+      </view>
+      <view class="shuzi">
+        <view class="zhi"  style="color:#666;height:50rpx;line-height:50rpx;">智合:
+          <text>{{xiangmu_zhihe}}</text>
+        </view>
+        <view class="ren"  style="color:#666;height:50rpx;line-height:50rpx;" >人合:
+          <text >{{xiangmu_renhe}}</text>
+        </view>
+        <view class="zi" style="color:#666;height:50rpx;line-height:50rpx;">资合:
+          <text >{{xiangmu_zihe}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="below" >
+      <view class="left" style="height:70rpx;line-height:70rpx;">观察团：
+        <text style="height:70rpx;line-height:70rpx;">{{xiangmu_guanchatuan}}</text>
+      </view>
+      <view class="mid" style="height:70rpx;line-height:70rpx;">体验团：
+        <text style="height:70rpx;line-height:70rpx;">{{xiangmu_tiyantuan}}</text>
+      </view>
+      <view class="right" style="height:70rpx;line-height:70rpx;">专家团：
+        <text style="height:70rpx;line-height:70rpx;">{{xiangmu_zhuanjiatuan}}</text>
+      </view>
+    </view>
+  </view>
+</view>-->
+<view wx:if="{{activity_status=='1'}}" class="guanzhu-box">
+  <view class="guanzhu-box-top">
+    <image class="guanzhu-box-top-icon" src="{{urlPath}}article.png"></image>
+    <text class="guanzhu-box-top-name">活动</text>
+    <text class="guanzhu-box-top-all">查看全部</text>
+  </view>
+  <view class="guanzhu-box-bottom">
+    <image class="guanzhu-bb-left1" src="{{heuoren_pic}}"></image>
+    <view class="guanzhu-bb-middle">
+      <view class="guanzhu-bbm-box" style="margin-top:20rpx;">{{hehuoren_name}}</view>
+      <view class="guanzhu-bbm-box">{{hehuoren_gongsi}}</view>
+      <view class="guanzhu-bbm-box">{{hehuoren_zhiwu}}</view>
+      <view class="guanzhu-bbm-box">{{hehuoren_chengshi}}</view>
+    </view>
+    <image class="guanzhu-bb-right" src="{{urlPath}}wo_bg.jpg"></image>
+  </view>
+</view>
+<!--<view wx:if="{{activity_status=='1'}}" class="guanzhu-box">
+  <view class="guanzhu-box-top">
+    <image class="guanzhu-box-top-icon" src="{{urlPath}}study.png"></image>
+    <text class="guanzhu-box-top-name">学习</text>
+    <text class="guanzhu-box-top-all">查看全部</text>
+  </view>
+  <view class="guanzhu-box-bottom">
+    <image class="guanzhu-bb-left1" src="{{heuoren_pic}}"></image>
+    <view class="guanzhu-bb-middle">
+      <view class="guanzhu-bbm-box" style="margin-top:20rpx;">{{hehuoren_name}}</view>
+      <view class="guanzhu-bbm-box">{{hehuoren_gongsi}}</view>
+      <view class="guanzhu-bbm-box">{{hehuoren_zhiwu}}</view>
+      <view class="guanzhu-bbm-box">{{hehuoren_chengshi}}</view>
+    </view>
+    <image class="guanzhu-bb-right" src="{{urlPath}}wo_bg.jpg"></image>
+  </view>
+</view>-->

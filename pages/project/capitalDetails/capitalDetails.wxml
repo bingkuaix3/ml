@@ -1,0 +1,74 @@
+<!--zihexiangqing.wxml-->
+<view class="card">
+  <view class="text">
+    <view class="left">
+      <view class="mubiaoLeft">目标资金</view>
+      <view class="mubiaoLeft">已筹资金</view>
+      <view>开始时间</view>
+    </view>
+    <view class="zhong">
+      <view class="mubiaoLeft">{{mbMoney}}</view>
+      <view class="mubiaoLeft">{{ycMoney}}</view>
+      <view>{{startTime}}</view>
+    </view>
+
+    <image class="Icon" src="{{urlPath}}jingxingzhong.png"></image>
+
+  </view>
+  <view class="boxUp">
+    <view class="textDown">{{per}}%</view>
+     <view class="box3" wx:if="{{per >= 2}}" style="width:{{per}}%">
+      </view>
+      <view class="box3" wx:if="{{per > 0 && per < 2}}" style="width:20px">
+        <view class="box3" wx:if="{{per}}" style="width:0px">
+        </view>
+      </view>
+  </view>
+</view>
+
+<view class="cardCentre">
+  <view class="centreUp">
+    <view class="centreUpLeft">
+      <text class="maRight">每股价格</text>
+      <text>{{gujia}}</text>
+    </view>
+    <view class="centreUpRight">
+      <text class="maRight">您已认筹</text>
+      <text>{{yirenchou}}</text>
+    </view>
+    <view style="clear:both"></view>
+  </view>
+  <view class="centreUp">
+    <view class="centreDownLeft">
+      <text class="maRight">每股占比</text>
+      <text> {{meiguzhanbi}} %</text>
+    </view>
+    <view class="centreDownRight">
+      <text class="maRight">股份占比</text>
+      <text> {{gufenzhanbi}}%</text>
+    </view>
+  </view>
+  <view style="clear:both"></view>
+  <button class="renchou-btn" type="primary">我要认筹</button>
+</view>
+
+<view wx:for="{{tzrList.length > 0}}" class="biaoti">投资人</view>
+
+ 
+<view class="Card">
+  <view wx:for="{{tzrList}}" class="cardDown">
+    <view class="cardDownLeft">
+      <image class="headPortrait" src="{{item.headpic}}"></image>
+      <view class="cardLeftText">
+        <text>{{item.xingming}}</text>
+        <image class="IconDown" src="{{urlPath}}ji.png"></image>
+      </view>
+    </view>
+    <view class="cardRight">
+      <text >出资数额 {{item.money}}</text>
+      <text>股份占比 {{item.alreadystock}}%</text>
+    </view>
+  </view>
+</view>
+ 
+

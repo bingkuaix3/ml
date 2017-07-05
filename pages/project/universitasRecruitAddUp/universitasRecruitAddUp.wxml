@@ -1,0 +1,38 @@
+<!--ARMS.wxml-->
+<view class="{{firstHidden}}">
+  <view class="text">数字平台地址</view>
+  <input style="text-align:center;" bindinput="recordAddress" value="{{address}}" type="text" placeholder="请输入数字平台地址" />
+  <view class="btn">
+    <view bindtap="back" class="btnLeft">取消</view>
+    <view bindtap="firstNext" class="btnRight">下一步</view>
+  </view>
+</view>
+<view class="{{secondHidden}}">
+  <view class="text">代理商优惠</view>
+  <view class="neirong ">
+    <textarea maxlength="-1" bindinput="recordYouhui" value="{{youhui}}" class="overFlowText">
+    </textarea>
+  </view>
+  <view class="btn">
+    <view bindtap="secondBefore" class="btnLeft">上一步</view>
+    <view bindtap="secondNext" class="btnRight">下一步</view>
+  </view>
+</view>
+<view class="{{thirdHidden}} ">
+  <view class="text">销售期权奖励</view>
+  <view class="body-view">是否期权奖励
+    <switch checked="{{isHasQq}}" bindchange="recordIsHasQd" class="big" />
+  </view>
+  <view class="btn">
+    <view bindtap="thirdBefore" class="btnLeft">上一步</view>
+    <view bindtap="thirdNext" class="btnRight">下一步</view>
+  </view>
+</view>
+<view class="{{forthHidden}}">
+  <view class="text">合伙人数量</view>
+  <input style="text-align:center;" bindinput="recordAmount" value="{{amount}}" type="number" placeholder="请输入合伙人数量" />
+  <view class="btn">
+    <view bindtap="forthBefore" class="btnLeft">上一步</view>
+    <view bindtap="sure" class="btnRight">确认</view>
+  </view>
+</view>

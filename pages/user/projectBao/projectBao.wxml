@@ -1,0 +1,70 @@
+<!--xiangmubao.wxml-->
+<view class="top">
+  <view class="top-left">
+    <view bindtap="selectFqXiangmu" class="top-box {{fqSelected}}">
+      <view class="top-box-name">发起的项目</view>
+      <view class="top-box-bar"></view>
+    </view>
+  </view>
+  <view class="top-right">
+    <view bindtap="selectCyXiangmu" class="top-box {{cySelected}}">
+      <view class="top-box-name">参与的项目</view>
+      <view class="top-box-bar"></view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{fqSelected!=''}}" class="middle">
+  <view bindtap="goToFqXiangmu" class="middle-box">发起新项目</view>
+</view>
+<view class="bottom">
+  <block wx:for="{{list}}">
+    <view bindtap="panelCtrl" style="display:{{item.b}}" data-id="{{item.id}}" class="bottom-box">
+      <view class="bb-box">
+        <image class="bb-xm-image" src="{{item.pic}}"></image>
+        <view class="bb-xm-info">
+          <view class="bb-xm-name">{{item.name}}</view>
+          <view class="bb-xm-time">{{item.createtime}}</view>
+        </view>
+        <button bindtap="goToYulan" data-id="{{item.id}}" class="bb-xm-yl">预览</button>
+      </view>
+    </view>
+    <view style="display:{{item.a}};height:{{pHeight}}px" class="bottom-content">
+      <view bindtap="goToGuanchatuan" class="bc-box">
+        <view class="bc-box-line">
+          <view class="bc-box-tag">观察团</view>
+          <view class="bc-box-value">{{guanchatuan_state_txt}}</view>
+          <image class="bc-box-arrows" src="{{urlPath}}arrows.png"></image>
+        </view>
+        <view bindtap="goToTiyantuan"  class="bc-box-line" style="border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;">
+          <view class="bc-box-tag">体验团</view>
+          <view class="bc-box-value">{{tiyantuan_state_txt}}</view>
+          <image class="bc-box-arrows" src="{{urlPath}}arrows.png"></image>
+        </view>
+        <view bindtap="goToZhuanjiatuan" class="bc-box-line">
+          <view class="bc-box-tag">专家团</view>
+          <view class="bc-box-value">{{zhuanjiatuan_state_txt}}</view>
+          <image class="bc-box-arrows" src="{{urlPath}}arrows.png"></image>
+        </view>
+      </view>
+      <view class="bc-box">
+        <view bindtap="goToWisdomjoin" class="bc-box-line">
+          <view class="bc-box-tag">智合</view>
+          <view class="bc-box-value">{{zhiheValue}}</view>
+          <image class="bc-box-arrows" src="{{urlPath}}arrows.png"></image>
+        </view>
+        <view bindtap="goToRenheLiebiao" class="bc-box-line" style="border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;">
+          <view class="bc-box-tag">人合</view>
+          <view class="bc-box-value">{{renheValue}}</view>
+          <image class="bc-box-arrows" src="{{urlPath}}arrows.png"></image>
+        </view>
+        <view bindtap="goToZiheLiebiao" class="bc-box-line">
+          <view class="bc-box-tag">资合</view>
+          <view class="bc-box-value">{{ziheValue}}</view>
+          <image class="bc-box-arrows" src="{{urlPath}}arrows.png"></image>
+        </view>
+      </view>
+      <button wx:if="{{fqSelected !=''}}" bindtap="goToProjectEdit" data-id="{{item.id}}" class="bc-edit" type="primary">编辑项目</button>
+    </view>
+    <view class="bottom-border"></view>
+  </block>
+</view>

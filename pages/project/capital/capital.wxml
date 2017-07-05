@@ -1,0 +1,57 @@
+<!--ziheliebiao.wxml-->
+<view wx:if="{{isHidden == false}}" bindtap="goToFundraising" class="biaoTi">发起募资</view>
+<view wx:if="{{isHidden == true}}" class="biaoTi"></view>
+<view wx:if="{{jxzList.length > 0}}" class="name">募资进行中</view>
+<view wx:if="{{jxzList.length == 0 && yjsList.length == 0}}"  style="width:100%;height:90rpx;line-height:90rpx;color:#888;font-size:11pt;text-align:center;">
+  暂无募资
+</view>
+<block wx:for="{{jxzList}}">
+  <view bindtap="goToDetails" data-id="{{item.id}}" class="card">
+    <view class="text">
+      <view class="left">
+        <view class="mubiaoLeft">目标资金</view>
+        <view>已筹资金</view>
+      </view>
+      <view class="zhong">
+        <view class="mubiaoLeft">{{item.targetmoney}}</view>
+        <view class="classname">{{item.alreadymoney}}</view>
+      </view>
+      <image class="Icon" src="{{urlPath}}jingxingzhong.png"></image>
+    </view>
+    <view class="boxUp">
+      <view class="textDown">{{item.per}}%</view>
+      <view class="box3" wx:if="{{item.per >= 2}}" style="width:{{item.per}}%">
+      </view>
+      <view class="box3" wx:if="{{item.per > 0 && item.per < 2}}" style="width:20px">
+        <view class="box3" wx:if="{{item.per == 0}}" style="width:0px">
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<view wx:if="{{yjsList.length > 0}}" class="name">募资已结束</view>
+<block wx:for="{{yjsList}}">
+  <view bindtap="goToDetails" data-id="{{item.id}}" class="card">
+    <view class="text">
+      <view class="left">
+        <view class="mubiaoLeft">目标资金</view>
+        <view>已筹资金</view>
+      </view>
+      <view class="zhong">
+        <view class="mubiaoLeft">{{item.targetmoney}}</view>
+        <view class="classname">{{item.alreadymoney}}</view>
+      </view>
+      <image class="Icon" src="{{urlPath}}jieshu.png"></image>
+    </view>
+    <view class="boxUp backLan">
+      <view class="textDown">{{item.per}}%</view>
+      <view class="box4" wx:if="{{item.per >= 2}}" style="width:{{item.per}}%">
+      </view>
+      <view class="box4" wx:if="{{item.per > 0 && item.per < 2}}" style="width:20px">
+        <view class="box4" wx:if="{{item.per}}" style="width:0px">
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+ 

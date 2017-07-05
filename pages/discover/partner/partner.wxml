@@ -1,0 +1,122 @@
+<!--partner.wxml-->
+<!--轮播图开始-->
+<!--<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>-->
+<map id="map" longitude="113.324520" latitude="23.099994" scale="1" markers="{{markers}}" style="width: 100%; height: 200px;"></map>
+<!--轮播图结束-->
+<!--搜索栏学院开始-->
+<view>
+  <view class="icon">
+    <image src="{{urlPath}}sousuo.png"></image>
+    <input bindinput="recordKey" class="inputOne" type="text" placeholder="搜索" />
+    <button bindtap="search" class="queDing">
+      查找
+    </button>
+  </view>
+
+</view>
+<!--搜索栏学院结束-->
+
+<!--展开-->
+<view class="card">
+  <button bindtap="choosearea" class="city">
+    <text>{{city}}</text>
+    <image class="Icon" src="{{urlPath}}triangle.png"></image>
+  </button>
+
+  <view class="jiugongge">
+    <view bindtap="chooseChuangke" class="jiuke">
+      <image wx:if="{{chooseChuangke==''}}" class="IconJiu" src="{{urlPath}}chuang.png"></image>
+      <text wx:if="{{chooseChuangke==''}}">创客</text>
+      <image wx:if="{{chooseChuangke!=''}}" class="IconJiu" src="{{urlPath}}chuang-click.png"></image>
+      <text wx:if="{{chooseChuangke!=''}}" style="color:#888;">创客</text>
+    </view>
+
+    <view bindtap="chooseJike" class="jiuke">
+      <image wx:if="{{chooseJike==''}}" class="IconJiu" src="{{urlPath}}ji.png"></image>
+      <text wx:if="{{chooseJike==''}}">极客</text>
+      <image wx:if="{{chooseJike!=''}}" class="IconJiu" src="{{urlPath}}ji-click.png"></image>
+      <text wx:if="{{chooseJike!=''}}" style="color:#888;">极客</text>
+    </view>
+    <view bindtap="chooseJinke" class="jiuke">
+      <image wx:if="{{chooseJinke==''}}" class="IconJiu" src="{{urlPath}}jin.png"></image>
+      <text wx:if="{{chooseJinke==''}}">金客</text>
+      <image wx:if="{{chooseJinke!=''}}" class="IconJiu" src="{{urlPath}}jin-click.png"></image>
+      <text wx:if="{{chooseJinke!=''}}" style="color:#888;">金客</text>
+    </view>
+    <view bindtap="chooseShuke" class="jiuke">
+      <image wx:if="{{chooseShuke ==''}}" class="IconJiu" src="{{urlPath}}shu.png"></image>
+      <text wx:if="{{chooseShuke ==''}}">数客</text>
+      <image wx:if="{{chooseShuke !=''}}" class="IconJiu" src="{{urlPath}}shu-click.png"></image>
+      <text wx:if="{{chooseShuke !=''}}" style="color:#888;">数客</text>
+    </view>
+    <view bindtap="chooseZhike" class="jiuke">
+      <image wx:if="{{chooseZhike ==''}}" class="IconJiu" src="{{urlPath}}zhi.png"></image>
+      <text wx:if="{{chooseZhike ==''}}">智客</text>
+      <image wx:if="{{chooseZhike !=''}}" class="IconJiu" src="{{urlPath}}zhi-click.png"></image>
+      <text wx:if="{{chooseZhike !=''}}" style="color:#888;">智客</text>
+    </view>
+    <view bindtap="chooseShike" class="jiuke">
+      <image wx:if="{{chooseShike ==''}}" class="IconJiu" src="{{urlPath}}shi.png"></image>
+      <text wx:if="{{chooseShike ==''}}">师客</text>
+      <image wx:if="{{chooseShike !=''}}" class="IconJiu" src="{{urlPath}}shi-click.png"></image>
+      <text wx:if="{{chooseShike !=''}}" style="color:#888;">师客</text>
+    </view>
+    <view bindtap="chooseWeike" class="jiuke">
+      <image wx:if="{{chooseWeike == ''}}" class="IconJiu" src="{{urlPath}}wei.png"></image>
+      <text wx:if="{{chooseWeike == ''}}">威客</text>
+      <image wx:if="{{chooseWeike != ''}}" class="IconJiu" src="{{urlPath}}wei-click.png"></image>
+      <text wx:if="{{chooseWeike != ''}}" style="color:#888;">威客</text>
+    </view>
+    <view bindtap="chooseHuike" class="jiuke">
+      <image wx:if="{{chooseHuike == ''}}" class="IconJiu" src="{{urlPath}}hui.png"></image>
+      <text wx:if="{{chooseHuike == ''}}">慧客</text>
+      <image wx:if="{{chooseHuike != ''}}" class="IconJiu" src="{{urlPath}}hui-click.png"></image>
+      <text wx:if="{{chooseHuike != ''}}" style="color:#888;">慧客</text>
+    </view>
+    <view bindtap="chooseHaike" class="jiuke">
+      <image wx:if="{{chooseHaike ==''}}" class="IconJiu" src="{{urlPath}}hai.png"></image>
+      <text wx:if="{{chooseHaike ==''}}">嗨客</text>
+      <image wx:if="{{chooseHaike !=''}}" class="IconJiu" src="{{urlPath}}hai-click.png"></image>
+      <text wx:if="{{chooseHaike !=''}}" style="color:#888;">嗨客</text>
+    </view>
+  </view>
+</view>
+
+<view wx:for="{{list}}" class="guanzhu-box">
+  <view class="guanzhu-box-bottom">
+    <view class="left">
+      <image class="guanzhu-bb-left1" src="{{item.touxiang}}"></image>
+    </view>
+    <view class="guanzhu-bb-middle">
+      <view class="text overflow">{{item.xingming}}</view>
+      <view class="nameOne overflow">{{item.gongsimingcheng}}</view>
+      <view class="textDown">
+        <image class="guanzhu-bb-right" src="{{shenfen}}"></image>
+        <view class="name overflow">{{item.zhiwu}}</view>
+        <view class="name overflow">{{item.shi}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+ 
+<view wx:if="{{isShow}}" class="picker-view">
+  <button class="city-left" bindtap="cityModalBindCancel" type="warn">取消</button>
+  <button class="city-right" bindtap="cityModalBindConfirm" type="primary">确定</button>
+  <picker-view style="width:100%;height:100%;" indicator-style="height: 50px;" value="{{value}}" bindchange="cityChange">
+    <picker-view-column>
+      <view wx:for="{{proviceData}}" data-province="{{item}}" class="addr-item">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{cityData}}" data-city="{{item}}" class="addr-item">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column wx:if="{{showDistrict}}">
+      <view wx:for="{{districtData}}" class="addr-item">{{item.fullNameDot}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

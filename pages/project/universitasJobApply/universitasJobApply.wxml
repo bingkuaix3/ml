@@ -1,0 +1,50 @@
+<!--applyFor.wxml-->
+<view wx:if="{{type=='1'}}" class="originator">
+  <view>创始合伙人</view>
+  <view class="describe overFlowText">创始合伙人的描述</view>
+</view>
+<view wx:if="{{type=='2'}}" class="originator">
+  <view>管理合伙人</view>
+  <view class="describe overFlowText">管理合伙人的描述</view>
+</view>
+<view class="labelOne">职位名称:{{zhiweiName}}</view>
+<view class="card ">
+  <view class="label">职位描述</view>
+  <view class="text overFlowText">{{zhiweiMiaoshu}}</view>
+</view>
+
+<view class="cardDown">
+  <view class="flex">
+    <view class="labelDown">合伙方式</view>
+    <view class="textRight">{{hezuofangshi}}</view>
+  </view>
+  <view class="flex">
+    <view class="labelDown">是否需要入资占股</view>
+    <view class="textRight">{{isZhangu}}</view>
+  </view>
+  <view class="flex">
+    <view class="labelDown">是否有薪资待遇</view>
+    <view class="textRight">{{isHasXinzi}}</view>
+  </view>
+  <view class="flex">
+    <view class="labelDown">鼓励方式</view>
+    <view class="textRight">{{gulifangshi}}</view>
+  </view>
+</view>
+<view class="labelOne">选择简历</view>
+<view class="cardDown">
+  <view wx:for="{{jianli}}" class="flex" style="height:50rpx; border-bottom: 1px solid #f7f7f7;">
+    <view bindtap="selectJianli" data-index="{{index}}" class="labelDown">{{item.name}}</view>
+    <view class="textRight">
+      <image style="float:right;width:50rpx;height:30rpx;{{item.a == 'true' ? 'display:none':'display:block'}}" src="{{urlPath}}duihao.png"></image>
+    </view>
+  </view>
+</view>
+<view wx:if="{{jianli.length == 0}}"  style="width:100%;height:90rpx;line-height:90rpx;color:#888;background-color:#fff;font-size:11pt;text-align:center;">
+  请到[会员]>[我的简历]设置
+</view>
+
+<view class="btn-shenqing">
+  <button wx:if="{{isShenqing == false}}" bindtap="shenqing" type="primary" style="height:80rpx;line-height:80rpx;font-size:10pt;">申请加入</button>
+  <button wx:if="{{isShenqing == true}}" disabled="true"  style="height:80rpx;line-height:80rpx;font-size:10pt;" type="default">已申请加入</button>
+</view>

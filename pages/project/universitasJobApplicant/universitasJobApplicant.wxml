@@ -1,0 +1,25 @@
+<!--zhiweisqrlist.wxml-->
+<view class="btn">
+  <!--<view bindtap="closePiliang" wx:if="{{isPiliang == true}}" class="btn-cancle">取消</view>-->
+  <view bindtap="selectPlRefuse" class="btnTop red ">{{plText}}</view>
+  <view  hidden="{{isQudao}}" bindtap="deleteZhiwei" class="btnTop red">删除职位</view>
+</view>
+<view class="headline">{{zhiweiName}}</view>
+
+<view wx:for="{{sqrList}}" class="card">
+  <view class="classname" hidden="{{!isPiliang}}">
+    <checkbox-group data-no="{{item.ID}}" bindchange="isSelected">
+      <checkbox checked="{{initValue}}" />
+    </checkbox-group>
+  </view>
+  <image bindtap="goToDetail" class="headPortrait" src="{{item.headpic}}"></image>
+  <view class="text">
+    <view>{{item.xingming}}</view>
+    <view class="huiText">{{item.zhiwu}}</view>
+    <image class="Icon" src="../../../images/ji.png"></image>
+  </view>
+  <view class="btnDown">
+    <view bindtap="accept" data-id="{{item.ID}}" class="btnDownLeft greenDown">接受</view>
+    <view bindtap="refuse" data-id="{{item.ID}}" class="btnDownRight red">拒绝</view>
+  </view>
+</view>

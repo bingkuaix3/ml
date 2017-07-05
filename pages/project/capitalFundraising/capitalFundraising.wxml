@@ -1,0 +1,18 @@
+<!--zihemuzi.wxml-->
+<view class="{{firstHidden}}">
+  <view class="text">目标资金(元)</view>
+  <input bindinput="recordMoney" type="number" placeholder="请输入目标资金" />
+  <view class="btn">
+    <view bindtap="back" class="btnLeft">取消</view>
+    <view bindtap="firstNext" class="btnRight">下一步</view>
+  </view>
+</view>
+<view class="{{secondHidden}}">
+  <view class="text">股份(%)</view>
+  <input bindinput="recordRate" placeholder="请输入出让股份百分比(0-100)" />
+  <view class="btn">
+    <view bindtap="secondBefore" class="btnLeft">上一步</view>
+    <view bindtap="sure" class="btnRight">确认</view>
+  </view>
+</view>
+

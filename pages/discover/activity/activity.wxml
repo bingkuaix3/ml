@@ -1,0 +1,85 @@
+<!--activity.wxml-->
+<!--轮播图开始-->
+<view class="main" style="{{ht==0?'':' position: fixed;top: 0;bottom: 0;left: 0;right: 0;;overflow: hidden;'}}">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{listt}}">
+      <swiper-item>
+        <image src="{{item.pic}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--轮播图结束-->
+
+  <!--按钮-->
+  <view class="btn">
+    <view class="btnleft">
+      <picker bindchange="paixu" value="{{index}}" range="{{paixu}}">
+        <view>{{paixun}}</view>
+      </picker>
+      <view class="tri" bindtap="shengjiang">
+        <image src="{{ordertype==0?urlPath+'triangle.png':urlPath+'triangle1.png'}}"></image>
+      </view>
+
+    </view>
+    <view class="btnright" bindtap="shaixuan">筛选</view>
+  </view>
+
+
+  <!--列表-->
+  <view class="guanzhu-box">
+    <block wx:for="{{list}}" wx:key="{{this}}">
+      <view bindtap="goToDetails" data-id="{{item.ID}}" class="guanzhu-box-bottom">
+        <view>
+          <image class="guanzhu-bb-left1" src="{{item.pic}}"></image>
+        </view>
+        <view class="guanzhu-bb-middle">
+          <view class="textDown">
+            <view class="wid">{{item.name}}</view>
+            <view class="wid">{{item.activitytime}}</view>
+          </view>
+          <view class="textDown" style="justify-content: flex-start">
+            <image style="{{item.shuke_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+            <image style="{{item.zhike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+            <image style="{{item.shike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+            <image style="{{item.jinke_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+            <image style="{{item.haike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+            <image style="{{item.huike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+            <image style="{{item.chuangke_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+            <image style="{{item.jike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+            <image style="{{item.weike_level==0?'display:none':'display:block'}}" class="guanzhu-bb-right" src="{{urlPath}}ji.png"></image>
+          </view>
+          <view class="textDown">
+            <view class="wid">{{item.counts}}/{{item.people}}人</view>
+            <view class="wid">{{item.city}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!--列表-->
+
+
+<!--筛选遮罩-->
+<view class="{{zhezhao == 0 ? 'zhezhaoh' : 'zhezhao'}}">
+  <view class="zhezhaotop">
+    <view class="zhezhaoa">选择所在城市</view>
+    <view class="zhezhaog">
+      <view class="liandong">省</view>
+      <picker bindchange="xuanzesheng" value="{{index}}" range="{{sheng}}">
+        <view class="classname">{{province==""?'请选择':province}}</view>
+      </picker>
+      <image src="{{urlPath}}jiantou.png"></image>
+    </view>
+    <view class="zhezhaog" style="border:0rpx;">
+      <view class="liandong">市</view>
+      <picker disabled="{{disabled== 1 ? 'disabled' :''}}" bindchange="xuanzeshi" value="{{index}}" range="{{shi}}">
+        <view class="classname">{{city==""?'请选择':city}}</view>
+      </picker>
+      <image src="{{urlPath}}jiantou.png"></image>
+    </view>
+  </view>
+
+  <button class="shaixuanbtn" bindtap="queding">确定</button>
+</view>
+<!--筛选遮罩-->

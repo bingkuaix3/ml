@@ -1,0 +1,154 @@
+/* zhiweixgxianshang.wxss */
+page{
+  width:100%;
+  height: 100%;
+  background-color:#f7f7f7;
+  color: #353535;
+}
+
+.boxThree{
+  height: 90rpx;
+  background-color: #fff;
+  margin: 40rpx 0;
+}
+
+.boxThreeUp{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  height: 90rpx;
+  margin: 0 30rpx;
+}
+.textLeft{
+  line-height: 90rpx;
+  font-size: 11pt;
+}
+.imageJ{
+width:18rpx;
+height:50rpx;
+opacity:0.6;
+
+}
+
+.boxZ{
+  flex:1;
+  background-color: #fff;
+  text-align: right;
+  margin-right:30rpx;
+  font-size: 11pt;
+}
+page{
+  width: 100%;
+  height: 100%;
+  font-size: 11pt;
+  margin: 0;
+  padding: 0;
+  background-color:#f7f7f7;
+}
+.text{
+  padding-top: 60rpx;
+  color: #353535;
+  font-size: 13pt;
+  text-align: center;
+  
+}
+input{
+  margin: 100rpx 30rpx 0 30rpx;
+  border: 1rpx solid #ccc;
+  background-color: #fff;
+  color: #888;
+  border-radius: 10rpx;
+  font-size: 11pt;
+  padding-left: 30rpx;
+  letter-spacing: 1.2rpx;
+  line-height: 90rpx;
+  height: 90rpx;
+}
+
+.neirong{
+  height: 180rpx;
+  border: 1rpx solid #ccc;
+  background-color: #fff;
+  margin: auto;
+  margin-top:100rpx;
+  border-radius: 8rpx;
+  padding: 0rpx 30rpx;
+  color: #888;
+}
+.overFlowText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  font-size: 11pt;
+  line-height: 1.4;
+  letter-spacing: 1.2rpx;
+  margin: 30rpx 0rpx;
+}
+.body-view{
+  margin: 100rpx  0 0 0rpx;
+  background-color: #fff;
+  line-height: 90rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+padding:0 30rpx;
+}
+.big{
+  transform: scale(0.8);
+
+}
+.block{
+  display: block;
+
+}
+.none{
+  display: none;
+}
+
+.btn{
+  position:fixed;
+  width:100%;
+  bottom: 200rpx;
+  font-size: 11pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+
+}
+.btnRight{
+
+ height: 70rpx;
+  width: 240rpx;
+  background-color: #09bb07;
+  border: 1rpx solid #f7f7f7;
+  border-radius: 8rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+}
+.btnLeft{
+  height: 70rpx;
+  width: 240rpx;
+  background-color: #fff;
+  border: 1rpx solid #09bb07;
+  border-radius: 8rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #09bb07;
+}
+.matop{
+  margin-top:0;
+
+}
+.Icon{
+  width: 37rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+}

@@ -1,0 +1,20 @@
+<view bindtap="goToPrivatechat" class="box">
+  <view class="box-type">私聊(<text class="box-value">{{privateAmount}}</text>)
+  </view>
+</view>
+<view bindtap="goToFans" class="box">
+  <view class="box-type">新增粉丝(<text class="box-value">{{fansAmount}}</text>)
+  </view>
+</view>
+<view bindtap="goToNotice" class="box">
+  <view class="box-type">通知(<text class="box-value">{{noticeAmount}}</text>)
+  </view>
+</view>
+<view bindtap="goToSystem" class="box">
+  <view class="box-type">系统消息(<text class="box-value">{{systemAmount}}</text>)
+  </view>
+</view>
+<view bindtap="goToInvitation" class="box">
+  <view class="box-type">邀请函(<text class="box-value">{{invitationAmount}}</text>)
+  </view>
+</view>

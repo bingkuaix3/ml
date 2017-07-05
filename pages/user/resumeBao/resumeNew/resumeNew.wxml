@@ -1,0 +1,254 @@
+<!--pages/wo/jianli/jianli.wxml-->
+<!--名称/时间-->
+<view class="title">
+  <view class="titletop">
+    <view class="ttl">{{jianliname==""?'请输入名称':jianliname}}</view>
+    <view class="ttr" bindtap="xiugaimingcheng">
+      <image src="{{urlPath}}wo_edit.png"></image>
+      修改名称</view>
+  </view>
+  <modal title="修改名称" hidden="{{modal}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalconfirm" bindcancel="modalcancel">
+    <input placeholder="请输入名称" bindinput="input" />
+  </modal>
+  <view class="titlebelow">
+    <view class="tbl">
+      <view style="color:rgb(136,136,136);margin-right:20rpx">创建时间</view>
+      {{createtime==""?'--/--/--':createtime}}</view>
+    <view class="tbr">
+      <view style="color:rgb(136,136,136);margin-right:20rpx">更新时间</view>
+      {{updatetime==""?'--/--/--':updatetime}}</view>
+  </view>
+</view>
+<view class="zibenxixi"></view>
+<view class="jiaoyujingli"></view>
+<view class="gongzuojingyan"></view>
+<!--名称/时间-->
+
+<!--基本信息-->
+
+<view class="contt" bindtap="xxzhankai">
+  <view>基本信息</view>
+  <view class="ts">
+    <view style="{{headpic!=''&&name!=''&&birthday!=''&&phone!=''&&city!=''?'display:none;color:red':'color:red'}}">有信息尚未填写</view>
+    <image src="{{urlPath}}right.png"></image>
+  </view>
+</view>
+<view class="xxc" style="{{jbxxh==0?'display:none':'display:block'}}">
+  <view class="headpic" bindtap="pic">
+    <image src="{{headpic==''?'{{urlPath}}headbackground.png':headpic}}" class="headimg"></image>
+    <image src="{{urlPath}}xiangji.png" class="xiangji"></image>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">姓名</view>
+      <view class="classname" bindtap="xmchange">{{name==''?'未输入姓名':name}}</view>
+    </view>
+    <modal title="修改姓名" hidden="{{xmm}}" confirm-text="确定" cancel-text="取消" bindconfirm="xmco" bindcancel="xmca">
+      <input placeholder="请输入姓名" bindinput="inputxm" />
+    </modal>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">性别</view>
+      <view class="classname">
+        <radio-group bindchange="sex">
+          <radio value="1" checked="{{mc}}" class="radio" />男
+          <radio value="0" checked="{{fc}}" class="radio" />女
+        </radio-group>
+      </view>
+    </view>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">出生日期</view>
+      <picker mode="date" start="1950-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          {{birthday==''?'未设置生日':birthday}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">手机号</view>
+      <view class="classname" bindtap="telchange">{{phone==''?'未输入手机号码':phone}}</view>
+    </view>
+    <modal title="修改手机号" hidden="{{telm}}" confirm-text="确定" cancel-text="取消" bindconfirm="telco" bindcancel="telca">
+      <input placeholder="请输入手机号码" bindinput="inputtel" type="number" />
+    </modal>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon" style="border-bottom:0px">
+      <view class="classname left">居住地</view>
+      <view class="picker" bindtap="city">
+        {{city==''?'未设置居住地':city}}
+      </view>
+    </view>
+  </view>
+
+</view>
+<!--基本信息-->
+
+<!--教育经历-->
+
+<view class="contt" bindtap="jlzhankai">
+  <view>教育经历</view>
+  <view class="ts">
+    <view style="{{sname!=''&&sstarttime!=''&&sendtime!=''&&slevel!=''&&smajorname!=''?'display:none;color:red':'color:red'}}">有信息尚未填写</view>
+    <image src="{{urlPath}}right.png"></image>
+  </view>
+</view>
+<view class="jlc" style="{{jyjlh==0?'display:none':'display:block'}}">
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">学校</view>
+      <view class="classname" bindtap="xxchange">{{sname==''?'未填写学校信息':sname}}</view>
+    </view>
+    <modal title="修改学校" hidden="{{xxm}}" confirm-text="确定" cancel-text="取消" bindconfirm="xxco" bindcancel="xxca">
+      <input placeholder="请输入姓名" bindinput="inputxx" />
+    </modal>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">入学时间</view>
+      <picker mode="date" start="1950-09-01" end="2017-09-01" bindchange="sschange">
+        <view class="picker">
+          {{sstarttime==''?'未设置入学时间':sstarttime}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">毕业时间</view>
+      <picker mode="date" start="1950-09-01" end="2017-09-01" bindchange="sechange">
+        <view class="picker">
+          {{sendtime==''?'未设置毕业时间':sendtime}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">学历</view>
+      <picker bindchange="slchange" value="{{index}}" range="{{study}}">
+        <view class="picker">
+          {{slevel==''?'为选择学历':slevel}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon" style="border-bottom:0px">
+      <view class="classname left">专业</view>
+      <picker bindchange="zychange" value="{{index}}" range="{{inits}}" range-key="name">
+        <view class="picker">
+          {{smajorname==''?'未选择专业':smajorname}}
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<!--教育经历-->
+
+<!--工作经验-->
+
+<view class="contt" bindtap="jyzhankai">
+  <view>工作经验</view>
+  <view class="ts">
+    <view style="{{cname!=''&&cstarttime!=''&&cendtime!=''&&clevel!=''&&cjob_name!=''&&cdescs!=''?'display:none;color:red':'color:red'}}">有信息尚未填写</view>
+    <image src="{{urlPath}}right.png"></image>
+  </view>
+</view>
+<view class="jyc" style="{{gzjyh==0?'display:none':'display:block'}}">
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">公司名称</view>
+      <view class="classname" bindtap="gschange">{{cname==''?'未填写公司名称':cname}}</view>
+    </view>
+    <modal title="修改公司名称" hidden="{{gsm}}" confirm-text="确定" cancel-text="取消" bindconfirm="gsco" bindcancel="gsca">
+      <input placeholder="请输入姓名" bindinput="inputgs" />
+    </modal>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">入职时间</view>
+      <picker mode="date" start="1950-09-01" end="2017-09-01" bindchange="cschange">
+        <view class="picker">
+          {{cstarttime==''?'未填写入职时间':cstarttime}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">离职时间</view>
+      <picker mode="date" start="1950-09-01" end="2017-09-01" bindchange="cechange">
+        <view class="picker">
+          {{cendtime==''?'未填写离职时间':cendtime}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">职能</view>
+      <picker bindchange="znchange" value="{{index}}" range="{{initj}}" range-key="name">
+        <view class="picker">
+          {{clevel==""?'未选择职能':clevel}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">职位名称</view>
+      <view class="classname" bindtap="zwchange">{{cjob_name==''?'未填写职位名称':cjob_name}}</view>
+    </view>
+    <modal title="职位名称" hidden="{{zwm}}" confirm-text="确定" cancel-text="取消" bindconfirm="zwco" bindcancel="zwca">
+      <input placeholder="请输入姓名" bindinput="inputzw" />
+    </modal>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">工作类型</view>
+      <radio-group bindchange="jobtype">
+        <radio value="1" checked="{{qc}}" class="radio" />全职
+        <radio value="0" checked="{{jc}}" class="radio" />兼职
+      </radio-group>
+    </view>
+  </view>
+  <view class="xxcon">
+    <view class="xxrcon">
+      <view class="classname left">工作描述</view>
+      <view class="classname"></view>
+    </view>
+  </view>
+  <view class="textarea">
+    <textarea placeholder="{{cdescs==''?'请输入工作描述':cdescs}}" bindinput="textarea" />
+  </view>
+
+</view>
+<view class="classname" style="width:100%;height:200rpx"></view>
+<!--工作经验-->
+
+<view class="btn">
+  <view class="button" bindtap="houtui">后退</view>
+  <view class="button" bindtap="baocun">保存</view>
+</view>
+
+<view wx:if="{{isShow}}" class="picker-view">
+  <button class="city-left" bindtap="cityModalBindCancel" type="warn">取消</button>
+  <button class="city-right" bindtap="cityModalBindConfirm" type="primary">确定</button>
+  <picker-view style="width:100%;height:100%;" indicator-style="height: 50px;" value="{{value}}" bindchange="cityChange">
+    <picker-view-column>
+      <view wx:for="{{proviceData}}" data-province="{{item}}" class="addr-item">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{cityData}}" data-city="{{item}}" class="addr-item">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column wx:if="{{showDistrict}}">
+      <view wx:for="{{districtData}}" class="addr-item">{{item.fullNameDot}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

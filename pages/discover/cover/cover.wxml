@@ -1,0 +1,15 @@
+<!--cover.wxml-->
+<view class="box">
+  <image src="{{img}}"></image>
+  <view class="content">{{content}}</view>
+</view>
+<view class="bottom">
+  <image class="head" src="{{head}}"></image>
+  <view class="info">
+    <view class="name">{{name}}</view>
+    <view class="name">{{job}}</view>
+    <view class="name">{{rank}}</view>
+  </view>
+  <button bindtap="guanzhu" wx:if="{{isGuanzhu == '0'}}" class="guanzhu" type="primary">关注</button>
+    <button wx:if="{{isGuanzhu == '1'}}" disabled="true" class="guanzhu">已关注</button>
+</view>

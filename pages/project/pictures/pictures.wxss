@@ -1,0 +1,10 @@
+.box{
+  margin:0rpx 20rpx auto 20rpx;
+}
+.pic{
+  margin-top:20rpx;
+  width:100%;
+}
+.bottom{
+  margin:20rpx;
+}

@@ -1,0 +1,203 @@
+<!--zhiweijieyue.wxml-->
+<view hidden="{{xinxi}}">
+  <view class="card">
+    <image class="headPortrait" src="{{headpic}}"></image>
+    <view class="name">
+      <view class="nameText">{{name}}</view>
+      <view class="nameText textHui">{{job}}</view>
+      <!--<image class="Icon" src="{{identy}}"></image>-->
+    </view>
+  </view>
+  <view class="headline" bindtap="jianli">查看简历
+    <image class="IconDown" src="{{urlPath}}xiajian.png"></image>
+  </view>
+  <view class="cardDown">
+    <view class="bor" hidden="{{jieyue}}">
+      <view class="classname">合同</view>
+      <image class="hetong" src="{{hetong}}"></image>
+    </view>
+  </view>
+  <view class="cardDown">
+    <view class="bor">
+      <view class="classname">备注信息</view>
+      <view class="classnameDown overFlowText">{{text}}</view>
+    </view>
+  </view>
+  <view class="btn" hidden="{{jieyue}}">
+    <view class="button" bindtap="jieyue">解约</view>
+  </view>
+  <view class="sbtn" hidden="{{shenqing}}">
+  <!--<view class="sbuttonl" bindtap="shenqing" data-type="3">拒绝</view>
+   <view class="sbuttonr"  bindtap="shenqing" data-type="2">接受</view>-->
+  </view>
+  <modal hidden="{{hidden}}" title="是否确定解约？" confirm-text="确定解约" cancel-text="取消" bindconfirm="confirm" bindcancel="cancel">
+  </modal>
+</view>
+<!--信息页面-->
+
+<!--简历页面-->
+<view class="jianli" hidden="{{jianli}}" style="margin-bottom:150rpx;">
+  <!--名称/时间-->
+  <view class="title">
+    <view class="titletop">
+      <view class="ttl">{{jianliname}}</view>
+    </view>
+    <view class="titlebelow">
+      <view class="tbl">
+        <view style="color:#888;margin-right:20rpx">创建时间</view>
+        {{createtime==""?'--/--/--':createtime}}</view>
+      <view class="tbr">
+        <view style="color:#888;margin-right:20rpx">更新时间</view>
+        {{updatetime==""?'--/--/--':updatetime}}</view>
+    </view>
+  </view>
+  <!--名称/时间-->
+
+  <!--基本信息-->
+  <view class="contt">
+    <view>基本信息</view>
+    <image src="{{urlPath}}right.png"></image>
+  </view>
+  <view class="xxc">
+    <view class="headpic">
+      <image src="{{headpic==''?'{{urlPath}}headbackground.png':headpic}}" class="headimg"></image>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">姓名</view>
+        <view class="classname">{{name}}</view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">性别</view>
+        <view class="classname">
+          {{sex==0?'女':'男'}}
+        </view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">出生日期</view>
+        <view class="classname">{{birthday}}</view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">手机号</view>
+        <view class="classname">{{phone}}</view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon" style="border-bottom:0px">
+        <view class="classname left">居住地</view>
+        <view class="classname">{{city==''?'未填写':city}}</view>
+      </view>
+    </view>
+
+  </view>
+  <!--基本信息-->
+
+  <!--教育经历-->
+  <view class="contt">
+    <view>教育经历</view>
+    <image src="{{urlPath}}right.png"></image>
+  </view>
+  <view class="xxc">
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">学校</view>
+        <view class="classname">{{school}}</view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">入学时间</view>
+        <view class="classname">
+          {{intime}}
+        </view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">毕业时间</view>
+        <view class="classname">{{gotime}}</view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">学历</view>
+        <view class="classname">{{level}}</view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon" style="border-bottom:0px">
+        <view class="classname left">专业</view>
+        <view class="classname">{{work==''?'未填写':work}}</view>
+      </view>
+    </view>
+
+  </view>
+  <!--教育经历-->
+
+  <!--工作经验-->
+  <view class="contt">
+    <view>教育经历</view>
+    <image src="{{urlPath}}right.png"></image>
+  </view>
+  <view class="xxc">
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">公司名称</view>
+        <view class="classname">{{cname}}</view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">入职时间</view>
+        <view class="classname">
+          {{cintime}}
+        </view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">离职时间</view>
+        <view class="classname">{{cgotime}}</view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">职能</view>
+        <view class="classname">{{clevel==''?'未填写':clevel}}</view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">职位名称</view>
+        <view class="classname">{{cjobname==''?'未填写':cjobname}}</view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon">
+        <view class="classname left">工作类型</view>
+        <view class="classname">{{cwork==''?'未填写':cwork}}</view>
+      </view>
+    </view>
+    <view class="xxcon">
+      <view class="xxrcon" style="border-bottom:0px">
+        <view class="classname left">工作描述</view>
+        <view class="classname"></view>
+      </view>
+    </view>
+    <view class="classname" style="width:100%;background:white">
+      <view class="textarea" style="border-bottom:0px">{{cdescs}}</view>
+    </view>
+    <view class="headline" bindtap="jianlih">隐藏简历
+      <image class="IconDown" src="{{urlPath}}shangjian.png"></image>
+    </view>
+    <view class="classname" style="height:100rpx;"></view>
+  </view>
+  <!--工作经验-->
+
+</view>

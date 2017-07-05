@@ -1,0 +1,21 @@
+<image class="img" src="{{urlPath}}bk.png">
+</image>
+<view class="middle">
+  <view class="left">
+    <image class="tag-icon" src="{{urlPath}}caifu3.png"></image>
+    <view class="tag">美丽币</view>
+    <text class="value">{{meilibi}}
+    </text>
+  </view>
+</view>
+<view class="right">
+  <image class="icon" src="{{urlPath}}jifen.png"></image>
+  <view class="tagRight">美丽积分</view>
+  <text class="valueRight">{{meilijifen}}</text>
+</view>
+
+
+
+<button bindtap="goToRecharge" type="primary" class="btn1">充值</button>
+<button bindtap="goToTixian" type="default" class="btn2">提现</button>
+<view bindtap="goToDetails" class="text"> 查看明细</view>

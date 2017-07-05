@@ -1,0 +1,51 @@
+<view class="cardTop">
+  <image class="tupian" src="{{urlPath}}guanchatuan.jpg"></image>
+  <view class="headLine"> 申请成为观察团</view>
+</view>
+<view class="card">
+  <view class="card1">
+    <view class="biaotiDown">邀请函</view>
+    <view class="paTop">
+      <view class="content overFlowText">{{introduce}}</view>
+    </view>
+  </view>
+</view>
+<view class="card">
+  <view class="card1">
+    <view class="biaotiDown">观察团日期</view>
+
+  </view>
+  <view class="cardDown">
+    <view class="left">
+      <image class="Icon" src="{{urlPath}}rili1.png"></image>
+      <view class="textLeft">{{date}}</view>
+    </view>
+    <view class="right">
+      <image class="Icon" src="{{urlPath}}shijian1.png"></image>
+      <view class="text">{{time}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="xiabiao">距离报名截止还有<text style="color:red">{{day}}</text>天</view>
+<view class="time">
+  <view class="classname">
+    <image class="IconDown" src="{{urlPath}}numbg.png"></image>
+    <view class="val">{{hour}}</view>
+    <view class="text">时</view>
+  </view>
+    <view class="classname">
+    <image class="IconDown" src="{{urlPath}}numbg.png"></image>
+     <view class="val">{{minute}}</view>
+    <view class="text">分</view>
+  </view>
+    <view class="classname">
+    <image class="IconDown" src="{{urlPath}}numbg.png"></image>
+     <view class="val">{{second}}</view>
+    <view class="text">秒</view>
+  </view>
+</view>
+<button bindtap="apply" wx:if="{{isShenqing == '0' && isOver == false}}" class="shenqing" type="primary">立刻申请</button>
+<button  wx:if="{{isShenqing == '1' && isOver == false}}" class="shenqing" disabled="true" type="default">已成为观察团</button>
+<button wx:if="{{isOver == true}}" disabled="true" class="shenqing" type="default">已结束</button>
+<view style="float:left;width:100%;height:20px;"></view>

@@ -1,0 +1,102 @@
+/* tiyantuan.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  font-size: 11pt;
+}
+.cardTop{
+  width: 100%;
+  height: 400rpx;
+  overflow:hidden;
+}
+.tupian{
+  width: 100%;
+  float: left;
+  height: 100%;
+}
+.headLine {
+  font-size: 17pt;
+  line-height:13;
+  position: absolute;
+  right: 90rpx;
+  margin: 0 auto;
+  letter-spacing: 2rpx;
+  color: #353535;
+  font-weight: 700;
+}
+.biaoti{
+  padding: 30rpx 0 16rpx 30rpx;
+  font-size: 11pt;
+  opacity: 0.6;
+}
+.biaotiDown{
+  padding: 30rpx 0 16rpx 0 ;
+  font-size: 11pt;
+}
+
+.card1{
+  padding: 0rpx 30rpx;
+  margin: 40rpx 0 0 0;
+  background-color: #fff;
+}
+
+
+.cardDown{
+  padding: 0 0 30rpx 0rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+.content{
+  font-size: 9pt;
+  color: #888;
+  line-height: 1.4;
+  letter-spacing: 1.2rpx;
+}
+.overFlowText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.left{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  line-height: 50rpx;
+  justify-content: space-around;
+  padding: 0 10%;
+}
+.right{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  line-height: 50rpx;
+  justify-content: space-around;
+  padding: 0 10%;
+}
+.Icon{
+  width: 50rpx;
+  height: 50rpx;
+  
+}
+.text{
+  color: #576b95;
+  margin-left:20rpx;
+  font-size:10pt;
+   
+}
+.paTop{
+  padding: 0 0 30rpx 0;
+}
+.yqButton{
+  margin-top:200rpx;
+  margin-bottom:30rpx;
+  width:80%;
+  height:80rpx;
+  line-height:80rpx;
+  font-size:11pt;
+}

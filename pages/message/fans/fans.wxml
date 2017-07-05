@@ -1,0 +1,8 @@
+<!--fans.wxml-->
+<view class="card">
+  <view wx:for="{{list}}" class="line">
+    <image class="head" src="{{item.touxiang}}"></image>
+    <view class="name">{{item.xingming}}</view>
+    <view class="time">{{item.riqi}}</view>
+  </view>
+</view>

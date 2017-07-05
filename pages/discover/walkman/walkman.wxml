@@ -1,0 +1,148 @@
+<view hidden="{{locl}}" style="width:100%;">
+  <view class="top">
+    <view class="top-box" bindtap="selectMp3" data-type="0">
+      <image wx:if="{{ctr_status2=='1'}}" class="top-image" src="{{urlPath}}play1.png"></image>
+      <image wx:if="{{ctr_status2=='0'}}" class="top-image" src="{{urlPath}}zanting1.png"></image>
+      <text class="top-text">播放今日</text>
+    </view>
+  </view>
+  <view class="middle">
+    <view class="middle-top">
+      <text class="middle-top-title">今日</text>
+    </view>
+    <view class="middle-bottom">
+      <block wx:for="{{today_mp3}}">
+        <view bindtap="selectMp3" data-type="1" data-item="{{item}}">
+          <view class="music-top">
+            <text class="music-top-title">{{item.biaoti}}</text>
+          </view>
+          <view class="music-bottom">
+            <text class="music-time">{{item.shichang}}</text>
+            <text class="music-author">{{item.fabuzhe}}</text>
+          </view>
+        </view>
+      </block>
+      <view wx:if="{{today_mp3.length == 0}}" class="nodata">暂无数据</view>
+    </view>
+    <view class="b"></view>
+    <view class="middle-top">
+      <text class="middle-top-title">昨天</text>
+    </view>
+    <view class="middle-bottom">
+      <block wx:for="{{yesterday_mp3}}">
+        <view bindtap="selectMp3" data-type="1" data-item="{{item}}">
+          <view class="music-top">
+            <text class="music-top-title">{{item.biaoti}}</text>
+          </view>
+          <view class="music-bottom">
+            <text class="music-time">{{item.shichang}}</text>
+            <text class="music-author">{{item.fabuzhe}}</text>
+          </view>
+        </view>
+      </block>
+      <view wx:if="{{yesterday_mp3.length == 0}}" class="nodata">暂无数据</view>
+    </view>
+    <view class="middle-top">
+      <text class="middle-top-title">更早以前</text>
+    </view>
+    <view class="middle-bottom" style="margin-bottom:90rpx;">
+      <block wx:for="{{before_mp3}}">
+        <view bindtap="selectMp3" data-type="1" data-item="{{item}}">
+          <view class="music-top">
+            <text class="music-top-title">{{item.biaoti}}</text>
+          </view>
+          <view class="music-bottom">
+            <text class="music-time">{{item.shichang}}</text>
+            <text class="music-author">{{item.fabuzhe}}</text>
+          </view>
+        </view>
+      </block>
+      <view wx:if="{{before_mp3.length == 0}}" class="nodata">暂无数据</view>
+    </view>
+  </view>
+</view>
+<view class="bottom" hidden="{{bottomHidde}}">
+  <view bindtap="ctrlPaly" class="left">
+    <image bindtap="play" wx:if="{{ctr_status == '1'}}" class="ctr-image2" src="{{urlPath}}play2.png"></image>
+    <image bindtap="stop" wx:if="{{ctr_status == '0'}}" class="ctr-image2" src="{{urlPath}}stop2.png"></image>
+  </view>
+  <view bindtap="open" class="right">
+    <text class="mp3-name">{{cur_name}}</text>
+    <text class="mp3-time">{{cur_jindu_time}}</text>
+  </view>
+</view>
+<view class="panel {{panel_status}}">
+  <view class="panel-box">
+    <view class="panel-top">
+      <view class="panel-top-middle">正在播放({{cur_index+1}}/{{cur_length}})</view>
+      <!--<view class="panel-top-right lan">播放列表</view>-->
+    </view>
+    <view class="panel-middle">
+    <image bindtap="close" class="Icon" src="{{urlPath}}guanbi.png"></image>
+      <image class="pm-image" src="{{mp3Image}}"></image>
+      <view class="pm-name">{{cur_name}}</view>
+    </view>
+    <view class="panel-bottom">
+      <view class="panel-bottom-box">
+        <slider class="panel-bottom-slider" min="0" max="{{cur_jindu}}" value="{{cur_jindu_value}}" bindchange="sliderChange" />
+      </view>
+      <view class="panel-bottom-box">
+        <view class="panel-bottom-time-left">{{cur_jindu_time}}</view>
+        <view class="panel-bottom-time-right">{{cur_time}}</view>
+      </view>
+      <view class="panel-bottom-box2">
+        <view class="panel-bottom-ctr">
+          <image bindtap="daotui" class="ctr-image" src="{{urlPath}}kuaitui.png"></image>
+        </view>
+        <view class="panel-bottom-ctr">
+          <image bindtap="before" class="ctr-image" src="{{urlPath}}shangyishou.png"></image>
+        </view>
+        <view class="panel-bottom-ctr">
+          <image bindtap="play" wx:if="{{ctr_status == '1'}}" class="ctr-image" src="{{urlPath}}play3.png"></image>
+          <image bindtap="stop" wx:if="{{ctr_status == '0'}}" class="ctr-image" src="{{urlPath}}zanting.png"></image>
+        </view>
+        <view class="panel-bottom-ctr">
+          <image bindtap="next" class="ctr-image" src="{{urlPath}}xiayishou.png"></image>
+        </view>
+        <view class="panel-bottom-ctr">
+          <image bindtap="kuaijin" class="ctr-image" src="{{urlPath}}kuaijin.png"></image>
+        </view>
+      </view>
+      <view class="panel-bottom-box2" style="border-top:1px solid #d0d0d0;">
+        <view bindtap="goToDownload" class="panel-bottom-button">
+          <view class="fun-box">
+            <image class="fun-image" src="{{urlPath}}down02.png"></image>
+          </view>
+          <view class="fun-text">下载</view>
+        </view>
+        <view bindtap="openWengao" class="panel-bottom-button">
+          <view class="fun-box">
+            <image class="fun-image" src="{{urlPath}}hetong.png"></image>
+          </view>
+          <view class="fun-text">文稿</view>
+        </view>
+        <view bindtap="dianzan" class="panel-bottom-button">
+          <view class="fun-box">
+            <image wx:if="{{cur_isDianzan =='0'}}" class="fun-image" src="{{urlPath}}down01.png"></image>
+            <image wx:if="{{cur_isDianzan =='1'}}" class="fun-image" src="{{urlPath}}downC01.png"></image>
+          </view>
+          <view class="fun-text">{{cur_dianzan}}</view>
+        </view>
+        <button open-type="share" style="content:1;width:100%;background-color:#fff;border:0;"  class="panel-bottom-button">
+          <view class="fun-box">
+            <image class="fun-image" src="{{urlPath}}down03.png"></image>
+          </view>
+          <view class="fun-text">分享</view>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="wengao-panel" hidden="{{wengao_hidden}}">
+  <view class="wengao-close">
+    <view bindtap="closeWengao" class="closeb">关闭</view>
+  </view>
+  <view class="wengao-content">
+    <view class="wengao-content2">{{cur_wengao}}</view>
+  </view>
+</view>

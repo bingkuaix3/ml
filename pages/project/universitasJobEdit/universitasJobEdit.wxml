@@ -1,0 +1,127 @@
+<!--editorship.wxml-->
+<!--主页面-->
+<view class="classname" hidden="{{bianji}}">
+  <view class="boxThree">
+    <view class="boxThreeUp" bindtap="zhiwei">
+      <text class="textLeft">职位名称</text>
+      <view class="boxZ"></view>
+      <view class="classname" style="margin-right:20rpx;">{{name}}</view>
+      <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+    </view>
+  </view>
+  <view class="boxThree">
+    <view class="boxThreeUp" bindtap="yaoqiu">
+      <text class="textLeft">要求</text>
+      <view class="boxZ"></view>
+      <view class="" style="margin-right:20rpx;">{{yq}}</view>
+      <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+    </view>
+  </view>
+  <view class="boxThree">
+    <view class="boxThreeUp" bindtap="hehuo">
+      <text class="textLeft">合伙方式</text>
+      <view class="boxZ"></view>
+      <view class="classname" style="margin-right:20rpx;">{{IsWhole}} {{IsSocial}} {{IsFocus}} {{IsOther}}</view>
+      <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+    </view>
+  </view>
+  <view class="boxThree">
+    <view class="boxThreeUp" bindtap="daiyu">
+      <text class="textLeft">入资占股和薪资待遇</text>
+      <view class="boxZ"></view>
+      <view class="classname" style="margin-right:20rpx;">{{IsMoney}} {{IsStock}}</view>
+      <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+    </view>
+  </view>
+  <view class="boxThree">
+    <view class="boxThreeUp" bindtap="jili">
+      <text class="textLeft">激励方式</text>
+      <view class="boxZ"></view>
+      <view class="classname" style="margin-right:20rpx;">{{IsOriginal}} {{IsOption}}</view>
+      <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+    </view>
+  </view>
+</view>
+<!--主页面-->
+
+<!--职位选择页面-->
+<view class="{{zhiwei==0?'none':'block'}}">
+  <view class="text">职位名称</view>
+  <input placeholder="请输入职位名称" bindinput="zw" />
+  <view class="btn">
+    <button class="btnLeft" bindtap="zcan">取消</button>
+    <button class="btnRight" bindtap="zcon">确认</button>
+  </view>
+</view>
+<!--职位选择页面-->
+
+<!--要求输入页面-->
+<view class="{{yaoqiu==0?'none':'block'}}">
+  <view class="text">要求</view>
+  <view>
+    <textarea class="neirong" placeholder="{{descs}}" maxlength="-1" bindinput="yq" />
+  </view>
+  <view class="btn">
+    <button class="btnLeft" bindtap="ycan">取消</button>
+    <button class="btnRight" bindtap="ycon">确认</button>
+  </view>
+</view>
+<!--要求输入页面-->
+
+<!--合伙方式页面-->
+<view class="{{hehuo==0?'none':'block'}}">
+  <view class="text">合伙方式</view>
+  <radio-group class="radio-group" bindchange="sj">
+    <view class="radio">全职
+      <radio value="全职" checked="{{IsWhole==''?'false':'true'}}" />
+    </view>
+    <view class="radio">社会化
+      <radio value="社会化" checked="{{IsWhole==''?'true':'false'}}" />
+    </view>
+  </radio-group>
+  <radio-group class="radio-group" bindchange="dd">
+    <view class="radio">集中办公
+      <radio value="集中办公" checked="{{IsFocus==''?'false':'true'}}" />
+    </view>
+    <view class="radio">异地办公
+      <radio value="异地办公" checked="{{IsFocus==''?'true':'false'}}" />
+    </view>
+  </radio-group>
+  <view class="btn">
+    <button class="btnLeft" bindtap="hcan">取消</button>
+    <button class="btnRight" bindtap="hcon">确认</button>
+  </view>
+</view>
+<!--合伙方式页面-->
+
+<!--待遇页面-->
+<view class="{{daiyu==0?'none':'block'}}">
+  <view class="text">薪资待遇与入资占股</view>
+  <view class="body-view">薪资待遇
+    <switch checked="{{IsMoney==''?false:true}}" bindchange="xz" class="big" />
+  </view>
+  <view class="swith-view">入资占股
+    <switch checked="{{IsStock==''?false:true}}" bindchange="zg" class="big" />
+  </view>
+  <view class="btn">
+    <button class="btnLeft" bindtap="dcan">取消</button>
+    <button class="btnRight" bindtap="dcon">确认</button>
+  </view>
+</view>
+<!--待遇页面-->
+
+<!--激励页面-->
+<view class="{{jili==0?'none':'block'}}">
+  <view class="text">激励方式</view>
+  <view class="body-view">原始股权
+    <switch checked="{{IsOriginal==''?false:true}}" bindchange="gq" class="big" />
+  </view>
+  <view class="swith-view">期权
+    <switch checked="{{IsOption==''?false:true}}" bindchange="qq" class="big" />
+  </view>
+  <view class="btn">
+    <button class="btnLeft" bindtap="jcan">取消</button>
+    <button class="btnRight" bindtap="jcon">确认</button>
+  </view>
+</view>
+<!--激励页面-->

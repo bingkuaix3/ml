@@ -1,0 +1,59 @@
+/* WisdomInDetails.wxss */
+page{
+  height:100%;
+  background-color:#f7f7f7;
+  padding-top: 40rpx;
+}
+.tou{
+  width: 100%;
+  font-size: 11pt;
+  color: #09bb07;
+  text-align: center;
+
+  padding-bottom: 30rpx;
+
+}
+.card{
+  margin-bottom: 40rpx;
+  background-color: #fff;
+}
+.headline{
+  color: #353535;
+  font-size: 11pt;
+  margin: 0rpx 0 16rpx 30rpx;
+  padding-top: 30rpx;
+
+}
+.text{
+  font-size: 9pt;
+  line-height: 1.4;
+  letter-spacing: 1.2;
+  margin: 0 30rpx;
+  color: #888;
+}
+.overFlowText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  
+}
+.reply{
+  margin-top:30rpx;
+  text-align: right;
+  padding-right: 30rpx;
+  font-size: 11pt;
+  padding-bottom: 30rpx;
+  color:  #576b95;
+}
+.scroll-box{
+  width:100%;
+  height:100%;
+}
+.scroll-top,.scroll-bottom{
+  width:100%;
+  height:60rpx;
+  line-height:60rpx;
+  color:#353535;
+  text-align:center;
+}

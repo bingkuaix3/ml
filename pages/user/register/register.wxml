@@ -1,0 +1,209 @@
+<!--zhuce.wxml-->
+<!--导航-->
+<view class="card">
+  <view class="title">
+    <view class="back">
+      <!--backBluebackGrey-->
+      <view class="{{jd1}}">1</view>
+    </view>
+    <view class="back">
+      <view class="{{jd2}}">2</view>
+    </view>
+    <view class="back">
+      <image wx:if="{{jd3 == 'true'}}" class="icon" src="{{urlPath}}duihao2.png"></image>
+    </view>
+  </view>
+  <view class="titleDown">
+    <view class="titleText click">基本信息</view>
+    <view class="titleText">系统生态位</view>
+    <view class="titleText">注册完成</view>
+  </view>
+</view>
+
+<!--表单backBlue1-->
+<view class="{{first}}">
+  <view class="list">
+    <view class="name">姓名:</view>
+    <input class="input" bindinput="recordName" placeholder="请输入姓名" />
+  </view>
+
+  <view class="list">
+    <view class="name">性别:</view>
+    <radio-group class="radio-group text" bindchange="sexChange">
+      <label class="radio maRight" wx:for="{{items}}">
+        <radio value="{{item.value}}" checked="{{item.checked}}" />{{item.name}}
+      </label>
+    </radio-group>
+  </view>
+
+  <view class="list">
+    <view class="name">手机号码:</view>
+    <input bindtap="recordPhone" bindinput="recordPhone" class="input" type="number" placeholder="请输入手机号码" />
+  </view>
+
+  <view class="listB">
+    <input bindinput="recordNewCode" class="input" type="number" placeholder="请输入验证码" />
+    <view bindtap="sendCode" wx:if="{{btnDisabled == false}}" class="gain">{{btnText}}</view>
+      <view   wx:if="{{btnDisabled == true}}" class="gain">{{btnText}}</view>
+  </view>
+
+  <view class="list">
+    <view class="name">出生日期:</view>
+    <view class="birth">
+      <picker mode="date" value="{{birth}}" start="1999-09-01" end="2117-09-01" bindchange="birthChange">
+        <view class="picker">
+          {{birth}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="list">
+    <view class="name">学历:</view>
+    <view class="birth">
+      <picker bindchange="xueliChange" value="{{index}}" range="{{xueli_items}}">
+        <view class="picker">
+          {{xueli}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="list">
+    <view class="name">地址:</view>
+    <view class=" birth" bindtap="choosearea">{{newProvince}} {{newCity}}</view>
+  </view>
+    <view class="list">
+    <view class="name"> </view>
+    <input bindinput="recordAddress" class="input" placeholder="请输入详细地址" />
+  </view>
+
+  <button bindtap="firstNext" class="btn" type="primary">下一步</button>
+</view>
+<!--表单backBlue2-->
+<view class="{{second}}">
+  <view class="cardTow" style="height:{{winHeight}}px">
+    <view class="keLeft">
+      <view bindtap="chooseChuangke" class="{{chuangke == '1'? 'keClick':'ke'}}">
+        <image class="Icon" src="{{chuangke !='1' ? urlPath+'chuang.png':urlPath+'chuangClick.png'}}"></image>
+        <view class="{{chuangke=='1'?'blue':''}}">创客</view>
+      </view>
+      <view bindtap="chooseJike" class="{{jike == '1'? 'keClick':'ke'}}">
+        <image class="Icon" src="{{jike !='1' ? urlPath+'ji.png':urlPath+'jiClick.png'}}"></image>
+        <view class="{{jike=='1'?'blue':''}}">极客</view>
+      </view>
+      <view bindtap="chooseJinke" class="{{jinke == '1'? 'keClick':'ke'}}">
+        <image class="Icon" src="{{jinke !='1' ? urlPath+'jin.png':urlPath+'jinClick.png'}}"></image>
+        <view class="{{jinke=='1'?'blue':''}}">金客</view>
+      </view>
+      <view bindtap="chooseShuke" class="{{shuke == '1'? 'keClick':'ke'}}">
+        <image class="Icon" src="{{shuke !='1' ? urlPath+'shu.png':urlPath+'shuClick.png'}}"></image>
+        <view class="{{shuke=='1'?'blue':''}}">数客</view>
+      </view>
+      <view bindtap="chooseZhike" class="{{zhike == '1'? 'keClick':'ke'}}">
+        <image class="Icon" src="{{zhike !='1' ? urlPath+'zhi.png':urlPath+'zhiClick.png'}}"></image>
+        <view class="{{zhike=='1'?'blue':''}}">智客</view>
+      </view>
+    </view>
+    <view wx:if="{{chuangke=='1'}}" class="neirong">
+      <view class="titleBigText">创客</view>
+      <image class="iconBk" src="{{urlPath}}ji30.png"></image>
+      <scroll-view scroll-y="true" class="textBig">是指那些企业家、企业者，他们需要各种资源来实现自己的创业梦想，包括资金、人才、技术、渠道；他们的项目要成功，需要很多的资源配置。</scroll-view>
+    </view>
+    <view wx:if="{{jike=='1'}}" class="neirong">
+      <view class="titleBigText">极客</view>
+      <image class="iconBk" src="{{urlPath}}ji30.png"></image>
+      <scroll-view scroll-y="true" class="textBig">是指那些发明家、专利拥有者、有绝活儿的人、有秘方的人、对事物有极致专注和追求的人。他们的专利、创新成果需要市场化，他们的绝活儿或秘方需要传承，他们的匠心产品需要找到成功率高、能做大的好项目一旦项目成功，可能收获成成百上千倍的回报。</scroll-view>
+    </view>
+    <view wx:if="{{shuke=='1'}}" class="neirong">
+      <view class="titleBigText">数客</view>
+      <image class="iconBk" src="{{urlPath}}shu30.png"></image>
+      <scroll-view scroll-y="true" class="textBig">是指那些从事代码开发、数字平台运营等互联网和数字世界的原住民，他们能够飞快地写出程序，对互联网的事情精通擅长，但是没有传统的资源优势，很多还一不小心成了数字民工。</scroll-view>
+    </view>
+    <view wx:if="{{zhike=='1'}}" class="neirong">
+      <view class="titleBigText">智客</view>
+      <image class="iconBk" src="{{urlPath}}zhi30.png"></image>
+      <scroll-view scroll-y="true" class="textBig">是指那些能够为他人提供系统完整方案策划和设计的人，在某一个专业或领域，他们被称为专家，他们的集合称为“智库”。</scroll-view>
+    </view>
+    <view wx:if="{{shike=='1'}}" class="neirong">
+      <view class="titleBigText">师客</view>
+      <image class="iconBk" src="{{urlPath}}shi30.png"></image>
+      <scroll-view scroll-y="true" class="textBig">是指那些传道授业解惑的人。纵然普天之下莫非王土，但皇帝仍然需要有师者辅佐。好的师客不是填鸭客，而是启发者、引领者、教练者。</scroll-view>
+    </view>
+    <view wx:if="{{weike=='1'}}" class="neirong">
+      <view class="titleBigText">威客</view>
+      <image class="iconBk" src="{{urlPath}}wei30.png"></image>
+      <scroll-view scroll-y="true" class="textBig">
+        是指那些擅长通过互联网协同他人完成某项任务的人，他们会被随需随聘，在互联网平台上完成任务交接、收款、评价等。
+      </scroll-view>
+    </view>
+    <view wx:if="{{huike=='1'}}" class="neirong">
+      <view class="titleBigText">慧客</view>
+      <image class="iconBk" src="{{urlPath}}hui30.png"></image>
+      <scroll-view scroll-y="true" class="textBig">
+        是指那些有正确宗教信仰、有较高层次的道德水准的人，他们对于生命价值、人文观念要高于普通大众的水平，有普世价值观、利他善念、相信因果等。
+      </scroll-view>
+    </view>
+    <view wx:if="{{haike=='1'}}" class="neirong">
+      <view class="titleBigText">嗨客</view>
+      <image class="iconBk" src="{{urlPath}}hai30.png"></image>
+      <scroll-view scroll-y="true" class="textBig">
+        是指那些不能够准确对应上述条件，但是愿意帮助他人了解美丽互联、帮助他人在美丽互联获得海量资源对接的人，他们愿意在美丽互联平台上学习和参与，愿意和大家一起嗨。
+      </scroll-view>
+    </view>
+     <view wx:if="{{jinke=='1'}}" class="neirong">
+      <view class="titleBigText">嗨客</view>
+      <image class="iconBk" src="{{urlPath}}jin30.png"></image>
+      <scroll-view scroll-y="true" class="textBig">
+      是指那些投资机构负责人、天使投资人，他们需要寻找到成功率高、能做大的好项目，一旦项目成功，可能会收获成百上千倍的回报。
+      </scroll-view>
+    </view>
+    <view class="keUpRight">
+      <view bindtap="chooseShike" class="{{shike == '1'? 'keRightClick':'keRight'}}">
+        <image class="Icon" src="{{shike !='1' ? urlPath+'shi.png':urlPath+'shiClick.png'}}"></image>
+        <view class="{{shike=='1'?'blue':''}}">师客</view>
+      </view>
+      <view bindtap="chooseWeike" class="{{weike == '1'? 'keRightClick':'keRight'}}">
+        <image class="Icon" src="{{weike !='1' ? urlPath+'wei.png':urlPath+'weiClick.png'}}"></image>
+        <view class="{{weike=='1'?'blue':''}}">威客</view>
+      </view>
+      <view bindtap="chooseHuike" class="{{huike == '1'? 'keRightClick':'keRight'}}">
+        <image class="Icon" src="{{huike !='1' ? urlPath+'hui.png':urlPath+'huiClick.png'}}"></image>
+        <view class="{{huike=='1'?'blue':''}}">慧客</view>
+      </view>
+      <view bindtap="chooseHaike" class="{{haike == '1'? 'keRightClick':'keRight'}}">
+        <image class="Icon" src="{{haike !='1' ?urlPath+'hai.png':urlPath+'haiClick.png'}}"></image>
+        <view class="{{haike=='1'?'blue':''}}">嗨客</view>
+      </view>
+
+    </view>
+  </view>
+
+  <button bindtap="secondNext" class="btn" type="primary">注册</button>
+</view>
+
+<!--表单backBlue3-->
+<view class="{{third}}">
+  <view class="win">
+    <image class="iconDui" src="{{urlPath}}duihaoGreen.png"></image>
+    <view class="winText">恭喜您，注册成功 ！</view>
+  </view>
+  <view class="winDown">
+    <view class="winTextDown">3秒之后退出页面</view>
+  </view>
+</view>
+<view wx:if="{{isShow}}" class="picker-view">
+  <button class="city-left" bindtap="cityModalBindCancel" type="warn">取消</button>
+  <button class="city-right" bindtap="cityModalBindConfirm" type="primary">确定</button>
+  <picker-view style="width:100%;height:100%;" indicator-style="height: 50px;" value="{{value}}" bindchange="cityChange">
+    <picker-view-column>
+      <view wx:for="{{proviceData}}" data-province="{{item}}" class="addr-item">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{cityData}}" data-city="{{item}}" class="addr-item">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column wx:if="{{showDistrict}}">
+      <view wx:for="{{districtData}}" class="addr-item">{{item.fullNameDot}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

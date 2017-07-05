@@ -1,0 +1,97 @@
+page {
+  width: 100%;
+  background-color: #f7f7f7;
+  color: #353535;
+}
+
+.boxOne {
+  height: 181rpx;
+  background-color: #fff;
+  margin: 40rpx 0;
+}
+
+.boxOneUp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  height: 90rpx;
+  border-bottom: 1px solid #f7f7f7;
+  margin: 0 30rpx;
+}
+
+.textLeft {
+  line-height: 90rpx;
+  font-size: 11pt;
+}
+
+.imageJ {
+  width: 18rpx;
+  height: 50rpx;
+  opacity: 0.6;
+}
+
+.imageT {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 10rpx;
+  margin-right: 30rpx;
+  opacity: 0.6;
+}
+
+.boxZ {
+  flex: 1;
+  background-color: #fff;
+  text-align: right;
+  margin-right: 30rpx;
+  font-size: 11pt;
+}
+
+.boxTow {
+  height: 272rpx;
+  background-color: #fff;
+  margin: 40rpx 0;
+}
+
+.btn {
+  height: 90rpx;
+  display: flex;
+}
+
+.buttonF {
+  width: 280rpx;
+  display: block;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #09bb07;
+  margin-bottom: 30rpx;
+  margin-top: 40rpx;
+  margin-right: 70rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 13pt;
+}
+
+.buttonT {
+  width: 280rpx;
+  display: block;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  margin-top: 40rpx;
+  margin-left: 60rpx;
+  margin-right: 70rpx;
+  border-radius: 10rpx;
+  color: #09bb07;
+  font-size: 13pt;
+}
+
+.buttonF:active {
+  background-color: red;
+}
+
+.textarea {
+  width: 100%;
+}

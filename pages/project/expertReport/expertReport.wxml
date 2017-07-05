@@ -1,0 +1,49 @@
+<view class="biaoti">
+  {{tuanname}}平均分 {{score}}
+</view>
+<view wx:for="{{list}}" wx:key="{{this}}" class="box">
+  <view class="card">
+    <view class="cardUp">
+      <view class="box1">
+        <image class="headPortrait" src="{{item.headpic}}"></image>
+      </view>
+      <view class="text">
+        <view class="name">{{item.xingming}}</view>
+        <view class="title">教授</view>
+        <view class="classname">
+          {{item.shenfen}}
+          <!--<image class="icon" src="../../images/ji.png"></image>-->
+        </view>
+      </view>
+      <view class="textRight">{{item.sorce}}</view>
+    </view>
+    <view class="content overFlowText">{{item.comment}}</view>
+    <scroll-view class="img" scroll-x="true" style="inline-block;white-space: nowrap;{{item.pic_list.length==0?'display:none':'width:100%;display:block'}}">
+      <view class="img" style="{{item.pic_list.length<3?'width:100%':''}}">
+        <image wx:for="{{item.pic_list}}" wx:for-index="idx" wx:for-item="ite" src="{{ite.pic}}"></image>
+      </view>
+    </scroll-view>
+    <!--<view class="img" wx:for="{{item.pic_list}}" wx:for-index="idx" wx:for-item="ite">
+      <image src="../../images/carouselFour.jpg"></image>
+    </view>-->
+    <view class="date">
+      <view class="dateText">{{item.createtime}}</view>
+      <image class="iconOne" src="{{urlPath}}pinglun.png" bindtap="pinglun" data-type="pinglun" data-number="{{index}}" data-id="{{item.id}}" data-toid="0" data-toname="" data-type="pinglun"></image>
+      <image class="iconOne" src="{{item.isdianzan==0?'{{urlPath}}down01.png':'{{urlPath}}downC01.png'}}" data-type="{{item.isdianzan}}" data-index='{{index}}' data-id="{{item.id}}" bindtap="dianzan"></image>
+    </view>
+    <view class="click" data-number="{{index}}" data-id="{{item.id}}" data-zhankai="{{item.a}}" data-memid="{{item.memid}}" style="{{idxc>1?'display:none':''}}" bindtap="click" style="{{item.flag==0?'display:none':'display:block'}}">{{item.a=='0' ? '点击展开评论':'点击隐藏评论'}}
+      <image src="{{item.a==0?'{{urlPath}}xiajian1.png':'{{urlPath}}xiajian2.png'}}"></image>
+    </view>
+    <view class="classname" wx:for="{{item.comments_list}}" wx:for-index="idxc" wx:for-item="itec" bindtap="pinglun" data-type="huifu" data-number="{{index}}" data-id="{{item.id}}" data-toid="{{itec.memid}}" data-toname="{{itec.memname}}" style="{{idxc>1?item.a==0?'display:none':'display:block':'display:block'}}">
+      <view class="require">{{itec.memname}}{{itec.p_memname==""?'':' 回复 '+itec.p_memname}}</view>
+      <view class="content overFlowText">{{itec.descs}}</view>
+      <view class="down"></view>
+    </view>
+    <view class="cardDown"></view>
+  </view>
+</view>
+<!--输入框-->
+<view class="inputview" style="display:{{display}}">
+  <input placeholder="{{placeholder}}" placeholder-style="font-size:9pt;margin-left:10rpx;" value="{{value}}" class="input" focus="{{focus}}" bindconfirm="tianjia" bindblur="shouqi" bindinput="input" confirm-hold="{{hold}}" />
+  <view class="{{input==''?'fasongh':'fasongl'}}" bindtap="tianjia">发送</view>
+</view>

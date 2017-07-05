@@ -1,0 +1,115 @@
+<!--project.wxml-->
+
+<!--轮播图-->
+<view class="main" style="{{ht==0?'':' position: fixed;top: 0;bottom: 0;left: 0;right: 0;;overflow: hidden;'}}">
+  <view class="swiper-containe">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="img">
+        <swiper-item>
+          <image  src="{{item.pic}}" class="swiper-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--轮播图-->
+
+  <!--按钮-->
+  <view class="btn">
+    <view class="btnleft">
+      <picker bindchange="btnleft" value="{{index}}" range="{{arrayname}}">
+        <view class="paixu">{{paixu}}</view>
+      </picker>
+      <view class="tri" bindtap="shengjiang">
+        <image src="{{jiantou==1? urlPath+'triangle.png':urlPath+'triangle1.png'}}"></image>
+      </view>
+
+    </view>
+    <view class="btnright" bindtap="shaixuan">筛选</view>
+  </view>
+  <!--按钮-->
+
+  <!--列表-->
+  <view class="list">
+    <block wx:for='{{list}}' wx:key='{{this}}'>
+      <view class="listmain" bindtap="goToDetail" data-id="{{item.id}}">
+        <view class="top" data-id="{{item.id}}">
+          <view class="touxiang">
+            <view class="piao">{{item.votes}}票
+              <image wx:if="{{item.flag==1}}" class="jiantou" src="{{urlPath}}up2.png"></image>
+              <image wx:if="{{item.flag==2}}" class="jiantou" src="{{urlPath}}up2.png"></image>
+              <image wx:if="{{item.flag==3}}" class="jiantou" src="{{urlPath}}flat.png"></image>
+            </view>
+            <image  mode="aspectFill" class="headpic" src="{{item.headpic}}"></image>
+          </view>
+          <view class="xiangmu">
+            <view class="mingcheng">{{item.name}}</view>
+            <view class="chengshi">{{item.city}}</view>
+            <view class="chuangshiren">{{item.memname}}</view>
+          </view>
+          <view class="shuzi">
+            <view class="zhi">智合:
+              <text style="color:black">{{item.zhihe}}</text>
+            </view>
+            <view class="ren">人合:
+              <text style="color:black">{{item.renhe}}</text>
+            </view>
+            <view class="zi">资合:
+              <text style="color:black">{{item.zihe}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="below">
+          <view class="left">观察团：
+            <text>{{item.guanchatuan}}</text>
+          </view>
+          <view class="mid">体验团：
+            <text>{{item.tiyantuan}}</text>
+          </view>
+          <view class="right">专家团：
+            <text>{{item.zhuanjiatuan}}</text>
+          </view>
+        </view>
+        <block>
+          <image wx:if="{{item.level==0}}" class="tuijian" src="{{urlPath}}power3.png"></image>
+          <image wx:elif="{{item.level==1}}" class="tuijian" src="{{urlPath}}power.png"></image>
+          <image wx:elif="{{item.level==2}}" class="tuijian" src="{{urlPath}}power1.png"></image>
+          <image wx:elif="{{item.level==3}}" class="tuijian" src="{{urlPath}}power2.png"></image>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>
+<!--列表-->
+
+<!--筛选遮罩-->
+<view class="{{zhezhao == 0 ? 'zhezhaoh' : 'zhezhao'}}">
+  <view class="zhezhaotop">
+    <view class="zhezhaoa">选择所在城市</view>
+    <view class="zhezhaog">
+      <view class="liandong">省</view>
+      <picker bindchange="xuanzesheng" value="{{index}}" range="{{sheng}}">
+        <view class="classname">{{shengz==""?'请选择':shengz}}</view>
+      </picker>
+      <image src="{{urlPath}}jiantou.png"></image>
+    </view>
+    <view class="zhezhaog" style="border:0rpx;">
+      <view class="liandong">市</view>
+      <picker disabled="{{disabled== 1 ? 'disabled' :''}}" bindchange="xuanzeshi" value="{{index}}" range="{{shi}}">
+        <view class="classname">{{shiz==""?'请选择':shiz}}</view>
+      </picker>
+      <image src="{{urlPath}}jiantou.png"></image>
+    </view>
+  </view>
+  <view class="zhezhaobelow">
+    <view class="zhezhaoa">选择所属行业</view>
+    <view class="zhezhaog" style="border:0rpx;">
+      <view class="liandong">行业类型</view>
+      <picker bindchange="xuanzehangye" value="{{index}}" range="{{hangye}}">
+        <view class="classname">{{hangyez==""?'请选择':hangyez}}</view>
+      </picker>
+      <image src="{{urlPath}}jiantou.png"></image>
+    </view>
+  </view>
+  <button class="shaixuanbtn" bindtap="queding">确定</button>
+</view>
+<!--筛选遮罩-->

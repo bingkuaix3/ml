@@ -1,0 +1,67 @@
+<view class="boxOne">
+  <view class="boxOneUp" bindtap="mingcheng">
+    <text class="textLeft">项目名称</text>
+    <view class="boxZ">{{xiangmuname}}</view>
+    <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+  </view>
+  <!--弹出框-->
+  <modal title="修改名称" hidden="{{modal}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalconfirm" bindcancel="modalcancel">
+    <input placeholder="请输入名称" bindinput="input" value="{{input}}" />
+  </modal>
+  <modal title="输入内容过长（15个字符以内）" hidden="{{tishi}}" confirm-text="确定" no-cancel="true" bindconfirm="tishiconfirm">
+  </modal>
+  <modal title="输入内容不能为空" hidden="{{tishie}}" confirm-text="确定" no-cancel="true" bindconfirm="tishieconfirm">
+  </modal>
+  <modal title="创始人说" hidden="{{csrs}}" confirm-text="修改" cancel-text="取消" bindconfirm="csrsconfirm" bindcancel="csrscancel">
+    <textarea placeholder="请输入内容" value="{{textareac}}" bindinput="textareac" class="textarea" />
+  </modal>
+  <modal title="项目介绍" hidden="{{jieshaoh}}" confirm-text="修改" cancel-text="取消" bindconfirm="jieshaoconfirm" bindcancel="jieshaocancel">
+    <textarea placeholder="请输入项目介绍" value="{{textarea}}" bindinput="textarea" class="textarea" maxlength="-1" />
+  </modal>
+
+  <!--弹出框-->
+  <view class="boxOneUp">
+    <text class="textLeft">所属行业</text>
+    <view class="boxZ">
+      <picker bindchange="hangye" value="{{index}}" range-key="name" range="{{hangye}}">
+        <view class="">{{hangyes}}</view>
+      </picker>
+    </view>
+    <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+  </view>
+</view>
+<view class="boxOne">
+  <view class="boxOneUp" bindtap="jumptupian" data-type="3" data-state="{{xiangmufengmian}}">
+    <text class="textLeft">项目封面</text>
+    <view class="boxZ"></view>
+    <image src="{{xiangmufengmian==0?'':urlPath+'tupian.png'}}" class="imageT"></image>
+    <image  src="{{urlPath}}arrows.png" class="imageJ"></image>
+  </view>
+  <view class="boxOneUp" bindtap="jumptupian" data-type="1">
+    <text class="textLeft">项目图片</text>
+    <view class="boxZ">
+    </view>
+    <image src="{{xiangmutupian==0?'':urlPath+'tupian.png'}}" class="imageT"></image>
+    <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+  </view>
+</view>
+
+<view class="boxTow">
+  <view class="boxOneUp" bindtap="jieshao">
+    <text class="textLeft">项目介绍</text>
+    <view class="boxZ">
+    </view>
+    <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+  </view>
+  <view class="boxOneUp" bindtap="csrs">
+    <text class="textLeft">创始人说</text>
+    <view class="boxZ"></view>
+    <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+  </view>
+  <view class="boxOneUp" bindtap="jumptupian" data-type="2">
+    <text class="textLeft">认证资料</text>
+    <view class="boxZ"></view>
+    <image src="{{ziliaorenzheng==0?'':urlPath+'tupian.png'}}" class="imageT"></image>
+    <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+  </view>
+</view>

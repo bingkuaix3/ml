@@ -1,0 +1,425 @@
+/* activityBao.wxss */
+
+page {
+  background: #f7f7f7;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.top {
+  width: 100%;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.top-left, .top-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  color: #353535;
+}
+
+.top-box {
+  color: #888;
+}
+
+.top-box-name {
+  width: 100%;
+  text-align: center;
+  font-size: 13pt;
+  font-weight: 700;
+  letter-spacing: 1.2rpx;
+  padding: 30rpx 0 16rpx 0;
+}
+
+.top-active {
+  color: #09bb07;
+}
+
+.top-box-bar {
+  width: 100%;
+  height: 4px;
+}
+
+.top-box-bar1 {
+  width: 100%;
+  height: 4px;
+  background-color: #09bb07;
+}
+
+.middle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.middle-box {
+  font-size: 13pt;
+  color: #576b95;
+}
+
+.guanzhu-box {
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.guanzhu-box-top {
+  height: 50rpx;
+  margin: 0rpx 30rpx;
+  padding: 30rpx 0 16rpx 0;
+  border-bottom: 1rpx solid #f7f7f7;
+}
+
+.guanzhu-box-top-icon {
+  width: 50rpx;
+  height: 50rpx;
+  float: left;
+}
+
+.guanzhu-box-top-name {
+  float: left;
+  width: auto;
+  font-size: 11pt;
+  margin-left: 10rpx;
+  color: #888;
+  line-height: 50rpx;
+}
+
+.guanzhu-box-top-all {
+  float: right;
+  width: auto;
+  font-size: 11pt;
+  color: #09bb07;
+  line-height: 50rpx;
+}
+
+.guanzhu-box-bottom {
+  background-color: white;
+  padding: 30rpx 0rpx;
+  margin: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #f7f7f7;
+}
+
+.guanzhu-bb-left1 {
+  width: 140rpx;
+  height: 140rpx;
+  display: block;
+  margin-right: 30rpx;
+}
+
+.guanzhu-bb-middle {
+  width: calc(100% - 160rpx);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guanzhu-bb-right {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+
+.wid {
+  text-align: left;
+  font-size: 11pt;
+  color: #353535;
+}
+
+.text {
+  height: 50rpx;
+  font-size: 11pt;
+  color: #353535;
+  margin-top: 10rpx;
+  text-align: left;
+  flex: 1;
+}
+
+.textDown {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-size: 11pt;
+  justify-content: space-between;
+}
+
+.overflow {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview {
+  height: 70rpx;
+  font-size: 9pt;
+  line-height: 70rpx;
+  letter-spacing: 2rpx;
+  border-radius: 8rpx;
+}
+
+.img {
+  height: 140rpx;
+  width: 140rpx;
+}
+
+.details {
+  margin: 0 30rpx;
+  border: 1rpx solid #f7f7f7;
+  box-shadow: 3px 3px 7px rgb(128, 128, 128);
+  margin-top: 40rpx;
+}
+
+.cardDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 30rpx;
+  border-bottom: 1rpx solid #f7f7f7;
+  font-size: 11pt;
+  color: #888;
+  line-height: 92rpx;
+}
+
+.Icon {
+  width: 20rpx;
+  height: 60rpx;
+  padding: 16rpx 0;
+}
+
+.cardDetailsr {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.imageT {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 10rpx;
+  margin-right: 30rpx;
+  opacity: 0.6;
+}
+
+.guanzhu-bb-right {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+
+.flex {
+  margin: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btnUp {
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 120rpx;
+  font-size: 9pt;
+  margin-top: 80rpx;
+  background-color: #fff;
+  color: #09bb07;
+}
+
+.text {
+  margin: 0 30rpx;
+  padding-top: 30rpx;
+  padding-bottom: 16rpx;
+  color: #888;
+  font-size: 11pt;
+  text-align: left;
+}
+
+.middle {
+  text-align: left;
+  margin: 0;
+  margin-top: 60rpx;
+  margin-bottom: 40rpx;
+  flex: 1;
+}
+
+.imgf {
+  width: 100%;
+}
+
+.btn {
+  position: fixed;
+  width: 100%;
+  bottom: 200rpx;
+  font-size: 11pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.btnRight {
+  height: 70rpx;
+  width: 240rpx;
+  background-color: #09bb07;
+  border: 1rpx solid #f7f7f7;
+  border-radius: 8rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.btnRight {
+  height: 70rpx;
+  width: 240rpx;
+  background-color: #09bb07;
+  border: 1rpx solid #f7f7f7;
+  border-radius: 8rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.btnLeft {
+  height: 70rpx;
+  width: 240rpx;
+  background-color: #fff;
+  border: 1rpx solid #09bb07;
+  border-radius: 8rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #09bb07;
+}
+
+.btnprimary {
+  margin: 0 30rpx;
+  width: calc(100% - 60rpx);
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  font-size: 11pt;
+  color: #888;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #f7f7f7;
+  background-color: #fff;
+  justify-content: flex-start;
+  align-items: center
+}
+
+.inputs {
+  height: 26px;
+  line-height: 26px;
+  font-size: 13pt;
+  margin-top: 0px;
+
+}
+
+.names {
+  width: 100%;
+  height: 26px;
+  line-height: 26px;
+  font-size: 13pt;
+  color: #353535;
+}
+
+.name {
+  display:inline-block;
+  width: 105px;
+  height: 26px;
+  line-height: 26px;
+  font-size: 13pt;
+  color: #353535;
+}
+
+.body-view {
+  background-color: #fff;
+  line-height: 90rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0 30rpx;
+  color: #353535;
+  font-size: 13pt;
+}
+.jiugongge {
+  margin: 16rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.jiuke {
+  width: 33.3%;
+  text-align: center;
+  font-size: 11pt;
+  margin-bottom: 16rpx;
+  color: #888;
+}
+.IconJiu {
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 15rpx 15rpx;
+  margin: 0 auto;
+}
+.btn1 {
+  position: fixed;
+  left:30rpx;
+  right:30rpx;
+  bottom: 100rpx;
+  font-size: 11pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.card {
+  background-color: #fff;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.namej {
+  width: 105px;
+  height: 26px;
+  line-height: 26px;
+  font-size: 13pt;
+  color: #353535;
+}
+.box {
+  height: 580rpx;
+}
+.namejl {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 13pt;
+  color: #353535;
+  flex: 1;
+}
+.btnUp1 {
+  height: 60rpx;
+  padding: 0 30rpx;
+  border-radius: 8rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #e64340;
+  border: 1rpx solid #e64340;
+  font-size: 9pt;
+  background-color: #fff;
+  letter-spacing: 1.2rpx;
+}
+.cir{
+  border-radius: 50%
+}

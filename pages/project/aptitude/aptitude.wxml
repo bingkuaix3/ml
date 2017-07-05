@@ -1,0 +1,15 @@
+<!--xiangguanzhizi.wxml  bindtap="actionSheetTap" -->
+<view class="box">
+  <block wx:for="{{pics}}" wx:key="{{pics}}">
+    <image mode="widthFix"  class="pic" data-id="{{item.id}}" src="{{item.pic}}"></image>
+  </block>
+</view>
+<view class="bottom">
+  <!--<button bindtap="addPic" type="primary">添加</button>-->
+</view>
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+  <block wx:key="{{actionSheetItems}}" wx:for-items="{{actionSheetItems}}">
+    <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>

@@ -1,0 +1,14 @@
+<!--zhuanjiatuan.wxml-->
+<view class="cardTop">
+  <image class="tupian" src="{{urlPath}}guanchatuan.jpg"></image>
+  <view class="headLine">邀请观察团</view>
+</view>
+<view class="card">
+  <view class="card1">
+    <view class="biaotiDown">邀请函</view>
+    <view class="paTop">
+      <textarea bindinput="yqCotentChange" maxlength="-1" class="content overFlowText"> </textarea>
+    </view>
+  </view>
+</view>
+<button bindtap="faQiYaoqing" class="yqButton" type="primary">邀请</button>

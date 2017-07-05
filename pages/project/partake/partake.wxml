@@ -1,0 +1,14 @@
+<view bindtap="goToZhihe" class=" card1">
+  <image class="img" src="{{urlPath}}timg3.jpg"></image>
+  <text class="text1">参与智合</text>
+</view>
+
+<view bindtap="goToRenhe" class=" card">
+  <image class="img" src="{{urlPath}}timg5.jpg"></image>
+  <text>参与人合</text>
+</view>
+
+<view bindtap="goToZihe" class=" card">
+  <image class="img" src="{{urlPath}}timg4.jpg"></image>
+  <text>参与资合</text>
+</view>

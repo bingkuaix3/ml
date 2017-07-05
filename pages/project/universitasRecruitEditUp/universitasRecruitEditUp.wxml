@@ -1,0 +1,85 @@
+<!--zhiweixgxianshang.wxml-->
+<!--主页面-->
+<view class="classname" hidden="{{bianji}}">
+  <view class="boxThree">
+    <view class="boxThreeUp" bindtap="pingtai">
+      <text class="textLeft">数字平台地址</text>
+      <view class="boxZ"></view>
+      <view class="classname" style="margin-right:20rpx;">{{pt}}</view>
+      <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+    </view>
+  </view>
+  <view class="boxThree">
+    <view class="boxThreeUp" bindtap="daili">
+      <text class="textLeft">代理商优惠</text>
+      <view class="boxZ"></view>
+      <view class=""></view>
+      <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+    </view>
+  </view>
+  <view class="boxThree">
+    <view class="boxThreeUp" bindtap="xiaoshou">
+      <text class="textLeft">销售期权激励</text>
+      <view class="boxZ"></view>
+      <view class="classname" style="margin-right:20rpx;">{{sh==0?'无':'有'}}</view>
+      <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+    </view>
+  </view>
+  <view class="boxThree">
+    <view class="boxThreeUp" bindtap="hehuo">
+      <text class="textLeft">合伙人数量</text>
+      <view class="boxZ"></view>
+      <view class="classname" style="margin-right:20rpx;">{{hh}}</view>
+      <image src="{{urlPath}}arrows.png" class="imageJ"></image>
+    </view>
+  </view>
+</view>
+<!--主页面-->
+
+<!--数字平台页面-->
+<view class="{{pingtai==0?'none':'block'}}">
+  <view class="text">数字平台地址</view>
+  <input placeholder="请输入文字" bindinput="pt"/>
+  <view class="btn">
+    <button class="btnLeft" bindtap="pcan">取消</button>
+    <button class="btnRight" bindtap="pcon">确认</button>
+  </view>
+</view>
+<!--数字平台页面-->
+
+<!--代理商页面-->
+<view class="{{daili==0?'none':'block'}}">
+  <view class="text">代理商优惠</view>
+  <view >
+    <textarea  class="neirong " placeholder="{{dl}}" maxlength="-1" bindinput="dl"/> 
+  </view>
+  <view class="btn">
+    <button class="btnLeft" bindtap="dcan">取消</button>
+    <button class="btnRight" bindtap="dcon">确认</button>
+  </view>
+</view>
+<!--代理商页面-->
+
+<!--销售页面-->
+<view class="{{xiaoshou==0?'none':'block'}}">
+  <view class="text">销售期权奖励</view>
+  <view class="body-view">是否期权奖励
+    <switch  checked="{{sh==0?false:true}}" bindchange="sh" class="big" />
+  </view>
+  <view class="btn">
+    <button class="btnLeft" bindtap="xcan">取消</button>
+    <button class="btnRight" bindtap="xcon">确认</button>
+  </view>
+</view>
+<!--销售页面-->
+
+<!--合伙人页面-->
+<view class="{{hehuo==0?'none':'block'}}">
+  <view class="text">合伙人数量</view>
+  <input placeholder="请输入数量" type="number" bindinput="hh"/>
+  <view class="btn">
+    <button class="btnLeft" bindtap="hcan">取消</button>
+    <button class="btnRight" bindtap="hcon">确认</button>
+  </view>
+</view>
+<!--合伙人页面-->

@@ -1,0 +1,124 @@
+/* huiyuan.wxss */
+
+page {
+  background-color: #f7f7f7;
+}
+
+.bg {
+  width: 100%;
+  height: 190px;
+  border: 0;
+}
+
+.header {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  margin-left: -40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  z-index: 5000;
+}
+
+.nickname {
+  position: absolute;
+  left: 50%;
+  top: 108px;
+  margin-left: -90px;
+  width: 180px;
+  height: 24px;
+  line-height: 24px;
+  z-index: 99;
+  color: white;
+  text-align: center;
+  font-size: 11pt;
+}
+
+.edit {
+  position: absolute;
+  right: 8px;
+  top: 60px;
+  width: 24px;
+  height: 26px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+}
+
+.para {
+  position: absolute;
+  left: 0;
+  top: 141px;
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+  opacity: 0.6;
+}
+
+.para-box {
+  float: left;
+  width: 33%;
+  height: 50px;
+}
+
+.para-tag {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: #f90;
+}
+
+.para-value {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+  margin-top: -2px;
+}
+
+.card {
+  border-bottom: 1px solid #f7f7f7;
+  background-color: white;
+  margin-top: -5rpx;
+  margin-bottom: 40rpx;
+}
+
+.line-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 20rpx;
+  margin-right: 30rpx;
+}
+
+.line-name {
+  font-size: 11pt;
+  line-height: 90rpx;
+  height: 90rpx;
+}
+
+.line-right {
+  width: 20rpx;
+  height: 60rpx;
+}
+
+.line {
+  height: 90rpx;
+  background-color: #fff;
+  margin: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #f7f7f7;
+}
+
+.headPortrait {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  vertical-align: middle;
+}

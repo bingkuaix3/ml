@@ -1,0 +1,72 @@
+<!--xinxiangmu.wxml-->
+<view class="{{firstHidden}}">
+  <view class="text">所属行业</view>
+  <picker bindchange="hangyeChange" value="{{index}}" range="{{hangyeList}}" range-key="name">
+    <view class="neirong ">
+      <text class="overFlowText">{{selectedHangye}}
+      </text>
+    </view>
+  </picker>
+  <view class="btn">
+    <button bindtap="back" class="btnLeft">取消</button>
+    <button bindtap="firstNext" class="btnRight">下一步</button>
+  </view>
+</view>
+
+
+
+<view class="{{secondHidden}}">
+  <view class="text">项目名称</view>
+  <input bindinput="recordName" style="text-align:center;" placeholder="请输入项目名称" />
+  <view class="btn">
+    <button bindtap="secondBefore" class="btnLeft">上一步</button>
+    <button bindtap="secondNext" class="btnRight">下一步</button>
+  </view>
+</view>
+
+
+
+<view class="{{thirdHidden}}">
+  <view class="text">项目封面</view>
+  <view class="btnRight compile" bindtap="selectFengmian">{{img==""?'添加':'更换'}}</view>
+  <view class="map">
+    <image  mode="widthFix" class="picture" src="{{img}}"></image>
+  </view>
+  <view class="btn">
+    <button bindtap="thirdBefore" class="btnLeft">上一步</button>
+    <button bindtap="thirdNext" class="btnRight">下一步</button>
+  </view>
+</view>
+
+
+<view class="{{forthHidden}}">
+  <view class="text">项目介绍</view>
+  <view class="neirong ">
+    <textarea maxlength="-1" bindconfirm="recordIntroduce" bindinput="recordIntroduce" class="overFlowText">
+    </textarea>
+  </view>
+  <view class="btn">
+    <button bindtap="forthBefore" class="btnLeft">上一步</button>
+    <button bindtap="forthNext" class="btnRight">下一步</button>
+  </view>
+</view>
+
+<view class="{{fifthHidden}}">
+  <view class="text">相关资质</view>
+  <view class="btnRight compile" bindtap="tjzz">添加
+  </view>
+  <view class="map">
+    <image mode="widthFix" wx:for="{{imgs}}" bindtap="actionSheetTap" data-index="{{index}}" class="picture" src="{{item}}"></image>
+  </view>
+  <view class="btn">
+    <button bindtap="fifthBefore" class="btnLeft">上一步</button>
+    <button bindtap="sure" class="btnRight">确定</button>
+  </view>
+</view>
+
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+  <block wx:key="{{actionSheetItems}}" wx:for-items="{{actionSheetItems}}">
+<action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>
